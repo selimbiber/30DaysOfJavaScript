@@ -1,0 +1,1 @@
+console.log("Hello World! In this course, I'm learning JavaScript in 30 Days.")

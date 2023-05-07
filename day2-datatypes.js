@@ -14,7 +14,7 @@ console.log(typeof 5.3); // -> number (tam sayılar: ...-3,-2,-1,0,1,2,3.../onda
 
 console.log(typeof true); // -> boolean (Boolean veri türü, yalnızca True(doğru) veya False(yanlış) bir değer alır-gönderir.)
 
-console.log(typeof null); // -> object (JavaScript'te 'null' boş bir değer anlamına gelir.)
+console.log(typeof null); // -> object (JavaScript'te 'null' boş bir değer anlamına gelir.) Aslında yanlıştır. Bu typeof fonksiyonunun bilinen bir hatasıdır. Eski versiyonlara uygunluk açısından bu şekliyle bırakılmıştır. Yoksa null bir obje değildir. Kendine has bir tiptir. Tekrar söylemek gerekirse bu JavaScript dilinin bir hatasıdır.
 
 console.log(typeof undefined); // undefined (JavaScript'te, bir değişkene bir değer atamaz isek, değeri undefined olarak alır. Buna ek olarak, bir fonksiyon hiçbir şey döndürmüyorsa, döndereceği tanım 'undefined' tır.)
 
@@ -357,9 +357,52 @@ console.log(numFloat2) // 9.19
 // Float to Int: Ondalık sayıları tam sayılara çevirebiliriz. (Int) ( bu aşağıya yuvarlıyor ) Float'ı int'e dönüştürmek için aşağıdaki metodu kullanıyoruz:
 // parseInt()
 
+
 let newNum2 = 9.99;
 let numInteger = parseInt(newNum2)
 console.log(numInteger) // 9
+
+/*
+    Özet
+
+Javascript dilinde 8 tane basit tip bulunmaktadır.
+
+    number her türlü sayı için (integer veya floating point)
+
+    bigint isteğe bağlı uzunluktaki tam sayılar içindir.
+
+    string bir veya birden fazla karakter için
+
+    boolean , true/false yani doğru-yanlış değerleri için.
+
+    null bilinmeyen değerler için.
+
+    undefined değer atanmamış değişkenler için.
+
+    object daha karmaşık veri yapıları için.
+    
+    symbol eşsiz tanımlamalar için.
+
+*/
+
+/* What is the output of the script? https://tr.javascript.info/task/string-quotes
+
+let name = "Ilya";
+
+alert( `hello ${1}` ); -> ?
+
+alert( `hello ${"name"}` ); -> ?
+
+alert( `hello ${name}` ); -> ? */
+
+// Solutions:
+let name = "Ilya";
+
+alert( `hello ${1}` ); // -> hello 1
+
+alert( `hello ${"name"}` ); // -> hello name 
+
+alert( `hello ${name}` ); // -> hello Ilya
 
 // Exercises: Level 1
 

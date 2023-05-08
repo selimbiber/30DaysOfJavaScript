@@ -1,8 +1,8 @@
-/* Day 1: Exercises 
+/* Day 1: Exercise 
 Create datatypes.js file and use the JavaScript typeof operator to check different data types. Check the data type of each variable
 
 https://github.com/Asabeneh/30-Days-Of-JavaScript/blob/master/Turkish/02_Day_Data_types/02_day_data_types.md
-
+https://30dayjavascript.js.org/02-day/
 https://tr.javascript.info/types
 */
 
@@ -237,7 +237,7 @@ console.log(country.toUpperCase()) // -> TURKIYE
 let string = 'JavaScript'
 console.log(string.toLowerCase()) // -> javascript
 
-// substr(): İki arrgüman alır, başlangıç indeksi ve silenecek karakter sayısı.
+// substr(): İki argüman alır, başlangıç indeksi ve silenecek karakter sayısı.
 console.log(string.substr(4, 6)) // -> Script
 console.log(country.substr(0, 4)) // -> Turk
 
@@ -398,14 +398,100 @@ alert( `hello ${name}` ); -> ? */
 // Solutions:
 let name = "Ilya";
 
-alert( `hello ${1}` ); // -> hello 1
+// alert( `hello ${1}` ); // -> hello 1
 
-alert( `hello ${"name"}` ); // -> hello name 
+// alert( `hello ${"name"}` ); // -> hello name 
 
-alert( `hello ${name}` ); // -> hello Ilya
+// alert( `hello ${name}` ); // -> hello Ilya
 
-// Exercises: Level 1
+// type conversions: https://tr.javascript.info/type-conversions
+/*
 
-// Exercises: Level 2
+"" + 1 + 0 = "10" // (1)
+"" - 1 + 0 = -1 // (2)
+true + false = 1
+6 / "3" = 2
+"2" * "3" = 6
+4 + 5 + "px" = "9px"
+"$" + 4 + 5 = "$45"
+"4" - 2 = 2
+"4px" - 2 = NaN
+7 / 0 = Infinity
+" -9  " + 5 = " -9  5" // (3)
+" -9  " - 5 = -14 // (4)
+null + 1 = 1 // (5)
+undefined + 1 = NaN // (6) 
 
-// Exercises: Level 3
+The addition with a string "" + 1 converts 1 to a string: "" + 1 = "1", and then we have "1" + 0, the same rule is applied.
+
+The subtraction - (like most math operations) only works with numbers, it converts an empty string "" to 0.
+
+The addition with a string appends the number 5 to the string.
+
+The subtraction always converts to numbers, so it makes " -9 " a number -9 (ignoring spaces around it).
+null becomes 0 after the numeric conversion.
+
+undefined becomes NaN after the numeric conversion.
+
+*/
+
+/* Day 2: Exercises: Level 1 */
+// 1. -> Declare a variable named challenge and assign it to an initial value '30 Days Of JavaScript'.
+let challengeName = '30 Days Of JavaScript';
+// 2. -> Print the string on the browser console using console.log()
+console.log(challengeName);
+// 3. -> Print the length of the string on the browser console using console.log()
+console.log(challengeName.length);
+// 4. -> Change all the string characters to capital letters using toUpperCase() method
+console.log(challengeName.toUpperCase());
+// 5. -> Change all the string characters to lowercase letters using toLowerCase() method
+console.log(challengeName.toLowerCase());
+// 6. -> Cut (slice) out the first word of the string using substr() or substring() method
+console.log(challengeName.substr(0, 2));
+// 7. -> Slice out the phrase Days Of JavaScript from 30 Days Of JavaScript.
+console.log(challengeName.substring(2,21));
+// 8. -> Check if the string contains a word Script using includes() method
+console.log(challengeName.includes('Java')); // -> true
+// 9. -> Split the string into an array using split() method
+console.log(challengeName.split(',')); // -> ['30 Days Of JavaScript']
+// 10. -> Split the string 30 Days Of JavaScript at the space using split() method
+console.log(challengeName.split(''));
+// 11. -> Facebook, Google, Microsoft, Apple, IBM, Oracle, Amazon' split the string at the comma and change it to an array.
+let techGiants = 'Facebook, Google, Microsoft, Apple, IBM, Oracle, Amazon'
+console.log(techGiants.split(', ')); // -> ['Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle', 'Amazon']
+// 12. -> Change 30 Days Of JavaScript to 30 Days Of Python using replace() method.
+console.log(challengeName.replace('JavaScript', 'Python')); // -> 30 Days Of Python
+// 13. -> What is character at index 15 in '30 Days Of JavaScript' string? Use charAt() method.
+console.log(challengeName.charAt(15)); // -> S
+// 14. -> What is the character code of J in '30 Days Of JavaScript' string using charCodeAt()
+console.log(challengeName.charCodeAt('J')); // -> 51
+// 15. -> Use indexOf to determine the position of the first occurrence of a in 30 Days Of JavaScript
+console.log(challengeName.indexOf('a')); // -> 4
+// 16. -> Use lastIndexOf to determine the position of the last occurrence of a in 30 Days Of JavaScript.
+console.log(challengeName.lastIndexOf('a')); // -> 14
+// 17. -> Use indexOf to find the position of the first occurrence of the word because in the following sentence:'You cannot end a sentence with because because because is a conjunction'
+let sentence = 'You cannot end a sentence with because because because is a conjunction';
+console.log(sentence.indexOf('because')); // -> 31
+// 18. -> Use lastIndexOf to find the position of the last occurrence of the word because in the following sentence:'You cannot end a sentence with because because because is a conjunction'
+console.log(sentence.lastIndexOf('because')); // -> 47
+// 19. -> Use search to find the position of the first occurrence of the word because in the following sentence:'You cannot end a sentence with because because because is a conjunction'
+console.log(sentence.search('because')); // 31
+// 20. -> Use trim() to remove any trailing whitespace at the beginning and the end of a string.E.g ' 30 Days Of JavaScript '
+let spaceJS = ' 30 Days Of JavaScript   ';
+console.log(spaceJS.trim()); // -> 30 Days Of JavaScript
+// 21. -> Use startsWith() method with the string 30 Days Of JavaScript and make the result true
+console.log(challengeName.startsWith('30')); // -> true
+// 22. -> Use endsWith() method with the string 30 Days Of JavaScript and make the result true
+console.log(challengeName.endsWith('Script')); // true
+// 23. -> Use match() method to find all the a’s in 30 Days Of JavaScript
+console.log(challengeName.match('a')); // -> ['a', index: 4, input: '30 Days Of JavaScript', groups: undefined]
+// 24. -> Use concat() and merge '30 Days of' and 'JavaScript' to a single string, '30 Days Of JavaScript'
+let month = '30 Days of';
+let lang = 'JavaScript';
+console.log(month.concat(lang)); // -> 30 Days ofJavaScript
+// 25. -> Use repeat() method to print 30 Days Of JavaScript 2 times
+console.log(challengeName.repeat(2)); // -> 30 Days Of JavaScript30 Days Of JavaScript
+
+/* Day 2: Exercises: Level 2 */
+
+/* Day 2: Exercises: Level 3 */

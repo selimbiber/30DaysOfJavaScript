@@ -470,12 +470,12 @@ console.log(challengeName.indexOf('a')); // -> 4
 // 16. -> Use lastIndexOf to determine the position of the last occurrence of a in 30 Days Of JavaScript.
 console.log(challengeName.lastIndexOf('a')); // -> 14
 // 17. -> Use indexOf to find the position of the first occurrence of the word because in the following sentence:'You cannot end a sentence with because because because is a conjunction'
-let sentence = 'You cannot end a sentence with because because because is a conjunction';
-console.log(sentence.indexOf('because')); // -> 31
+let sentenceBecause = 'You cannot end a sentence with because because because is a conjunction';
+console.log(sentenceBecause.indexOf('because')); // -> 31
 // 18. -> Use lastIndexOf to find the position of the last occurrence of the word because in the following sentence:'You cannot end a sentence with because because because is a conjunction'
-console.log(sentence.lastIndexOf('because')); // -> 47
+console.log(sentenceBecause.lastIndexOf('because')); // -> 47
 // 19. -> Use search to find the position of the first occurrence of the word because in the following sentence:'You cannot end a sentence with because because because is a conjunction'
-console.log(sentence.search('because')); // 31
+console.log(sentenceBecause.search('because')); // 31
 // 20. -> Use trim() to remove any trailing whitespace at the beginning and the end of a string.E.g ' 30 Days Of JavaScript '
 let spaceJS = ' 30 Days Of JavaScript   ';
 console.log(spaceJS.trim()); // -> 30 Days Of JavaScript
@@ -563,3 +563,31 @@ let because = 'You cannot end a sentence with because because because is a conju
 console.log(because.substr(31, 24)) // -> because because because
 
 /* Day 2: Exercises: Level 3 */
+
+// 1. -> 'Love is the best thing in this world. Some found their love and some are still looking for their love.' Count the number of word love in this sentence.
+let countLove = 'Love is the best thing in this world. Some found their love and some are still looking for their love.';
+let patternLove = /love/gi;
+console.log(countLove.match(patternLove)); // -> (3) ['Love', 'love', 'love']
+
+// 2. -> Use match() to count the number of all because in the following sentence:'You cannot end a sentence with because because because is a conjunction'
+let countBecause = 'You cannot end a sentence with because because because is a conjunction';
+let patternBecause = /because/gi;
+console.log(countBecause.match(patternBecause)); // -> (3) ['because', 'because', 'because']
+
+// 3. -> Clean the following text and find the most frequent word (hint, use replace and regular expressions).
+/*     
+const sentence = '%I $am@% a %tea@cher%, &and& I lo%#ve %te@a@ching%;. The@re $is no@th@ing; &as& mo@re rewarding as educa@ting &and& @emp%o@weri@ng peo@ple. ;I found tea@ching m%o@re interesting tha@n any ot#her %jo@bs. %Do@es thi%s mo@tiv#ate yo@u to be a tea@cher!? %Th#is 30#Days&OfJavaScript &is al@so $the $resu@lt of &love& of tea&ching'
+*/
+const sentence = '%I $am@% a %tea@cher%, &and& I lo%#ve %te@a@ching%;. The@re $is no@th@ing; &as& mo@re rewarding as educa@ting &and& @emp%o@weri@ng peo@ple. ;I found tea@ching m%o@re interesting tha@n any ot#her %jo@bs. %Do@es thi%s mo@tiv#ate yo@u to be a tea@cher!? %Th#is 30#Days&OfJavaScript &is al@so $the $resu@lt of &love& of tea&ching';
+
+console.log(sentence.replace(/[!@#$%^&*()|,;?.]/g,'')) 
+/*
+    I am a teacher and I love teaching There is nothing as more rewarding as educating and empowering people I found teaching more interesting than any other jobs Does this motivate you to be a teacher This 30DaysOfJavaScript is also the result of love of teaching
+*/
+
+// 4. -> Calculate the total annual income of the person by extracting the numbers from the following text. 'He earns 5000 euro from salary per month, 10000 euro annual bonus, 15000 euro online courses per month.'
+const text = 'He earns 5000 euro from salary per\ month, 10000 euro annual bonus, 15000 euro\ online courses per month.';
+const array = text.match(/\d+/g);
+const totalAnnualIncome = (+array[0] + +array[2]) * 12 + +array[1];
+
+console.log(totalAnnualIncome);

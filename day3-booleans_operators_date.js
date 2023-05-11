@@ -13,6 +13,8 @@ Gün 3 - Konular:
         Arttırma Operatörü
         Azaltma Operatörü
         Koşul Operatörü
+        Yerinde Değiştir Operatörü (Modify-in-place)
+        Virgül Operatörü
         Operatör Önceliği
     Window Metotları
         Window alert() metot
@@ -153,7 +155,7 @@ console.log('python'.length > 'dragon'.length)   // false
 
 // Temel kural olarak, eğer bir değer == ile doğru değilse, === ile eşit olmayacaktır. === kullanmak, == kullanmaktan daha güvenlidir.
 
-// Mantıksal Operatörler: Aşağıdaki semboller ortak mantıksal operatörlerdir: &&(ve işareti) , || (boru -veya-) ve !(olumsuzlama). && operatörü, yalnızca iki işlenen doğruysa doğru olur. || operatör, işlenenlerden herhangi birinin doğru olması durumunda gerçekleşir. ! operatör true - false ve false - true değerini olumsuzlar.
+// Bitsel(Bitwise) Operatörler (Mantıksal Operatörler): Aşağıdaki semboller ortak mantıksal operatörlerdir: &&(ve işareti) , || (boru -veya-) ve !(olumsuzlama). && operatörü, yalnızca iki işlenen doğruysa doğru olur. || operatör, işlenenlerden herhangi birinin doğru olması durumunda gerçekleşir. ! operatör true - false ve false - true değerini olumsuzlar.
 
 // &&   ve işareti operatörü örneği ( ampersand olarak anlandırılıyor)
 
@@ -174,31 +176,66 @@ let is_Light_On = true
 let is_Light_Off = !is_Light_On // -> false
 let is_Married = !false // -> true
 
+/* Diğer Bitsel(Mantıksal) Operatörlerin Listesi: 
+
+    XOR – ÖZEL VEYA ( ^ )
+    NOT – DEĞİL ( ~ )
+    LEFT SHIFT – SOLA KAYDIRMA ( << )
+    RIGHT SHIFT – SAĞ KAYDIRMA ( >> )
+    ZERO-FILL RIGHT SHIFT – SIFIR DOLDURARAK SAĞ KAYDIRMA ( >>> )
+
+    Bu oparatörler çok nadir kullanılır. Onları anlamak için düşük seviyeli sayı temsiline girmemiz gerekiyor ve özellikle de yakın zamanda onlara ihtiyaç duymayacağımızdan şu anda bunu yapmak uygun olmayacaktır. Konu ile ilgili doküman: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators 
+*/
+
+// Artırma/Azaltma Operatörleri: Bir sayıyı artırmak veya azaltmak sayısal operasyonlarda önemli sayılabilecek bir düzeydedir.
+//!Dikkat: Artırma/Azaltma sadece değişkenlere uygulanabilirler. 5++ gibi bir kullanım hata verecektir.
+/* ++ ve -- operatörleri değişkenden önce veya sonra kullanılabilirler.
+    Operatör değişkenden sonra geliyorsa ona “postfix form” deriz: counter++.
+    “prefix form” ise operatörün değişkenden önce geldiği durumdur: ++counter.
+    Bu iki durumda da aynı işlem yapılır: counter değişkeni 1 arttırılır veya azaltılır fakat aşağıdaki örneklerde görüleceği üzere bu iki formun arasında bir kullanım farkı mevcuttur.
+*/
+
 // Arttırma Operatörü: JavaScript'te, bir değişkende saklanan bir değeri artırmak için artırma operatörünü kullanırız. Artış, artış öncesi veya sonrası olabilir. 
 
-// Öncesi Artış için Örnek:
+// Artırma ++ değişkenin değerini 1 artırır:
+
+// Öncesi Artış (“prefix form”) için Örnek:
 let count = 0
 console.log(++count) // -> 1
 console.log(count) // -> 1
 
-// Sonrası Artış için Örnek:
+// Sonrası Artış (“postfix form”) için Örnek:
 let count1 = 0
 console.log(count1++) // -> 0
 console.log(count1) // -> 1
 
 // Azaltma Operatörü: JavaScript'te, bir değişkende saklanan bir değeri azaltmak için azaltma operatörünü kullanırız. Azaltma, eksiltme öncesi veya sonrası olabilir.
 
-// Öncesi Azaltma için Örnek:
+// Azaltma -- değişkenin değerini 1 azaltır:
+
+// Öncesi Azaltma (“prefix form”) için Örnek:
 let count2 = 0
 console.log(--count2) // -> -1
 console.log(count2) // -> -1
 
-// Sonrası Azaltma için Örnek:
+// Sonrası Azaltma (“postfix form”) için Örnek:
 let count3 = 0
 console.log(count3--) // -> 0
 console.log(count3) // -> -1
 
-// NOT: Artırma/Azaltma sadece değişkenlere uygulanabilirler. 5++ gibi bir kullanım hata verecektir.
+// Eğer arttırma/azaltma işleminin sonucunu kullanmıyorsak hangi formu kullandığımızın bir farkı olmaz:
+let counter = 0;
+counter++;
+++counter;
+console.log( counter ); // -> 2, iki satır da aynı işlemi yaptı.
+
+// Eğer bir değeri arttıracak ve onu aynı anda(o işlem sırasında) kullanacaksak, prefix formunu kullanmamız gerekir:
+let counter0 = 0;
+console.log( ++counter0 ); // -> 1
+
+// Eğer arttırma yapacak fakat arttırma yapmadan yapmadan önceki değeri kullanacaksak, postfix formunu kullanmamız gerekir:
+let counterNumber = 0;
+console.log( counterNumber++ ); // -> 0
 
 // Koşul Operatörü (Ternary - Üçlü): Üçlü operatör bir koşul yazmaya izin verir. Koşullar yazmanın başka bir yolu da üçlü operatörleri kullanmaktır.
 let isRaining53 = true
@@ -224,6 +261,39 @@ number > 0
   ? console.log(`${number} is a positive number`) // -> ? = true ise
   : console.log(`${number} is a negative number`) // -> : = false ise
 // -> console: -5 is a negative number
+
+// Modify-in-place (Yerinde Değiştir) Operatörü: Bazen bir değişken üzerinde bir operatör işlemi yaparız ve yeni oluşacak değerini aynı değişkende tutmak isteriz.
+let n = 2;
+n = n + 5;
+n = n * 2;
+// Bu işlemler += ve *= kullanılarak kısaltılabilir:
+let numX = 2;
+numX += 5; // -> şu an numX = 7 (numX = numX + 5 ile aynı)
+numX *= 2; // -> şu an numX = 14 (numX = numX * 2 ile aynı)
+
+console.log(numX); // -> 14
+
+// Kısa olan “modify-and-assign” operatörleri tüm aritmetik ve bitsel operatörler için mevcuttur: /=, -=, vb. Bu tür operatörler normal bir atama(assignment) ile aynı önceliğe sahiptir, bu yüzden diğer birçok hesaplamalardan sonra çalışırlar.
+
+let numY = 2;
+numY *= 3 + 5;
+
+console.log(numY); // -> 16 (önce sağ kısımda işlem yapıldı, numY *= 8 gibi)
+
+// Virgül Operatörü: Virgül operatörü , nadir ve en alışılmadık operatörlerden birisidir. Bazen daha kısa kodlar yazmak için kullanılır. Bu yüzden neler olduğunu anlamak için bu operatörü de bilmemiz gerekiyor.Virgül operatörü birden fazla ifadeyi virgül , ile ayırarak hesaplamamıza olanak sağlar. Her bir ifade işleme alınır fakat bu ifadelerden sadece sonuncusu döndürülür.
+let a = (1 + 2, 3 + 4);
+alert(a); // -> 7 (3 + 4 işleminin sonucu)
+// Burada, ilk ifade olan 1 + 2 işleme giriyor fakat sonucu çöpe atılıyor. Sonrasında gelen 3 + 4 işleme giriyor ve sonuç olarak geri döndürülüyor.
+//!Dikkat: Unutmamak gerekir ki; virgül operatörü çok düşük bir önceliğe sahiptir, önceliği ='den bile daha düşüktür. Bu yüzden yukarıdaki örnekte gördüğümüz gibi parantezler çok önemlidir. Parantezler olmadan: a = 1 + 2, 3 + 4 ifadesinde önce + işleme alınır, değerler toplanarak a = 3, 7 ifadesine çevirilir, ondan sonra atama operatörü = ile a = 7 ataması yapılır, ve sonuç olarak virgülden önceki sayı olan 3 işlenmeyerek yok sayılır.
+
+// Peki neden son kısım hariç her şeyi yok sayan bir operatöre ihtiyacımız var? - Bazen bizler; bir satırda birkaç işlem yapılan karmaşık yapılarda bu operatörü kullanırız.
+
+// Bir satırda 3 farklı işlem
+// for (a = 1, b = 3, c = a * b; a < 10; a++) {
+//     ...
+// }
+//! Bu tarz numaralar birçok JavaScript frameworklerinde kullanılır. Bu yüzden bunlardan bahsettik. Ama genelde bunlar kodun okunabilirliğini azaltıyorlar. Bu yüzden kullanmadan önce iyi düşünmek gerekir.
+
 
 // Operatör Önceliği -> https://dorey.github.io/JavaScript-Equality-Table/ (Tabloyu ezberlemeye gerek yok sadece unary operatörlerin binary olanlara göre daha üstün olduğunu hatırlayalım yeter). Yani +elma + +portakal işleminde önce unary ile elma'nın değerini sayı yapar sonra portakal'ın değerini sayı yapar ve en sonunda toplar. Örnek:)
 let elma = "2";

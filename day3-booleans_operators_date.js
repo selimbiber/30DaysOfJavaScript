@@ -9,7 +9,7 @@ Gün 3 - Konular:
         Atama Operatörleri
         Aritmetik Operatörleri
         Karşılaştırma Operatörleri
-        Mantıksal Operatörler
+        Mantıksal Operatörler (https://tr.javascript.info/logical-operators)
         Arttırma Operatörü
         Azaltma Operatörü
         Koşul Operatörü
@@ -118,15 +118,15 @@ console.log(
   `The boiling point of water is ${boilingPoint} oC.\nHuman body temperature is ${bodyTemp} oC.\nThe gravity of earth is ${gravity} m / s2.`
 )
 
-// Karşılaştırma Operatörleri: Programlamada değerleri karşılaştırırız, iki değeri karşılaştırmak için karşılaştırma operatörlerini kullanırız. Bir değerin diğer değere eşit veya büyük olup olmadığını kontrol ederiz.
+// Karşılaştırma Operatörleri: Programlamada değerleri karşılaştırırız, iki değeri karşılaştırmak için karşılaştırma operatörlerini kullanırız. Bir değerin diğer değere eşit veya büyük olup olmadığını kontrol ederiz. Çoğu karşılaştırma operatörlerini matematik derslerinden biliyoruz.
 
 console.log(3 > 2) // -> true, çünkü 3 2 den büyüktür
 console.log(3 >= 2) // -> true, çünkü 3 2 den büyüktür
 console.log(3 < 2) // -> false,  çünkü 3 2 den büyüktür
 console.log(2 < 3) // -> true, çünkü 2 3 den küçüktür
 console.log(2 <= 3) // -> true, çünkü 2 3 den küçüktür
-console.log(3 == 2) // -> false, çünkü 3 2 ye eşit değildir
-console.log(3 != 2) // -> true, çünkü 3 2 ye eşit değildir
+console.log(3 == 2) // -> false, çünkü 3 2 ye eşit değildir (tek = işareti anlamına gelir)
+console.log(3 != 2) // -> true, çünkü 3 2 ye eşit değildir (Eşit değildir matematikte şu şekilde gösteriliyor ≠, JavaScript’te ise eşittir öncesine ünlem işareti olarak kullanabiliriz)
 console.log(3 == '3') // -> true, sadece değeri karşılaştırıyor
 console.log(3 === '3') // -> false, hem değeri hemde veri türünü karşılaştırıyor o yüzden yanlış. Birisi int değeri birisi string değerinden ( Bu denklik operatörü )
 console.log(3 !== '3') // -> true, hem değeri hemde veri türünü karşılaştırıyor o yüzden doğru. (Bu denk değil operatörü)
@@ -144,6 +144,24 @@ console.log(undefined === null) // -> false
 console.log(NaN == NaN) // -> false, eşit değil
 console.log(NaN === NaN) // -> false
 console.log(typeof NaN) // -> number
+//! >= > < <= gibi karşılaştırmaları null/undefined değeri alabilecek değişkenler ile yapmayın, yaparsanız bile kesinlikle çok dikkatli olun. Eğer bir değişken null/undefined gibi değerler alabiliyorsa bunları ayrıca kontrol etmeniz gerekli.
+
+// Sıkı Eşitlik: Normal eşitlik kontorlü "=="'nün bir problemi vardır. 0 ile false'ı birbirinden ayıramamaktadır.
+console.log( 0 == false ); // -> true
+console.log( '' == false ); // -> true
+/*
+    Bunun nedeni farklı tiplerdeki verilerin karşılaştırılmaya çalışılmasıdır. Her iki taraf da sayısal değerlere çevrilir. Örneğin '' 0 olur, aynen false'ın 0 olması gibi.
+
+    Peki false ile 0'ın birbirinden farklı olarak tanımlamak için ne yapılmalıdır?
+
+    Sıkı eşitlik kontrolü === eşitliğin iki tarafını değiştirmeden kontrol eder.
+
+    Diğer bir deyişle eğer a ve b iki farklı tip ise a === b doğrudan false ( yanlış ) döner.
+*/
+console.log( 0 === false ); // -> yanlış, çünkü tipler farklı.
+// Ayrıca eşitsizliği belirtmek için yukarıdaki örneklerde de kullanıldığı üzere !== operatörü de bulunmaktadır.
+
+//!Sıkı eşitlik için temel kural olarak, eğer bir değer == ile doğru değilse, === ile eşit olmayacaktır. === kullanmak, == kullanmaktan daha güvenlidir. Sıkı eşitlik kontrolü biraz daha uzun yazıma sahip olsa da hataya yer bırakmaz.
 
 console.log('mango'.length == 'avocado'.length)  // false
 console.log('mango'.length != 'avocado'.length)  // true
@@ -153,39 +171,106 @@ console.log('milk'.length != 'meat'.length)      // false
 console.log('tomato'.length == 'potato'.length)  // true
 console.log('python'.length > 'dragon'.length)   // false
 
-// Temel kural olarak, eğer bir değer == ile doğru değilse, === ile eşit olmayacaktır. === kullanmak, == kullanmaktan daha güvenlidir.
+// Karakter dizisi karşılaştırma: Hangi karakter dizisinin hangisinden büyük olduğunu bulmak için alfabe sırasına bakılır ve her harf sıra ile kontrol edilir. (Alfabede sonra gelen harf büyüktür)
+console.log( 'Z' > 'A' ); // doğru ( true )
+console.log( 'Kum' > 'Kan' ); // doğru ( true )
+console.log( 'Bee' > 'Be' ); // doğru ( true )
+/*
+    İki karakter dizisini karşılaştıran algoritma aslında basit bir algoritmadır. Basamakları şu şekildedir.
 
-// Bitsel(Bitwise) Operatörler (Mantıksal Operatörler): Aşağıdaki semboller ortak mantıksal operatörlerdir: &&(ve işareti) , || (boru -veya-) ve !(olumsuzlama). && operatörü, yalnızca iki işlenen doğruysa doğru olur. || operatör, işlenenlerden herhangi birinin doğru olması durumunda gerçekleşir. ! operatör true - false ve false - true değerini olumsuzlar.
+    İki karakter dizisinin ilk karakterlerini karşılaştır.
 
-// &&   ve işareti operatörü örneği ( ampersand olarak anlandırılıyor)
+    Eğer birincisi ikincisinden büyükse, birinci karakter dizisi büyüktür. İşlem bitti.
+
+    Eğer karakterler eşit ise ikinci karakteri de aynı şekilde kontrol et. Eğer birincisi büyükse true döner.
+
+    Karakter dizilerinin sonuna kadar test et.
+
+    Eğer sonuna kadar tüm karakterler aynıysa uzun olanı daha büyüktür.
+
+    Tam olarak sözlükteki sıralama gibi değildir, unicode bir sıralama var
+
+    Algoritmada belirtilen karşılaştırma tam olarak sözlükteki veya telefon defterindeki gibi bir karşılaştırma vermez.
+
+    Örneğin karakterin büyük veya küçük harf olması önemlidir. "A" ile "a" eşit değildir. Peki hangisi büyük? Aslında "a" daha büyüktür. Neden ? Çünkü küçük harf karakterler büyüklere göre (Unicode) index olarak daha sonradır.
+*/
+/***Karşılaştırma Operatörleri Özeti:
+
+    Karşılaştırma operatörleri mantıksal değerler döndürür. (true/false) gibi
+
+    Karakter dizileri harf harf alfabe sırasına göre kontrol edilir.
+
+    Karşılaştırmalarda eğer farklı tipler kullanılıyorsa bu işlem yapılmadan sayıya çevirilir. ( Eğer sıkı eşittir kullanıyorsanız çevirilmez)
+
+    null ve undefined eşittir. Bu değerler başka hiçbir değere eşit değildirler.
+
+    Değeri null/undefined olabilen bir değişken ile > veya < karşılaştırması yaparken dikkat edin. Ayrı bir null/undefined kontrolü yapmakta fayda var.
+*/
+// Karşılaştırma Operatörleri Tasks: (https://tr.javascript.info/comparison)
+
+5 > 4 // -> true
+"apple" > "pineapple" // -> false (Alfabe dizilimine göre yanlış.)
+"2" > "12" // -> true (Yine harf sırasına göre "2" "1"'den büyük)
+undefined == null // -> true (null ve undefined birbirine eşittir.)
+undefined === null // -> false (Eğer sıkı eşitlik kontrolü yaparsak farklı tipler her halükarda yanlış(false) döndürür)
+null == "\n0\n" // -> false (null ve undefined sadece birbirine eşittir!)
+null === +"\n0\n" // -> Sıkı eşitlik kontrolü yaparsak farklı tipler yanlış(false) döndürür.
+
+// Mantıksal Operatörler: Aşağıdaki semboller ortak mantıksal operatörlerdir: &&(ve işareti) , || (boru -veya-) ve !(olumsuzlama). && operatörü, yalnızca iki işlenen doğruysa doğru olur. || operatör, işlenenlerden herhangi birinin doğru olması durumunda gerçekleşir. ! operatör true - false ve false - true değerini olumsuzlar. JavaScript dilinde üç tane mantıksal operatör bulunmaktadır: || (OR – VEYA ), &&(AND – VE ), ! (NOT – DEĞİL )
+
+// && ( ampersand olarak anlandırılıyor) Ve operatörü iki tane & işaretiyle tanımlanmaktadır. VE Operatörü Örnekleri:
+
+// Klasik programlamaya göre eğer iki operandda doğru ise doğru, diğer türlü yanlış döner.
 
 const check1 = 4 > 3 && 10 > 5 // -> true && true -> true
 const check2 = 4 > 3 && 10 < 5 // -> true && false -> false
 const check3 = 4 < 3 && 10 < 5 // -> false && false -> false
+/*
+    AND "&&" operatörü aşağıdaki gibi çalışır:
 
-// || boru veya operatörü örneği
+    Operandları soldan sağa doğru değerlendir.
+    Her bir operandı boolean değere çevir. Eğer sonuç yanlış ise dur ve operatörün orijinal değerini döndür.
+
+    Eğer diğer operandlara erişim sağlandıysa ( hepsinin doğru olma durumu ) sondaki operandı döndür.
+
+    Yukarıdaki kurallar VEYA kuralları ile benzerlik göstermektedir. Farklılık AND operatörünün ilk yanlış bulduğunda dönmesi. Aşağıda göreceğimiz OR operatörü ise ilk doğru bulduğunda dönmektedir.
+*/
+//! VE && VEYA’dan || önce çalışır. VE’nin && önceliği VEYA’ya || göre daha yüksektir. Bundan dolayı VEYA’dan önce çalışır. Aşağıdaki örnekte 1 && 0 önce hesaplanır.
+console.log( 5 || 1 && 0 ); // -> 5
+
+// || “OR”,“VEYA” operatörü iki dikey çizgiden oluşur. Çoğu zaman, VEYA || if yapısı içerisinde kullanılır. Herhangi biri doğruysa yap anlamı taşımaktadır. OR (VEYA) Operatörü Örnekleri:
 const check4 = 4 > 3 || 10 > 5 // -> true  || true -> true
 const check5 = 4 > 3 || 10 < 5 // -> true  || false -> true
 const check6 = 4 < 3 || 10 < 5 // -> false || false -> false
+/*
+    VEYA "||" operatörü şunları yapar:
 
-/* ! olumsuzlama örnekleri */
+    Soldan sağa olacak şekilde operandları değerlendirir.
+    Her operandın değerini boolean’a çevirir. Eğer sonuç doğru ise durur ve o operandın orjinal değerini döner.
+    Eğer tüm operandlar kontrol edildi ve tamamı yanlış ise son operandı döner.
+
+    Eğer VEYA zincirinde bir tane doğru bulunursa o an dönülür. Eğer bulunamazsa sonuncusu döner.
+*/
+console.log( 1 || 0 ); // -> 1 (1 doğru)
+console.log( true || 'önemsiz' ); // -> (true doğru)
+
+console.log( null || 1 ); // -> 1 (1 tek doğru veri)
+console.log( null || 0 || 1 ); // -> 1 (1 tek doğru veri)
+console.log( undefined || null || 0 ); // -> 0 (Hepsi yanlış sonuncusunu döner)
+
+// ! (DEĞİL) Boolean değil operatörü "!" ile tanımlanmıştır. Değil Operatörü ile olumsuzlama örnekleri:
 
 let check7 = 4 > 3 // -> true
 let check8 = !(4 > 3) // ->  false
 let is_Light_On = true
 let is_Light_Off = !is_Light_On // -> false
 let is_Married = !false // -> true
-
-/* Diğer Bitsel(Mantıksal) Operatörlerin Listesi: 
-
-    XOR – ÖZEL VEYA ( ^ )
-    NOT – DEĞİL ( ~ )
-    LEFT SHIFT – SOLA KAYDIRMA ( << )
-    RIGHT SHIFT – SAĞ KAYDIRMA ( >> )
-    ZERO-FILL RIGHT SHIFT – SIFIR DOLDURARAK SAĞ KAYDIRMA ( >>> )
-
-    Bu oparatörler çok nadir kullanılır. Onları anlamak için düşük seviyeli sayı temsiline girmemiz gerekiyor ve özellikle de yakın zamanda onlara ihtiyaç duymayacağımızdan şu anda bunu yapmak uygun olmayacaktır. Konu ile ilgili doküman: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators 
-*/
+// Çift DEĞİL işareti değeri boolean tipine çevirmeye yarar: 
+console.log( !!"Boş olmayan karakter dizisi" ); // -> true
+console.log( !!null ); // -> false
+// Birinci DEĞİL değeri booleana çevirir ve tersini alır. İkincisi ise tersinin tersini alarak değeri orjinal halinin boolean haline çevirir. Aynı şeyi Boolean fonksiyonu ile de yapmak mümkündür.
+console.log( Boolean("boş olmayan karakter dizisi") ); // -> true
+console.log( Boolean(null) ); // -> false
 
 // Artırma/Azaltma Operatörleri: Bir sayıyı artırmak veya azaltmak sayısal operasyonlarda önemli sayılabilecek bir düzeydedir.
 //!Dikkat: Artırma/Azaltma sadece değişkenlere uygulanabilirler. 5++ gibi bir kullanım hata verecektir.
@@ -294,7 +379,6 @@ alert(a); // -> 7 (3 + 4 işleminin sonucu)
 // }
 //! Bu tarz numaralar birçok JavaScript frameworklerinde kullanılır. Bu yüzden bunlardan bahsettik. Ama genelde bunlar kodun okunabilirliğini azaltıyorlar. Bu yüzden kullanmadan önce iyi düşünmek gerekir.
 
-
 // Operatör Önceliği -> https://dorey.github.io/JavaScript-Equality-Table/ (Tabloyu ezberlemeye gerek yok sadece unary operatörlerin binary olanlara göre daha üstün olduğunu hatırlayalım yeter). Yani +elma + +portakal işleminde önce unary ile elma'nın değerini sayı yapar sonra portakal'ın değerini sayı yapar ve en sonunda toplar. Örnek:)
 let elma = "2";
 let portakal = "3";
@@ -344,7 +428,12 @@ console.log(num);
 // Window confirm() metot: Tamam ve İptal düğmesiyle birlikte belirli bir mesaj içeren bir iletişim kutusu görüntüler. Bir onay kutusu genellikle bir kullanıcıdan bir şeyi yürütmek için izin istemek için kullanılır. Pencere confirm() argüman olarak bir dize alır. Tamam'a tıklamak doğru değeri verir, İptal düğmesine tıklamak yanlış değeri verir.
 const assent = confirm('Are you sure you like to delete?')
 console.log(assent) // -> result will be true or false based on what you click on the dialog box
+let durum = confirm("İyi misin?");
+console.log(durum) // -> eğer OK'e basıldıysa `true` döner.
 //*NOT: Bunların hepsi window yöntemleri değil, window yöntemlerine derinlemesine girmek için ayrı bir bölümümüz olacak.
+// Window Metotları Tasks: (https://tr.javascript.info/alert-prompt-confirm) Kullanıcıdan adını isteyen ve bunu ekrana yazan basit bir web sayfası yapın.
+let isim = prompt("İsminizi Giriniz: ");
+alert("Merhaba "+isim);
 
 // Date Objesi: Zaman önemli bir şeydir. Belirli bir faaliyetin veya olayın zamanını bilmek isteriz. JavaScript'te geçerli saat ve tarih, JavaScript Date Objesi kullanılarak oluşturulur. Date objesini kullanarak oluşturduğumuz nesne, tarih ve saat ile çalışmak için birçok yöntem sunar. Bir tarih nesnesi değerlerinden tarih ve saat bilgisi almak için kullandığımız yöntemler, bilgiyi sağladığı için get kelimesi ile başlamaktadır. getFullYear(), getMonth(), getDate(), getDay(), getHours(), getMinutes, getSeconds(), getMilliseconds(), getTime(), getDay()
 
@@ -397,8 +486,120 @@ console.log(`${date}//${month}//${year} ${hours}:${minutes}`) // -> 11/5/2023 0:
 
 /*************************** Day 3: Exercises ******************************************/
 
-// Exercises: Level 1
+//!Exercises: Level 1
+
+// 1. -> Declare firstName, lastName, country, city, age, isMarried, year variable and assign value to it and use the typeof operator to check different data types.
+firstName = "Selim";
+console.log(typeof firstName); // -> string
+lastName = "Biber";
+console.log(typeof lastName); // -> string
+country = "Turkiye";
+console.log(typeof country); // -> string
+city = "Rize";
+console.log(typeof city); // -> string
+age = 23;
+console.log(typeof age); // number
+isMarried = "No";
+console.log(typeof isMarried)// -> string
+let Year = 2023;
+console.log(typeof Year); // -> number
+
+// 2. -> Check if type of '10' is equal to 10
+console.log('10' == 10); // -> true
+console.log('10' === 10); // -> false
+
+// 3. -> Check if parseInt('9.8') is equal to 10
+console.log(parseInt('9.8') === 10); //
+
+// 4. -> Boolean value is either true or false.
+console.log(5 < 3); // -> false
+console.log(5 > 3); // -> true
+
+// 5. -> Write three JavaScript statement which provide truthy value.
+Boolean(1) // -> true
+Boolean(' '); // -> true
+Boolean(Boolean); // -> true
+
+// 6. -> Write three JavaScript statement which provide falsy value.
+Boolean(0); // -> false
+Boolean(undefined); // -> false
+Boolean(NaN); // -> false
+
+// 7. -> Figure out the result of the following comparison expression first without using console.log(). After you decide the result confirm it using console.log()
+
+/*
+    4 > 3 -> true
+    4 >= 3 -> true
+    4 < 3 -> false
+    4 <= 3 -> false
+    4 == 4 -> true
+    4 === 4 -> true
+    4 != 4 -> false
+    4 !== 4 -> false
+    4 != '4' -> false
+    4 == '4' -> true
+    4 === '4' -> false
+*/
+console.log(4 > 3); // -> true
+console.log(4 >= 3); // -> true
+console.log(4 < 3); // -> false
+console.log(4 <= 3); // -> false
+console.log(4 == 4); // -> true
+console.log(4 === 4); // -> true
+console.log(4 != 4); // -> false
+console.log(4 !== 4); // -> false
+console.log(4 != '4'); // -> false
+console.log(4 == '4'); // -> true
+console.log(4 === '4'); // -> false
+
+// 8. -> Find the length of python and jargon and make a falsy comparison statement.
+let lengthPython = "python";
+let lengthJargon = "jargon";
+
+console.log(lengthPython.length > lengthJargon.length); // -> false
+
+// 9. -> Figure out the result of the following expressions first without using console.log(). After you decide the result confirm it by using console.log()
+
+/*
+    4 > 3 && 10 < 12 -> true
+    4 > 3 && 10 > 12 -> false
+    4 > 3 || 10 < 12 -> true
+    4 > 3 || 10 > 12 -> true
+    !(4 > 3) -> false
+    !(4 < 3) -> true
+    !(false) -> true
+    !(4 > 3 && 10 < 12) -> false
+    !(4 > 3 && 10 > 12) -> true
+    !(4 === '4') -> true
+*/
+console.log(4 > 3 && 10 < 12) // -> true
+console.log(4 > 3 && 10 > 12) // -> false
+console.log(4 > 3 || 10 < 12) // -> true
+console.log(4 > 3 || 10 > 12) // -> true-
+console.log(!(4 > 3)) // -> false
+console.log(!(4 < 3)) // -> true
+console.log(!(false)) // -> true
+console.log(!(4 > 3 && 10 < 12)) // -> false
+console.log(!(4 > 3 && 10 > 12)) // -> true
+console.log(!(4 === '4')) // -> true
 
 // Exercises: Level 2
 
 // Exercises: Level 3
+
+/*************************** tr.javascript.info/operators Tasks  ****************************/
+
+//!TASK-1: Önden ve sonradan eklemeli değişkenler.
+// Aşağıdaki işlemlerden sonraki a, b, c,d değerlerini yazınız?
+let a1 = 1, b = 1;
+console.log( ++a ); // 2, eğer toplamayı önce yaparsanız sonraki değeri gösterir.
+console.log( b++ ); // 1, eğer toplamayı sonra yaparsanız önceki değerini gösterir.
+
+let c2 = ++a1; // ? -> Answer: 2 (bir defa artırıldı.)
+let d3 = b++; // ? -> Answer: 1 (bir defa artırıldı.)
+
+//!TASK-2: Atama sonuçları
+// Aşağıdaki işlemler sonrasında a ve x değerleri nedir ?
+let ab = 2;
+
+let x = 1 + (ab *= 2); // -> Answer: ab 2 ile çarpılıp yeni değeri olan 4'ü alır ve x değerine atanmış 1 ile toplanır sonuç olarak x'de 5 olur.

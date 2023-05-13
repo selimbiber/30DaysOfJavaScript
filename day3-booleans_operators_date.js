@@ -583,7 +583,66 @@ console.log(!(4 > 3 && 10 < 12)) // -> false
 console.log(!(4 > 3 && 10 > 12)) // -> true
 console.log(!(4 === '4')) // -> true
 
+// 10. -> Use the Date object to do the following activities: 
+//! What is the year today?
+let currentTime = new Date();
+console.log(currentTime.getFullYear()); // -> 2023
+
+//! What is the month today as a number?
+console.log(currentTime.getMonth()); // -> 4
+
+//! What is the date today?
+console.log(currentTime); // -> Sat May 13 2023 22:48:22 GMT+0300 (GMT+03:00)
+
+//! What is the day today as a number?
+console.log(currentTime.getDay()); // -> 6
+
+//! What is the hours now?
+console.log(currentTime.getHours()); // -> 22
+
+//! What is the minutes now?
+console.log(currentTime.getMinutes()); // -> 49
+
+//! Find out the numbers of seconds elapsed from January 1, 1970 to now.
+console.log(currentTime.getTime()); // -> 1684007453651
+
 // Exercises: Level 2
+
+// 1.1. -> Write a script that prompt the user to enter base and height of the triangle and calculate an area of a triangle (area = 0.5 x b x h).
+/*
+    Enter base: 20
+    Enter height: 10
+    The area of the triangle is 100
+*/
+//! Remove comment lines with ctrl + u (for windows users)
+// let base = parseFloat(prompt("enter base"));
+// let height = parseFloat(prompt("enter height"));
+// let area = (0.5*base)*height;
+//     document.write('base is:' +base+ '<br>');
+//     document.write('height is:' +height+ '<br>');
+//     document.write('Area of this triangle is:' +area); 
+
+// 1.2. -> Write a script that prompt the user to enter side a, side b, and side c of the triangle and and calculate the perimeter of triangle (perimeter = a + b + c)
+/*
+    Enter side a: 5
+    Enter side b: 4
+    Enter side c: 3
+    The perimeter of the triangle is 12
+*/
+//! Remove comment lines with ctrl + u (for windows users)
+// let side_a = parseFloat(prompt("enter side a"));
+// let side_b = parseFloat(prompt("enter side b"));
+// let side_c = parseFloat(prompt("enter side c"));
+// let triangle_perimeter = side_a + side_b + side_c;
+//     document.write('Perimeter of this triangle is:' +triangle_perimeter);
+
+// 1.3. -> Get length and width using prompt and calculate an area of rectangle (area = length x width and the perimeter of rectangle (perimeter = 2 x (length + width))
+//! Remove comment lines with ctrl + u (for windows users)
+// let rectangle_length = parseFloat(prompt("enter rectangle length"));
+// let rectangle_width = parseFloat(prompt("enter rectangle width"));
+// let rectangle_area = rectangle_length * rectangle_width;
+// let rectangle_perimeter = 2 * (rectangle_length + rectangle_width);
+//     document.write('Area of rectangle is: ' + rectangle_area + ', and perimeter of rectangle: ' + rectangle_perimeter);
 
 // Exercises: Level 3
 

@@ -775,10 +775,7 @@ let currentMinutes = readableTime.getMinutes();
         document.write(`Human Readable Time Format: ${currentDay}.${currentMonth}.${currentYear} ${currentHours}:${readableMinutes}`)
     } if (currentMinutes > 10) {
         document.write(`Human Readable Time Format: ${currentDay}.${currentMonth}.${currentYear} ${currentHours}:${currentMinutes}`) }
-
-
-// 2. -> YYY-MM-DD HH:mm eg. 20120-01-02 07:05
-
+       
 /*************************** tr.javascript.info/operators Tasks  ****************************/
 
 //!TASK-1: Önden ve sonradan eklemeli değişkenler.

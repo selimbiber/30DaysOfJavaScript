@@ -629,7 +629,7 @@ console.log(currentTime.getTime()); // -> 1684007453651
     Enter side c: 3
     The perimeter of the triangle is 12
 */
-//! Remove comment lines with ctrl + u (for windows users)
+//! Remove comment lines with ctrl + k + u (for windows users)
 // let side_a = parseFloat(prompt("enter side a"));
 // let side_b = parseFloat(prompt("enter side b"));
 // let side_c = parseFloat(prompt("enter side c"));
@@ -637,14 +637,141 @@ console.log(currentTime.getTime()); // -> 1684007453651
 //     document.write('Perimeter of this triangle is:' +triangle_perimeter);
 
 // 1.3. -> Get length and width using prompt and calculate an area of rectangle (area = length x width and the perimeter of rectangle (perimeter = 2 x (length + width))
-//! Remove comment lines with ctrl + u (for windows users)
+//! Remove comment lines with ctrl + k + u (for windows users)
 // let rectangle_length = parseFloat(prompt("enter rectangle length"));
 // let rectangle_width = parseFloat(prompt("enter rectangle width"));
 // let rectangle_area = rectangle_length * rectangle_width;
 // let rectangle_perimeter = 2 * (rectangle_length + rectangle_width);
 //     document.write('Area of rectangle is: ' + rectangle_area + ', and perimeter of rectangle: ' + rectangle_perimeter);
 
+// 2. -> Get radius using prompt and calculate the area of a circle (area = pi x r x r) and circumference of a circle(c = 2 x pi x r) where pi = 3.14.
+//! Remove comment lines with ctrl + k + u (for windows users)
+// let pi = 3.14;
+// let circleRadius = parseFloat(prompt("enter radius"));
+// let circle_area = pi * circleRadius * circleRadius;
+// let circumference_area = 2 * pi * circleRadius;
+//     document.write('Area of circle is: ' + circle_area + ' , and circumference of circle is: ' + circumference_area);
+
+// 3. -> Calculate the slope, x-intercept and y-intercept of y = 2x -2
+//! I'm sorry for this
+// 4. -> Slope is m = (y2-y1)/(x2-x1). Find the slope between point (2, 2) and point(6,10)
+//! I'm sorry for this
+
+// 5. -> Writ a script that prompt a user to enter hours and rate per hour. Calculate pay of the person?
+//! Remove comment lines with ctrl + k + u (for windows users)
+// let hour = parseFloat(prompt("Enter hours:"));
+// let rate = parseFloat(prompt("Enter rate per hour:"));
+// let pay = hour * rate;
+//     document.write('Your weekly earning is: ' + pay);
+
+// 6. -> If the length of your name is greater than 7 say, your name is long else say your name is short.
+//! Remove comment lines with ctrl + k + u (for windows users)
+// let yourName = prompt("Enter your name: ");
+// if (yourName.length > 7) {
+//     document.write('Your name is long!')
+// } else {
+//     document.write('Your name is short!')
+// }
+
+// 7. -> Compare your first name length and your family name length and you should get this output. : Your first name, Asabeneh is longer than your family name, Yetayeh
+//! Remove comment lines with ctrl + k + u (for windows users)
+// let yourFirstName = prompt("Enter your first name: ");
+// let yourLastName = prompt("Enter your last name: ");
+// if (yourFirstName.length > yourLastName.length) {
+//     document.write('Your first name, ' + yourFirstName + ' is longer than your family name, ' + yourLastName)
+// } else if (yourFirstName.length < yourLastName.length) {
+//     document.write('Your family name, ' + yourLastName + ' is longer than your first name, ' + yourFirstName)
+// } else {
+//     document.write('Your first name and family name are the same length or you entered an incorrect value.')
+// }
+
+// 8. -> Declare two variables myAge and yourAge and assign them initial values and myAge and yourAge.
+/* 
+    let myAge = 250
+    let yourAge = 25
+    I am 225 years older than you.
+*/
+//! Remove comment lines with ctrl + k + u (for windows users)
+// let myAge = 23;
+// let yourAge = Number(prompt("Enter your age: "));
+// let ageDifference;
+// if (myAge > yourAge) {
+//     ageDifference = myAge - yourAge;
+//     document.write('I am ' + ageDifference + ' years older than you.')
+// } else if (myAge < yourAge) {
+//     ageDifference = yourAge - myAge;
+//     document.write('You are ' + ageDifference + ' years older than me.')
+// } else {
+//     document.write('Our ages are the same or you entered the wrong value.')
+// }
+
+// 8.1. -> Using prompt get the year the user was born and if the user is 18 or above allow the user to drive if not tell the user to wait a certain amount of years.
+/*
+    Enter birth year: 1995
+    You are 25. You are old enough to drive
+
+    Enter birth year: 2005
+    You are 15. You will be allowed to drive after 3 years.
+*/
+//! Remove comment lines with ctrl + k + u (for windows users)
+// let birthYear = Number(prompt("Enter your birth year: "));
+// let currentYear = 2023;
+// let currentAge = currentYear - birthYear;
+// let enoughAge = 18;
+// let waitForYears;
+
+// if (currentAge >= enoughAge) {
+//     document.write('You are ' + currentAge + '. You are old enough to drive.')
+// } else if (currentAge < enoughAge) {
+//     waitForYears = enoughAge - currentAge;
+//     document.write('You are ' + currentAge + '. You will be allowed to drive after ' + waitForYears + ' years.')
+// } else {
+//     document.write('You entered the wrong value.')
+// }
+
+// 8.2. -> Write a script that prompt the user to enter number of years. Calculate the number of seconds a person can live. Assume some one lives just hundred years.
+/*
+    Enter number of years you live: 100
+    You lived 3153600000 seconds.
+*/
+//! Remove comment lines with ctrl + k + u (for windows users)
+// let secondsInseconds = 60;
+// let secondsInHour = secondsInseconds * 60;
+// let secondsInDay = secondsInHour * 24;
+// let secondsInYear = secondsInDay * 365;
+// let yearsLive = Number(prompt("How many years have you live?"));
+// let secondsOld = yearsLive * secondsInYear;
+//     document.write('You lived ' + secondsOld + ' seconds.')
+
+// Create a human readable time format using the Date time object
+//! Remove comment lines with ctrl + k + u (for windows users)
+// let readableTime = new Date();
+// let currentYear = readableTime.getFullYear();
+// let currentMonth = readableTime.getMonth()+1;
+// let currentDay = readableTime.getDate();
+// let currentHours = readableTime.getHours();
+// let currentMinutes = readableTime.getMinutes();
+//     document.write(`YYYY-MM-DD HH:mm: ${currentYear}-${currentMonth}-${currentDay} ${currentHours}:${currentMinutes}DD-MM-YYYY HH:mm: ${currentDay}-${currentMonth}-${currentYear} ${currentHours}:${currentMinutes}
+//     DD/MM/YYYY HH:mm: ${currentDay}/${currentMonth}/${currentYear} ${currentHours}:${currentMinutes}`);
+
 // Exercises: Level 3
+
+// -> Create a human readable time format using the Date time object. The hour and the minute should be all the time two digits(7 hours should be 07 and 5 minutes should be 05 )
+let readableTime = new Date();
+let currentYear = readableTime.getFullYear();
+let currentMonth = readableTime.getMonth()+1;
+let currentDay = readableTime.getDate();
+let currentHours = readableTime.getHours();
+let currentMinutes = readableTime.getMinutes();
+    if (currentMonth < 10 || currentHours < 10 || currentMinutes < 10) {
+        let readableMonth = '0' + currentMonth
+        let readableHours = '0' + currentHours
+        let readableMinutes = '0' + currentMinutes
+        document.write(`Human Readable Time Format: ${currentDay}.0${currentMonth}.${currentYear} ${currentHours}:${currentMinutes}`)
+    }
+
+
+// 2. -> YYY-MM-DD HH:mm eg. 20120-01-02 07:05
 
 /*************************** tr.javascript.info/operators Tasks  ****************************/
 

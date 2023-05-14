@@ -763,12 +763,18 @@ let currentMonth = readableTime.getMonth()+1;
 let currentDay = readableTime.getDate();
 let currentHours = readableTime.getHours();
 let currentMinutes = readableTime.getMinutes();
-    if (currentMonth < 10 || currentHours < 10 || currentMinutes < 10) {
+
+    if (currentMonth < 10, currentHours < 10, currentMinutes < 10) {
         let readableMonth = '0' + currentMonth
         let readableHours = '0' + currentHours
         let readableMinutes = '0' + currentMinutes
-        document.write(`Human Readable Time Format: ${currentDay}.0${currentMonth}.${currentYear} ${currentHours}:${currentMinutes}`)
-    }
+        document.write(`Human Readable Time Format: ${currentDay}.${readableMonth}.${currentYear} ${readableHours}:${readableMinutes}`)
+    } if (currentMonth > 10) {
+        document.write(`Human Readable Time Format: ${currentDay}.${currentMonth}.${currentYear} ${readableHours}:${readableMinutes}`)
+    } if (currentHours > 10) {
+        document.write(`Human Readable Time Format: ${currentDay}.${currentMonth}.${currentYear} ${currentHours}:${readableMinutes}`)
+    } if (currentMinutes > 10) {
+        document.write(`Human Readable Time Format: ${currentDay}.${currentMonth}.${currentYear} ${currentHours}:${currentMinutes}`) }
 
 
 // 2. -> YYY-MM-DD HH:mm eg. 20120-01-02 07:05

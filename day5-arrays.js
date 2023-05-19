@@ -195,7 +195,7 @@
             // index === -1 ? console.log('This fruit does not exist in the array'): console.log('This fruit does exist in the array')
 
 
-    // Dizinin içindeki son indexe ulaşmak: 
+    //* Dizinin içindeki son indexe ulaşmak: 
     
         //! lastIndexOf = Dizideki son elemanın pozisyonunu verir. Eğer mevcutsa o elemanın index numarasını döner, mevcut değilse -1 döner.
 
@@ -229,7 +229,7 @@
             // console.log(webTechs.includes('Node')) // -> true
             // console.log(webTechs.includes('C')) // -> false
 
-    // Diziyi kontrol etmek: Array.isArray = Veri tipinin bir dizi olup olmadığını kontrol etmek için kullanılır.
+    //* Diziyi kontrol etmek: Array.isArray = Veri tipinin bir dizi olup olmadığını kontrol etmek için kullanılır.
 
         // const numbers = [1, 2, 3, 4]
         // console.log(Array.isArray(numbers)) // -> true
@@ -237,7 +237,7 @@
         // const hundred = 100;
         // console.log(Array.isArray(hundred)) // -> false
 
-    // Diziyi stringe çevirmek: toString = Diziyi string bir ifadeye çevirir.
+    //* Diziyi stringe çevirmek: toString = Diziyi string bir ifadeye çevirir.
 
         // const numbers = [1, 2, 3, 4]
         // console.log(numbers.toString()) // -> 1,2,3,4
@@ -245,7 +245,7 @@
         // const names = ['Selim', 'Biber']
         // console.log(names.toString()) // -> Selim,Biber
 
-    // Dizi elemanlarını Joinlemek: join = Dizinin elemanlarını birleştirmek için kullanılır, join yönteminde ilettiğimiz argüman dizide birleştirilir ve bir dizi olarak döndürülür. Varsayılan olarak bir virgül ile birleşir, ancak elemanlar arasında birleştirilebilecek farklı dizi parametreleri iletebiliriz.
+    //* Dizi elemanlarını Joinlemek: join = Dizinin elemanlarını birleştirmek için kullanılır, join yönteminde ilettiğimiz argüman dizide birleştirilir ve bir dizi olarak döndürülür. Varsayılan olarak bir virgül ile birleşir, ancak elemanlar arasında birleştirilebilecek farklı dizi parametreleri iletebiliriz.
 
         // const numbers = [1, 2, 3, 4]
         // console.log(numbers.join()) // -> 1,2,3,4
@@ -269,7 +269,7 @@
         // ] // -> List of web technologies
         // console.log(webTechs.join(' # ')) // -> HTML5 # CSS3 # JavaScript # React # Redux # Node # MongoDB
  
-    // Dizi elemanlarını slice etmek: Slice = Bir aralıktaki çoklu elemanları dilimler İki parametre alır. Bu parametreler, başlangıç ve bitiş konumlarıdır. Bitiş konumunu dahil etmez.
+    //* Dizi elemanlarını slice etmek: Slice = Bir aralıktaki çoklu elemanları dilimler İki parametre alır. Bu parametreler, başlangıç ve bitiş konumlarıdır. Bitiş konumunu dahil etmez.
 
         // const numbers = [1, 2, 3, 4]
 
@@ -278,9 +278,9 @@
         // console.log(numbers.slice(0, numbers.length)) // -> Bütün öğeyi kopyalar
         // console.log(numbers.slice(0, 3)) // -> Son öğeyi dahil etmez: 1, 2, 3
 
-    // Dizilerde splice metodu: Splice = üç parametre alır :başlangıç konumu, kaldırılması gereken eleman sayısı ve eklenmesi gereken eleman sayısı.
+    //* Dizilerde splice metodu: Splice = üç parametre alır :başlangıç konumu, kaldırılması gereken eleman sayısı ve eklenmesi gereken eleman sayısı.
 
-        const numbers = [1, 2, 3, 4]
+        // const numbers = [1, 2, 3, 4]
 
         // numbers.splice();
         // console.log(numbers) // -> // -> Bütün elemanları kaldırır.
@@ -291,7 +291,7 @@
         // numbers.splice(2, 2, 7, 8, 9);
         // console.log(numbers) // -> 2 eleman kaldırıp 3 tane eleman ekledi: (5) [1, 2, 7, 8, 9]
 
-    // push kullanarak diziye eleman eklemek: Push = Dizinin sonuna eleman ekler.Varolan bir diziye eleman eklemek için push metodunu kullanırız.
+    //* push kullanarak diziye eleman eklemek: Push = Dizinin sonuna eleman ekler.Varolan bir diziye eleman eklemek için push metodunu kullanırız.
 
         // syntax
 
@@ -308,59 +308,169 @@
         // fruits.push('apple')
         // console.log(fruits) // -> apple elemanı dizinin sonuna eklendi: ['banana', 'orange', 'mango', 'lemon', 'apple']
 
-    // pop kullanarak diziden eleman çıkarmak: pop = Dizinin sonundaki elemanı siler.
+    //* pop kullanarak diziden eleman çıkarmak: pop = Dizinin sonundaki elemanı siler.
 
         // numbers.pop();
         // console.log(numbers); // -> sondaki eleman diziden çıkartıldı: (3) [1, 2, 3]
 
-    // Dizinin en başından eleman kaldırmak: shift = Dizinin en başındaki elemanı siler.
+    //* Dizinin en başından eleman kaldırmak: shift = Dizinin en başındaki elemanı siler.
 
         // numbers.shift();
         // console.log(numbers); // -> en baştaki eleman diziden çıkartıldı: (3) [2, 3, 4]
 
-    // Dizinin en başına eleman eklemek: unshift = Dizinin başına dizi elemanı ekler.
+    //* Dizinin en başına eleman eklemek: unshift = Dizinin başına dizi elemanı ekler.
 
         // numbers.unshift(0);
         // console.log(numbers); // -> 0 elemanı dizinin en başına eklendi: (5) [0, 1, 2, 3, 4]
 
-    // Dizi sırasını terse çevirmek: reverse = Dizi sıralamasını terse çevirir.
+    //* Dizi sırasını terse çevirmek: reverse = Dizi sıralamasını terse çevirir.
 
-        numbers.reverse();
-        console.log(numbers); // -> (4) [1, 2, 3, 4] dizisi tersine çevrildi: (4) [4, 3, 2, 1]
+        // numbers.reverse();
+        // console.log(numbers); // -> (4) [1, 2, 3, 4] dizisi tersine çevrildi: (4) [4, 3, 2, 1]
 
-    // Dizi elemanlarını sıralamak: sort = Dizi elemanlarını alfabetik sırada düzenleyin.Sort call back fonksyonu alır, sort'un call back fonksiyonu ile nasıl kullandığımızı ilerleyen bölümlerde göreceğiz.
+    //* Dizi elemanlarını sıralamak: sort = Dizi elemanlarını alfabetik sırada düzenleyin.Sort call back fonksyonu alır, sort'un call back fonksiyonu ile nasıl kullandığımızı ilerleyen bölümlerde göreceğiz.
 
-        const webTechs = [
-            'HTML',
-            'CSS',
-            'JavaScript',
-            'React',
-            'Redux',
-            'Node',
-            'MongoDB'
-            ]
-            webTechs.sort();
-            console.log(webTechs); // -> (7) ['CSS', 'HTML', 'JavaScript', 'MongoDB', 'Node', 'React', 'Redux']
+        // const webTechs = [
+        //     'HTML',
+        //     'CSS',
+        //     'JavaScript',
+        //     'React',
+        //     'Redux',
+        //     'Node',
+        //     'MongoDB'
+        //     ]
+        //     webTechs.sort();
+        //     console.log(webTechs); // -> (7) ['CSS', 'HTML', 'JavaScript', 'MongoDB', 'Node', 'React', 'Redux']
 
-            webTechs.reverse(); // -> sortladıktan sonra reverse edebiliriz.
-            console.log(webTechs); // -> (7) ['Redux', 'React', 'Node', 'MongoDB', 'JavaScript', 'HTML', 'CSS']
+        //     webTechs.reverse(); // -> sortladıktan sonra reverse edebiliriz.
+        //     console.log(webTechs); // -> (7) ['Redux', 'React', 'Node', 'MongoDB', 'JavaScript', 'HTML', 'CSS']
 
-    // Dizi içinde diziler: Diziler farklı veri tiplerinde elemanları ve yeni bir dizi de depolayabilirler. Şimdi dizi içinde bir dizi tanımlayalım.
+    //* Dizi içinde diziler: Diziler farklı veri tiplerinde elemanları ve yeni bir dizi de depolayabilirler. Şimdi dizi içinde bir dizi tanımlayalım.
 
-        const arrayOfArray = [[1, 2, 3], [1, 2, 3]]
-        console.log(arrayOfArray); // -> (2) [Array(3), Array(3)] 0 :  (3) [1, 2, 3] 1 :  (3) [1, 2, 3] length :  2      
+        // const arrayOfArray = [[1, 2, 3], [1, 2, 3]]
+        // console.log(arrayOfArray); // -> (2) [Array(3), Array(3)] 0 :  (3) [1, 2, 3] 1 :  (3) [1, 2, 3] length :  2      
         
-        const  frontEnd = ['HTML', 'CSS', 'JS', 'React', 'Redux']
-        const  backEnd = ['Node','Express', 'MongoDB']
-        const fullStack = [frontEnd, backEnd]
+        // const  frontEnd = ['HTML', 'CSS', 'JS', 'React', 'Redux']
+        // const  backEnd = ['Node','Express', 'MongoDB']
+        // const fullStack = [frontEnd, backEnd]
 
-        console.log(fullStack); // -> [["HTML", "CSS", "JS", "React", "Redux"], ["Node", "Express", "MongoDB"]]
-        console.log(fullStack.length); // -> 2
-        console.log(fullStack[0]) // -> ["HTML", "CSS", "JS", "React", "Redux"]
-        console.log(fullStack[1]) // -> ["Node", "Express", "MongoDB"]
+        // console.log(fullStack); // -> [["HTML", "CSS", "JS", "React", "Redux"], ["Node", "Express", "MongoDB"]]
+        // console.log(fullStack.length); // -> 2
+        // console.log(fullStack[0]) // -> ["HTML", "CSS", "JS", "React", "Redux"]
+        // console.log(fullStack[1]) // -> ["Node", "Express", "MongoDB"]
 
 //! Exercise: Level 1
 
+//? 1. -> Declare an empty array;
+
+    const emptyArray = [];
+
+//? 2. -> Declare an array with more than 5 number of elements:
+
+    const loadedArray = [1, 2, 3, 4, 5];
+
+//? 2.1. -> Find the length of your array:
+
+    console.log(loadedArray.length); // -> 5
+
+//? 2.2. -> Get the first item, the middle item and the last item of the array:
+
+    console.log(loadedArray[0]); // -> 1
+    console.log(loadedArray[2]); // -> 3
+    console.log(loadedArray[4]); // -> 5
+
+//? 3. -> Declare an array called mixedDataTypes, put different data types in the array and find the length of the array. The array size should be greater than 5:
+
+    const mixedDataTypes = [53, 'Selim', true, undefined, ['HTML5,', 'CSS3', 'JS'], null];
+    console.log(mixedDataTypes); // -> [53, 'Selim', true, undefined, Array(3), null]
+    console.log(mixedDataTypes.length); // -> 6
+
+//? 4. -> Declare an array variable name itCompanies and assign initial values Facebook, Google, Microsoft, Apple, IBM, Oracle and Amazon:
+
+    const itCompanies = ['Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle', 'Amazon'];
+
+    //? 4.1. -> Print the array using console.log():
+
+        console.log(itCompanies); // -> (7) ['Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle', 'Amazon']
+
+    //? 4.2. -> Print the number of companies in the array:
+
+        console.log(itCompanies.length); // -> 7
+
+    //? 4.3. -> Print the first company, middle and last company:
+
+        console.log(itCompanies[0], itCompanies[3], itCompanies.length - 1); // -> first: Facebook | middle: Apple | last: Amazon
+
+    //? 4.4. -> Print out each company:
+
+        console.log(itCompanies[0], itCompanies[1], itCompanies[2], itCompanies[3], itCompanies[4], itCompanies[5], itCompanies[6]); 
+        // -> Facebook Google Microsoft Apple IBM Oracle Amazon
+
+    //? 4.5. -> Change each company name to uppercase one by one and print them out:
+
+        console.log(itCompanies[0].toUpperCase()); // -> FACEBOOK
+        console.log(itCompanies[1].toUpperCase()); // -> GOOGLE
+        console.log(itCompanies[2].toUpperCase()); // -> MICROSOFT
+        console.log(itCompanies[3].toUpperCase()); // -> APPLE
+        console.log(itCompanies[4].toUpperCase()); // -> IBM
+        console.log(itCompanies[5].toUpperCase()); // -> ORACLE
+        console.log(itCompanies[6].toUpperCase()); // -> AMAZON
+
+    //? 4.6. -> Print the array like as a sentence: Facebook, Google, Microsoft, Apple, IBM, Oracle and Amazon are big IT companies.
+
+        let lastCompany = itCompanies.pop(); 
+        console.log(lastCompany) // -> lastCompany: Amazon
+
+        let otherCompanies = itCompanies.join(', ');
+        console.log(otherCompanies); // -> Facebook, Google, Microsoft, Apple, IBM, Oracle
+
+        console.log(otherCompanies + ' and ' + lastCompany + ' are big IT companies.') // -> Facebook, Google, Microsoft, Apple, IBM, Oracle and Amazon are big IT companies.
+
+    //? 4.7. -> Check if a certain company exists in the itCompanies array. If it exist return the company else return a company is not found:
+
+    //? 4.8. -> Filter out companies which have more than one 'o' without the filter method:
+
+    //? 4.9. -> Sort the array using sort() method:
+
+    //? 4.10. -> Reverse the array using reverse() method:
+
+    //? 4.11. -> Slice out the first 3 companies from the array:
+
+    //? 4.12. -> Slice out the last 3 companies from the array:
+
+    //? 4.13. -> Slice out the middle IT company or companies from the array:
+
+    //? 4.14. -> Remove the first IT company from the array:
+
+    //? 4.15. -> Remove the middle IT company or companies from the array:
+
+    //? 4.16. -> Remove the last IT company from the array:
+
+    //? 4.17. -> Remove all IT companies:
+
+
 //! Exercise: Level 2
 
+    //? Create a separate countries.js file and store the countries array in to this file, create a separate file web_techs.js and store the webTechs array in to this file. Access both file in main.js file
+
 //! Exercise: Level 3
+
+/*
+    ?The following is an array of 10 students ages:
+
+    const ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24]
+
+    Sort the array and find the min and max age
+
+    Find the median age(one middle item or two middle items divided by two)
+
+    Find the average age(all items divided by number of items)
+
+    Find the range of the ages(max minus min)
+
+    Compare the value of (min - average) and (max - average), use abs() method 1.Slice the first ten countries from the countries array
+
+    Find the middle country(ies) in the countries array
+
+    Divide the countries array into two equal arrays if it is even. If countries array is not even , one more country for the first half.
+*/

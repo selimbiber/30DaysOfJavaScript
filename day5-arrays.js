@@ -165,7 +165,6 @@
         // const numbers = [1, 2, 3]
         // console.log(numbers.length) // -> Dizinin uzunluğu 3'tür.
 
-
     //* Arr[] dizisinin içindeki indexe ulaşmak: = indexOf = O elemanın dizide olup olmadığını kontrol eder.Eğer o eleman dizide mevcutsa index numarasını, mevcut değilse -1 döner.
 
         // const numbers = [1, 2, 3]
@@ -363,27 +362,27 @@
 
 //? 1. -> Declare an empty array;
 
-    const emptyArray = [];
+    // const emptyArray = [];
 
 //? 2. -> Declare an array with more than 5 number of elements:
 
-    const loadedArray = [1, 2, 3, 4, 5];
+    // const loadedArray = [1, 2, 3, 4, 5];
 
 //? 2.1. -> Find the length of your array:
 
-    console.log(loadedArray.length); // -> 5
+    // console.log(loadedArray.length); // -> 5
 
 //? 2.2. -> Get the first item, the middle item and the last item of the array:
 
-    console.log(loadedArray[0]); // -> 1
-    console.log(loadedArray[2]); // -> 3
-    console.log(loadedArray[4]); // -> 5
+    // console.log(loadedArray[0]); // -> 1
+    // console.log(loadedArray[2]); // -> 3
+    // console.log(loadedArray[4]); // -> 5
 
 //? 3. -> Declare an array called mixedDataTypes, put different data types in the array and find the length of the array. The array size should be greater than 5:
 
-    const mixedDataTypes = [53, 'Selim', true, undefined, ['HTML5,', 'CSS3', 'JS'], null];
-    console.log(mixedDataTypes); // -> [53, 'Selim', true, undefined, Array(3), null]
-    console.log(mixedDataTypes.length); // -> 6
+    // const mixedDataTypes = [53, 'Selim', true, undefined, ['HTML5,', 'CSS3', 'JS'], null];
+    // console.log(mixedDataTypes); // -> [53, 'Selim', true, undefined, Array(3), null]
+    // console.log(mixedDataTypes.length); // -> 6
 
 //? 4. -> Declare an array variable name itCompanies and assign initial values Facebook, Google, Microsoft, Apple, IBM, Oracle and Amazon:
 
@@ -395,63 +394,98 @@
 
     //? 4.2. -> Print the number of companies in the array:
 
-        console.log(itCompanies.length); // -> 7
+        // console.log(itCompanies.length); // -> 7
 
     //? 4.3. -> Print the first company, middle and last company:
 
-        console.log(itCompanies[0], itCompanies[3], itCompanies.length - 1); // -> first: Facebook | middle: Apple | last: Amazon
+        // console.log(itCompanies[0], itCompanies[3], itCompanies.length - 1); // -> first: Facebook | middle: Apple | last: Amazon
 
     //? 4.4. -> Print out each company:
 
-        console.log(itCompanies[0], itCompanies[1], itCompanies[2], itCompanies[3], itCompanies[4], itCompanies[5], itCompanies[6]); 
+        // console.log(itCompanies[0], itCompanies[1], itCompanies[2], itCompanies[3], itCompanies[4], itCompanies[5], itCompanies[6]); 
         // -> Facebook Google Microsoft Apple IBM Oracle Amazon
 
     //? 4.5. -> Change each company name to uppercase one by one and print them out:
 
-        console.log(itCompanies[0].toUpperCase()); // -> FACEBOOK
-        console.log(itCompanies[1].toUpperCase()); // -> GOOGLE
-        console.log(itCompanies[2].toUpperCase()); // -> MICROSOFT
-        console.log(itCompanies[3].toUpperCase()); // -> APPLE
-        console.log(itCompanies[4].toUpperCase()); // -> IBM
-        console.log(itCompanies[5].toUpperCase()); // -> ORACLE
-        console.log(itCompanies[6].toUpperCase()); // -> AMAZON
+        // console.log(itCompanies[0].toUpperCase()); // -> FACEBOOK
+        // console.log(itCompanies[1].toUpperCase()); // -> GOOGLE
+        // console.log(itCompanies[2].toUpperCase()); // -> MICROSOFT
+        // console.log(itCompanies[3].toUpperCase()); // -> APPLE
+        // console.log(itCompanies[4].toUpperCase()); // -> IBM
+        // console.log(itCompanies[5].toUpperCase()); // -> ORACLE
+        // console.log(itCompanies[6].toUpperCase()); // -> AMAZON
 
     //? 4.6. -> Print the array like as a sentence: Facebook, Google, Microsoft, Apple, IBM, Oracle and Amazon are big IT companies.
 
-        let lastCompany = itCompanies.pop(); 
-        console.log(lastCompany) // -> lastCompany: Amazon
+        //! long way solution:
 
-        let otherCompanies = itCompanies.join(', ');
-        console.log(otherCompanies); // -> Facebook, Google, Microsoft, Apple, IBM, Oracle
+        // let lastCompany = itCompanies.pop(); 
+        // console.log(lastCompany) // -> lastCompany: Amazon
 
-        console.log(otherCompanies + ' and ' + lastCompany + ' are big IT companies.') // -> Facebook, Google, Microsoft, Apple, IBM, Oracle and Amazon are big IT companies.
+        // let otherCompanies = itCompanies.join(', ');
+        // console.log(otherCompanies); // -> Facebook, Google, Microsoft, Apple, IBM, Oracle
+
+        // console.log(otherCompanies + ' and ' + lastCompany + ' are big IT companies.') // -> Facebook, Google, Microsoft, Apple, IBM, Oracle and Amazon are big IT companies.
+
+        //! short way solution:
+
+        // console.log(`${itCompanies.splice(0,6)} and ${itCompanies.slice(-1)} are big IT companies`);
 
     //? 4.7. -> Check if a certain company exists in the itCompanies array. If it exist return the company else return a company is not found:
 
-    //? 4.8. -> Filter out companies which have more than one 'o' without the filter method:
+        // if (itCompanies.includes('IBM')) {
+        //     console.log('IBM is exist!')
+        // } else {
+        //     console.log('IBM does not exist.')
+        // }
 
+    //? 4.8. -> Filter out companies which have more than one 'o' without the filter method:
+        // I'm sorry.
     //? 4.9. -> Sort the array using sort() method:
+
+        // console.log(itCompanies.sort()); // -> (7) ['Amazon', 'Apple', 'Facebook', 'Google', 'IBM', 'Microsoft', 'Oracle']
 
     //? 4.10. -> Reverse the array using reverse() method:
 
+        // console.log(itCompanies.reverse()); // -> (7) ['Oracle', 'Microsoft', 'IBM', 'Google', 'Facebook', 'Apple', 'Amazon']
+
     //? 4.11. -> Slice out the first 3 companies from the array:
+
+        // console.log(itCompanies.slice(0, 3)); // -> (3) ['Oracle', 'Microsoft', 'IBM']
 
     //? 4.12. -> Slice out the last 3 companies from the array:
 
+        // console.log(itCompanies.slice(-3)) // -> (3) ['Facebook', 'Apple', 'Amazon']
+
     //? 4.13. -> Slice out the middle IT company or companies from the array:
+
+        // console.log(itCompanies.slice((itCompanies.length -1)/2))
 
     //? 4.14. -> Remove the first IT company from the array:
 
+        // let firstCompany = itCompanies.shift();
+        // console.log(firstCompany); // -> Oracle
+
     //? 4.15. -> Remove the middle IT company or companies from the array:
+
+        // let middleCompany = itCompanies.splice((itCompanies.length -1)/2);
+        // console.log(middleCompany) // -> (4) ['Google', 'Facebook', 'Apple', 'Amazon']
 
     //? 4.16. -> Remove the last IT company from the array:
 
+        // let lastCompany = itCompanies.pop();
+        // console.log(lastCompany); // -> Amazon
+
     //? 4.17. -> Remove all IT companies:
 
+        // let allCompanies = itCompanies.splice(itCompanies.length);
+        // console.log(allCompanies); // -> []
 
 //! Exercise: Level 2
 
     //? Create a separate countries.js file and store the countries array in to this file, create a separate file web_techs.js and store the webTechs array in to this file. Access both file in main.js file
+
+    // -> index.html -> day5-arrays-main.js
 
 //! Exercise: Level 3
 

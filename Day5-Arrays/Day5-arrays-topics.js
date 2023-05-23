@@ -440,7 +440,25 @@
         // }
 
     //? 4.8. -> Filter out companies which have more than one 'o' without the filter method:
-        // I'm sorry.
+        
+        //! chatGPT
+
+        let result = [];
+
+        for (let i = 0; i < itCompanies.length; i++) {
+        let counter = 0;
+        for (let j = 0; j < itCompanies[i].length; j++) {
+        if (itCompanies[i][j] === 'o') {
+        counter++;
+            }
+        }
+        if (counter <= 1) {
+        result.push(itCompanies[i]);
+            }
+        }
+        
+        console.log(result); // -> (4) ['Apple', 'IBM', 'Oracle', 'Amazon']
+
     //? 4.9. -> Sort the array using sort() method:
 
         // console.log(itCompanies.sort()); // -> (7) ['Amazon', 'Apple', 'Facebook', 'Google', 'IBM', 'Microsoft', 'Oracle']
@@ -489,22 +507,79 @@
 
 //! Exercise: Level 3
 
-/*
-    ?The following is an array of 10 students ages:
+ // The following is an array of 10 students ages:
 
-    const ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24]
+        const ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24]
 
-    Sort the array and find the min and max age
+    //? 1. -> Sort the array and find the min and max age
 
-    Find the median age(one middle item or two middle items divided by two)
+        ages.sort();
+        console.log(ages); // -> (10) [19, 19, 20, 22, 24, 24, 24, 25, 25, 26]
 
-    Find the average age(all items divided by number of items)
+        console.log(ages[0]); // -> min: 19
+        console.log(ages[ages.length -1]); // -> max: 26
 
-    Find the range of the ages(max minus min)
+    //? 1.1. -> Find the median age(one middle item or two middle items divided by two)
 
-    Compare the value of (min - average) and (max - average), use abs() method 1.Slice the first ten countries from the countries array
+        console.log(ages[ages.length/2]); // -> middle item: 24
 
-    Find the middle country(ies) in the countries array
+    //? 1.2. -> Find the average age(all items divided by number of items)
 
-    Divide the countries array into two equal arrays if it is even. If countries array is not even , one more country for the first half.
-*/
+        const average = (ages[0]+ages[1]+ages[2]+ages[3]+ages[4]+ages[5]+ages[6]+ages[7]+ages[8]+ages[9])/ages.length -1;
+
+        console.log(average); // -> average age: 21.8
+
+    //? 1.3. -> Find the range of the ages(max minus min)
+
+        let rangeOfAges = ages[ages.length -1] - ages[0];
+
+        console.log(rangeOfAges); // -> 7
+
+    //? 1.4. -> Compare the value of (min - average) and (max - average), use abs() method.
+
+        let minAverage = Math.abs(ages[0] - average);
+        let maxAverage = Math.abs(ages[ages.length -1] - average);
+
+        console.log(minAverage) // -> 2.8000000000000007
+        console.log(maxAverage) // -> 4.199999999999999
+        console.log(minAverage < maxAverage); // -> true
+
+    //? 2. -> Slice the first ten countries from the countries array
+
+        countries = [
+            'Albania',   
+            'Bolivia',   
+            'Canada',   
+            'Denmark',   
+            'Ethiopia',   
+            'Finland',   
+            'Germany',   
+            'Hungary',   
+            'Ireland',   
+            'Japan',   
+            'Kenya'   
+        ]
+
+        firstTenCountries = countries.slice(0, 10);
+        console.log(firstTenCountries); // -> (10) ['Albania', 'Bolivia', 'Canada', 'Denmark', 'Ethiopia', 'Finland', 'Germany', 'Hungary', 'Ireland', 'Japan']
+        
+    //? 2.1. -> Find the middle country(ies) in the countries array
+
+        console.log( countries[(countries.length -1)/(2)] ); // -> Middle Country: Finland
+
+    //? 2.2. -> Divide the countries array into two equal arrays if it is even. If countries array is not even , one more country for the first half.
+
+        console.log(countries); // -> (11) ['Albania', 'Bolivia', 'Canada', 'Denmark', 'Ethiopia', 'Finland', 'Germany', 'Hungary', 'Ireland', 'Japan', 'Kenya']
+
+        if ( countries.length % 2 === 0 ) {
+            let firstHalf = countries.splice(0, countries.length - 1 / 2)
+            let secondHalf = countries.splice(0, countries.length -1)
+            console.log(firstHalf);
+            console.log(secondHalf);
+        } else {
+            let firstHalf = countries.splice(0, ( (countries.length - 1) / 2 + 1) )
+            let secondHalf = countries.splice(0, countries.length)
+            console.log(firstHalf); // -> output: ['Albania', 'Bolivia', 'Canada', 'Denmark', 'Ethiopia', 'Finland']
+            console.log(secondHalf); // -> output: ['Germany', 'Hungary', 'Ireland', 'Japan', 'Kenya']
+        }
+        

@@ -1,4 +1,4 @@
-const  webTechs = [
+const webTechs = [
     'HTML',
     'CSS',   
     'JavaScript',   

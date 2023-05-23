@@ -1,7 +1,8 @@
-/* Day 1: Exercises */
+/* Day 0: Exercises */
+
+console.log(Welcome to 30DaysOfJavascript);
 
 // comments can make code readable
-// Welcome to 30DaysOfJavascript
 
 /*
     comments can make code readable, easy to reuse and informative  

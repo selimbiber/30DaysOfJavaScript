@@ -1,6 +1,6 @@
 /*** Day 5 = Arrays 
  *  https://30dayjavascript.js.org/05-day/
- *  https://tr.javascript.info/array
+ *  https://tr.javascript.info/array & https://tr.javascript.info/array-methods
  *  Not: Kod bloklarını yorum satırından çıkarmak için (ctrl + k + u) kısayolunu kullanabilirsin.
  * ***/
 

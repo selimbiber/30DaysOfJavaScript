@@ -1,6 +1,7 @@
 /*** Day 6 = Loops (Döngüler)
  *? https://30dayjavascript.js.org/06-day/
  *? https://tr.javascript.info/while-for
+ *? https://tr.javascript.info/while-for#dngy-krma (+)
  *! Not: Kod bloklarını yorum satırından çıkarmak için (ctrl + k + u) kısayolunu kullanabilirsin.
  *  ***/
 
@@ -19,25 +20,26 @@ Tekrar eden görevleri gerçekleştirmek için programlama dillerinde farklı d�
 //! for Loop - for Döngüsü: for döngüsü en fazla kullanılan döngüdür.
 
     // For Döngüsünün yapısı
-    for(başlangıç_değeri, şart, arttırma/azaltma){
-        // uygulamak istediğimiz kod
-    }
 
-    for(let i = 0; i <= 5; i++){
-        console.log(i)
-    }
+    // for(başlangıç_değeri, şart, arttırma/azaltma){
+        // uygulamak istediğimiz kod
+    // }
+
+    // for(let i = 0; i <= 5; i++){
+    //     console.log(i)
+    // }
     
     // 0 1 2 3 4 5
 
-    for(let i = 5; i >= 0; i--){
-        console.log(i)
-    }
+    // for(let i = 5; i >= 0; i--){
+    //     console.log(i)
+    // }
     
     // 5 4 3 2 1 0
 
-    for(let i = 0; i <= 5; i++){
-        console.log(`${i} * ${i} = ${i * i}`)
-    }
+    // for(let i = 0; i <= 5; i++){
+    //     console.log(`${i} * ${i} = ${i * i}`)
+    // }
 
     /* Output:
 
@@ -117,10 +119,10 @@ Tekrar eden görevleri gerçekleştirmek için programlama dillerinde farklı d�
 
     // while döngüsü aşağıdaki gibi bir yazıma sahiptir:
 
-        while (koşul) {
-            // kod
-            // veya döngünün gövdesi
-        }
+        // while (koşul) {
+             // kod
+             // veya döngünün gövdesi
+        // }
 
         // koşul doğru iken(while), döngü gövdesinde bulunan kod çalıştırılır.
 
@@ -177,9 +179,9 @@ Tekrar eden görevleri gerçekleştirmek için programlama dillerinde farklı d�
         for..of Deyimi, yinelenen nesneler üzerinde yinelemek için bir döngü oluşturur. ES6'da tanıtılan for..of döngü , yeni yinelemeli protokollerin yerini alır. for..in ve forEach() destekler. for..of Array (Diziler), String (Metinler), Map (Haritalar), Set (Kümeler), Array benzeri nesneler (örneğin arguments veya NodeList), ve diğer yinelenen veri yapıları arasında yineleme yapmanızı sağlar.
     */
 
-        for (const element of arr) {
-            // uygulamak istediğimiz kod
-        }
+        // for (const element of arr) {
+             // uygulamak istediğimiz kod
+        // }
 
         // array içindeki tüm nsayıları toplama
 
@@ -218,12 +220,12 @@ Tekrar eden görevleri gerçekleştirmek için programlama dillerinde farklı d�
             O anda tekrar eden değer ile işimiz bitti ve bir sonraki tekrar geçmek istendiğinde continue kullanılır.
         */
 
-            for(let i = 0; i <= 5; i++){
-                if(i == 3){
-                  continue
-                }
-                console.log(i)
-            }
+            // for(let i = 0; i <= 5; i++){
+            //     if(i == 3){
+            //       continue
+            //     }
+            //     console.log(i)
+            // }
               
             // -> 0 1 2 4 5 (3'e geldiğinde döngü durdu ve bir sonraki sayıdan devam etti)
 
@@ -231,11 +233,11 @@ Tekrar eden görevleri gerçekleştirmek için programlama dillerinde farklı d�
 
             // Tek değerler gösteren döngü aşağıdaki gibi de yazılabilir:
 
-                for (let i = 0; i < 10; i++) {
-                    if (i % 2) {
-                        console.log( i );
-                    }
-                }
+                // for (let i = 0; i < 10; i++) {
+                //     if (i % 2) {
+                //         console.log( i );
+                //     }
+                // }
 
                 /*
                     Teknik açısından birbiri ile aynıdırlar. Her zaman continue bloğunun yerine if kullanabiliriz.
@@ -249,24 +251,414 @@ Tekrar eden görevleri gerçekleştirmek için programlama dillerinde farklı d�
 
             // Örneğin:
 
-            if (i > 5) {
-                console.log(i);
-              } else {
-                continue;
-            }
+            // if (i > 5) {
+            //     console.log(i);
+            //   } else {
+            //     continue;
+            // }
 
             // Yukarıdaki döngü ? ile yazılacak olursa:
 
             // (i > 5) ? alert(i) : continue; // `continue` burada kullanılamaz! Böyle kodlar yazım hatası verir.
             // Bu da '?' işaretini if yerine kullanmamak için ayrı bir neden.
 
+/*
+        *Summary (Özet)
+
+    Bu konuda 3 farklı döngü işlendi:
+
+        while – Her tekrardan önce koşul kontrol edilir
+        do..while – Koşul tekrardan sonra kontrol edilir.
+        for (;;) – Her tekrardan önce koşul kontrol edilir. Farklı seçenekler mevcuttur.
+
+    Sonsuz döngü yapmak için genelde while(true) kullanılır. Böyle döngüler de diğerleri gibi break talimatıyla kırılabilir.
+
+    Eğer o anki tekrar ile işimiz bitti ve bir sonrakine geçmek istiyorsak "continue" kullanmamız lazım.
+
+    break/continue ile döngüden önce yazılan etikete atlamak veya üst döngüyü kırmak mümkündür.
+*/
+
 //! Exercises:Day 6 (Loops-Döngüler)
 
     //! Exercises: Level 1
 
-    //! Exercises: Level 2
+    const countries = [
+        'Albania',
+        'Bolivia',
+        'Canada',
+        'Denmark',
+        'Ethiopia',
+        'Finland',
+        'Germany',
+        'Hungary',
+        'Ireland',
+        'Japan',
+        'Kenya'
+    ]
+      
+    const webTechs = [
+        'HTML',
+        'CSS',
+        'JavaScript',
+        'React',
+        'Redux',
+        'Node',
+        'MongoDB'
+    ]
+      
+    const mernStack = ['MongoDB', 'Express', 'React', 'Node']
 
-    //! Exercises: Level 3
+    //? 1. -> Iterate 0 to 10 using for loop, do the same using while and do while loop
 
+        let i = 0;
+        // while (i < 10) {
+        //     i++;
+        //     console.log(i); // -> 1 2 3 4 5 6 7 8 9 10
+        // }
 
+        // do {
+        //     i++;
+        //     console.log(i);
+        // } while (i < 10);
+
+        // -> 1 2 3 4 5 6 7 8 9 10
+
+    //? 2. -> Iterate 10 to 0 using for loop, do the same using while and do while loop
+
+        i = 10;
+        // while (i > 0) {
+        //     i--;
+        //     console.log(i); // -> 0 1 2 3 4 5 6 7 8 9
+        // }
+
+        // do {
+        //     i--;
+        //     console.log(i); // -> 0 1 2 3 4 5 6 7 8 9
+        // } while (i > 0)
+
+        // -> 0 1 2 3 4 5 6 7 8 9
+
+    //? 3. -> Iterate 0 to n using for loop
+
+        // for (let i = 0; i <= 12; i++) {
+        //     console.log(i); // -> 0 1 2 3 4 5 6 7 8 9 10 11 12
+        // }
+
+    //? 4. -> Write a loop that makes the following pattern using console.log():
+
+        /*
+            #
+            ##
+            ###
+            ####
+            #####
+            ######
+            #######
+        */
+
+            // no loop solution
+            // console.log('#\n##\n###\n####\n#####\n######\n#######')
+
+            /* OUTPUT:
+
+                #
+                ##
+                ###
+                ####
+                #####
+                ######
+                #######
+            */
+
+            // for loop solution
+
+            // for (let i = 0; i <= 7; i++) {
+            //     console.log('#'.repeat(i));
+            // }
+            
+            /* OUTPUT:
+
+                #
+                ##
+                ###
+                ####
+                #####
+                ######
+                #######
+            */
+
+        //? 5. -> Use loop to print the following pattern:
+
+            /*
+                0 x 0 = 0
+                1 x 1 = 1
+                2 x 2 = 4
+                3 x 3 = 9
+                4 x 4 = 16
+                5 x 5 = 25
+                6 x 6 = 36
+                7 x 7 = 49
+                8 x 8 = 64
+                9 x 9 = 81
+                10 x 10 = 100
+            */
+
+            // Çözüm (Solution)
+
+            // for (let i = 0; i <= 10; i++) {
+            //     console.log(`${i} x ${i} = ${i * i}`);
+            // }
+
+            /* OUTPUT:
+
+                0 x 0 = 0
+                1 x 1 = 1
+                2 x 2 = 4
+                3 x 3 = 9
+                4 x 4 = 16
+                5 x 5 = 25
+                6 x 6 = 36
+                7 x 7 = 49
+                8 x 8 = 64
+                9 x 9 = 81
+                10 x 10 = 100
+            */
+
+        //? 6. -> Using loop print the following pattern
+
+        /*
+            i    i^2   i^3
+            0    0     0
+            1    1     1
+            2    4     8
+            3    9     27
+            4    16    64
+            5    25    125
+            6    36    216
+            7    49    343
+            8    64    512
+            9    81    729
+            10   100   1000
+        */
+
+        // Çözüm (Solution)
+
+        // for (let i = 0; i <= 10; i++) {
+        //     console.log(`${i} ${i*i} ${i * (i*i)}`);
+        // }
+
+        /*  
+            0    0     0
+            1    1     1
+            2    4     8
+            3    9     27
+            4    16    64
+            5    25    125
+            6    36    216
+            7    49    343
+            8    64    512
+            9    81    729
+            10   100   1000
+        */
+
+            //? 6.1. -> Use for loop to iterate from 0 to 100 and print only even numbers
+
+                // for (let i = 0; i <= 100; i++) {
+                //     if (i % 2 == 0) {
+                //      console.log(i);
+                //     }
+                // }
+
+            //? 6.2. -> Use for loop to iterate from 0 to 100 and print only odd numbers
+
+                // for (let i = 0; i <= 100; i++) {
+                //     if (i % 2 == 1) {
+                //         console.log(i)
+                //     }
+                // }
+
+            //? 6.3. -> Use for loop to iterate from 0 to 100 and print only prime numbers
+
+                // let primeNumbers;
+                // let result;
+                // for (let i = 2; i <= 100; i++) {
+                //     result = true;
+                //     for (primeNumbers = 2; primeNumbers < i; primeNumbers++) {
+                //         if (i % primeNumbers == 0) {
+                //             result = false;
+                //         }
+                //     } if (result == true) {
+                //         console.log(primeNumbers);
+                //     }
+                // }
+
+            //? 6.4. -> Use for loop to iterate from 0 to 100 and print the sum of all numbers.
+
+                // The sum of all numbers from 0 to 100 is 5050.
+
+                // let sum = 0;
+                // for (let i = 0; i <= 100; i++) {
+                //     sum += i;
+                //     console.log(sum); // -> ...4851 4950 5050
+                // }
+
+            //? 6.5. -> Use for loop to iterate from 0 to 100 and print the sum of all evens and the sum of all odds.
+
+                // The sum of all evens from 0 to 100 is 2550. And the sum of all odds from 0 to 100 is 2500.
+
+                // let evens = 0;
+                // let odds = 0;
+                // for (let i = 0; i <= 100; i++) {
+                //     if (i % 2 == 0) {
+                //         evens += i;
+                //         console.log(evens)
+                //     } else if (i % 2 == 1) {
+                //         odds += i;
+                //         console.log(odds)
+                //     }
+                // } console.log(`From 0 to 100 sum of all evens (${evens}) and the sum of all odd (${odds}) numbers: ${evens + odds}`)
+
+            //? 6.6. -> Use for loop to iterate from 0 to 100 and print the sum of all evens and the sum of all odds. Print sum of evens and sum of odds as array
+
+                // Beklenen (Expected) ->   [2550, 2500]
+
+                // let evens = 0;
+                // let odds = 0;
+                // for (let i = 0; i <= 100; i++) {
+                //     if (i % 2 == 0) {
+                //         evens += i;
+                //     } else if (i % 2 == 1) {
+                //         odds += i;
+                //     }
+                // } console.log([evens, odds]) // Output -> (2) [2550, 2500]
+
+        //? 7. -> Develop a small script which generate array of 5 random numbers
+
+            // let randomNums = [];
+            // for (let i = 0; i < 5; i++) {
+            //     randomNums.push(parseInt(Math.random(10) * 10));
+            // }
+            // console.log(randomNums.join('')); // -> 53531 / 82780 / 87837 etc.
+
+        //? 7.1. -> Develop a small script which generate array of 5 random numbers and the numbers must be unique
+
+            // let randomNumbers = [];
+            // for (let i = 0; i < 5; i++) {
+            //     randomNumbers.push(Math.floor(Math.random(10) * 10))   
+            // }
+            // console.log(randomNumbers.join('')); // -> 59330 / 19810 / 66317 etc.
+
+        //? 7.2. -> Develop a small script which generate a six characters random id:
+
+            // Beklenen (Expected) -> 5j2khz
+
+            // let letters = 'abcdefghijklmnopqrstuvwxyz';
+            // let randoms = [];
+            // for(let i = 0; i < 6; i++) {
+            //     if(i%2 == 0) {
+            //         randoms.push(Math.floor(Math.random(10) * 10));
+            //     } else {
+            //         randoms.push(letters[parseInt(Math.random() * 25)])
+            //     }
+            // }
+            // console.log(randoms.join('')); // -> 0l0f4t / 6a0c1a / 3b4d5e etc.
+
+    // todo Exercises: Level 2
+
+        //? 1. -> Develop a small script which generate any number of characters random id:
+            //* fe3jo1gl124g
+            //* xkqci4utda1lmbelpkm03rba
+
+        //? 2. -> Write a script which generates a random hexadecimal number.
+            //* '#ee33df'
+        //? 3. -> Write a script which generates a random rgb color number.
+            //* rgb(240,180,80)
+
+        //? 4. -> Using the above countries array, create the following new array.
+            //* ["ALBANIA", "BOLIVIA", "CANADA", "DENMARK", "ETHIOPIA", "FINLAND", "GERMANY", "HUNGARY", "IRELAND", "JAPAN", "KENYA"]
+
+        //? 5. -> Using the above countries array, create an array for countries length'.
+            //* [7, 7, 6, 7, 8, 7, 7, 7, 7, 5, 5]
+
+        //? 6. -> Use the countries array to create the following array of arrays:
+            /*   
+                [
+                    ['Albania', 'ALB', 7],
+                    ['Bolivia', 'BOL', 7],
+                    ['Canada', 'CAN', 6],
+                    ['Denmark', 'DEN', 7],
+                    ['Ethiopia', 'ETH', 8],
+                    ['Finland', 'FIN', 7],
+                    ['Germany', 'GER', 7],
+                    ['Hungary', 'HUN', 7],
+                    ['Ireland', 'IRE', 7],
+                    ['Iceland', 'ICE', 7],
+                    ['Japan', 'JAP', 5],
+                    ['Kenya', 'KEN', 5]
+                ]
+            */
+
+        //? 7. -> In above countries array, check if there is a country or countries containing the word 'land'. If there are countries containing 'land', print it as array. If there is no country containing the word 'land', print 'All these countries are without land'.
+                //* ['Finland','Ireland', 'Iceland']
+
+        //? 8. -> In above countries array, check if there is a country or countries end with a substring 'ia'. If there are countries end with, print it as array. If there is no country containing the word 'ai', print 'These are countries ends without ia'.
+
+                //* ['Albania', 'Bolivia','Ethiopia']
+
+        //? 9. -> Using the above countries array, find the country containing the biggest number of characters.
+                //* Ethiopia
+
+        //? 10. -> Using the above countries array, find the country containing only 5 characters.
+                //* ['Japan', 'Kenya']
+
+        //? 11. -> Find the longest word in the webTechs array
+
+        //? 12. -> Use the webTechs array to create the following array of arrays:
+                // [["HTML", 4], ["CSS", 3],["JavaScript", 10],["React", 5],["Redux", 5],["Node", 4],["MongoDB", 7]]
+
+        //? 13. -> An application created using MongoDB, Express, React and Node is called a MERN stack app. Create the acronym MERN by using the array mernStack
+
+        //? 14. -> Iterate through the array, ["HTML", "CSS", "JS", "React", "Redux", "Node", "Express", "MongoDB"] using a for loop or for of loop and print out the items.
+
+        //? 15. -> This is a fruit array , ['banana', 'orange', 'mango', 'lemon'] reverse the order using loop without using a reverse method.
+
+        //? 16. -> Print all the elements of array as shown below.
+                /*
+                    const fullStack = [
+                        ['HTML', 'CSS', 'JS', 'React'],
+                        ['Node', 'Express', 'MongoDB']
+                    ]
+                    ````
+
+                    ```sh
+                    HTML
+                    CSS
+                    JS
+                    REACT
+                    NODE
+                    EXPRESS
+                    MONGODB
+                */
+
+    // todo Exercises: Level 3
+
+        //? 1. -> Copy countries array(Avoid mutation)
+
+        //? 2. -> Arrays are mutable. Create a copy of array which does not modify the original. Sort the copied array and store in a variable sortedCountries
+
+        //? 3. -> Sort the webTechs array and mernStack array
+
+        //? 4. -> Extract all the countries contain the word 'land' from the countries array and print it as array
+
+        //? 5. -> Find the country containing the hightest number of characters in the countries array
+
+        //? 6. -> Extract all the countries contain the word 'land' from the countries array and print it as array
+
+        //? 7. -> Extract all the countries containing only four characters from the countries array and print it as array
+
+        //? 8. -> Extract all the countries containing two or more words from the countries array and print it as array
+
+        //? 9. -> Reverse the countries array and capitalize each country and stored it as an array
+
+//! 🎉 CONGRATULATIONS ! 🎉
 

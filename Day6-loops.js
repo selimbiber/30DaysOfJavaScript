@@ -293,7 +293,8 @@ Tekrar eden görevleri gerçekleştirmek için programlama dillerinde farklı d�
         'Hungary',
         'Ireland',
         'Japan',
-        'Kenya'
+        'Kenya',
+        'Iceland',
     ]
       
     const webTechs = [
@@ -569,16 +570,59 @@ Tekrar eden görevleri gerçekleştirmek için programlama dillerinde farklı d�
             //* fe3jo1gl124g
             //* xkqci4utda1lmbelpkm03rba
 
+            // let letters = 'abcdefghijklmnopqrstuvwxyz';
+            // let randoms = [];
+            // for(let i = 0; i < Math.floor(Math.random(1000) * 1000); i++) {
+            //     if(i%2 == 0) {
+            //         randoms.push(Math.floor(Math.random(100) * 10));
+            //     } else if (randoms.length < 7) {
+            //         randoms.push(Math.floor(Math.random(100) * 10));
+            //         randoms.push(letters[parseInt(Math.random(10) * 25)])
+            //     }
+            // }
+            // console.log(randoms.join('')); // -> 5c9o8h6r5q9x7d3y2p4y2a / 4j1j9l5r8k0t1q2p9n etc.
+
         //? 2. -> Write a script which generates a random hexadecimal number.
             //* '#ee33df'
+
+            // const hexNumber = Math.floor(Math.random() * (16777216 + 1));
+            // const randomHexColors = '#' + hexNumber.toString(16);
+            // console.log(randomHexColors); // -> #b4263c / #44a6a5 / #345cbe
+
         //? 3. -> Write a script which generates a random rgb color number.
             //* rgb(240,180,80)
+
+            // let randomRGB = `rgb(${Math.floor(Math.random()*255)},${Math.floor(Math.random()*255)},${Math.floor(Math.random()*255)})`;
+            // console.log(randomRGB); // -> rgb(239,181,96) / rgb(179,168,38) / rgb(24,22,80) / rgb(193,223,168) etc.
 
         //? 4. -> Using the above countries array, create the following new array.
             //* ["ALBANIA", "BOLIVIA", "CANADA", "DENMARK", "ETHIOPIA", "FINLAND", "GERMANY", "HUNGARY", "IRELAND", "JAPAN", "KENYA"]
 
+            // let randomCountriesArray = [];
+
+            // let randomIndex1 = Math.floor(Math.random()*11);
+            // let randomIndex2 = Math.floor(Math.random()*11);
+            // let randomIndex3 = Math.floor(Math.random()*11);
+
+            // if (randomIndex1 !== randomIndex2 && randomIndex1 !== randomIndex3 && randomIndex2 !== randomIndex3) {    
+            //     randomCountriesArray.push( (countries[randomIndex1]), (countries[randomIndex2]), (countries[randomIndex3]) );
+            //     console.log(randomCountriesArray);
+            // } else {
+            //     randomIndex1 = Math.floor(Math.random()*11);
+            //     randomIndex2 = Math.floor(Math.random()*11);
+            //     randomIndex3 = Math.floor(Math.random()*11);
+
+            //     randomCountriesArray.push( (countries[randomIndex1]), (countries[randomIndex2]), (countries[randomIndex3]) );
+            //     console.log(randomCountriesArray);
+            // } // -> ['Japan', 'Germany', 'Finland'] / ['Japan', 'Germany', 'Canada'] / ['Germany', 'Albania', 'Denmark']
+
         //? 5. -> Using the above countries array, create an array for countries length'.
             //* [7, 7, 6, 7, 8, 7, 7, 7, 7, 5, 5]
+
+            let randomCountryLength = []
+            // randomCountryLength.push(countries[Math.floor(Math.random()*11)].length, (countries[Math.floor(Math.random()*11)].length), countries[Math.floor(Math.random()*11)].length);
+
+            // console.log(randomCountryLength); // -> (3) [7, 5, 8] / (3) [7, 5, 7] / (3) [8, 7, 7] / (3) [7, 7, 8] / (3) [7, 7, 5]
 
         //? 6. -> Use the countries array to create the following array of arrays:
             /*   
@@ -598,27 +642,118 @@ Tekrar eden görevleri gerçekleştirmek için programlama dillerinde farklı d�
                 ]
             */
 
+            // let arrays = [];
+            // for(const countriesArray of countries) {
+            //     let length = countriesArray.length;
+            //     let first3Chars = countriesArray.slice(0, 3).toUpperCase();
+            //     arrays.push([countriesArray, first3Chars, length]);
+            // } 
+            // for (const arrayOfArrays of arrays) {
+            //     console.log(arrayOfArrays);
+            // }
+
         //? 7. -> In above countries array, check if there is a country or countries containing the word 'land'. If there are countries containing 'land', print it as array. If there is no country containing the word 'land', print 'All these countries are without land'.
                 //* ['Finland','Ireland', 'Iceland']
+
+                // let countriesLand = [];
+                // let otherCountries = [];
+
+                // for (let i = 0; i < countries.length; i++) {
+                //     if ( countries[i].includes('land') ) {
+                //         countriesLand.push( countries[i] )
+                //     } else if ( !countries[i].includes('land') ) {
+                //         otherCountries.push( countries[i] )
+                //     }
+                // }
+                // console.log(countriesLand) // -> (3) ['Finland', 'Ireland', 'Iceland']
+                // console.log(otherCountries); // -> (9) ['Albania', 'Bolivia', 'Canada', 'Denmark', 'Ethiopia', 'Germany', 'Hungary', 'Japan', 'Kenya']
 
         //? 8. -> In above countries array, check if there is a country or countries end with a substring 'ia'. If there are countries end with, print it as array. If there is no country containing the word 'ai', print 'These are countries ends without ia'.
 
                 //* ['Albania', 'Bolivia','Ethiopia']
 
+                // let countries_ia = [];
+                // let without_ia = [];
+
+                // for (let i = 0; i < countries.length; i++) {
+                //     if ( countries[i].endsWith('ia') ) {
+                //         countries_ia.push( countries[i] )
+                //     } else if ( !countries[i].endsWith('ia') ) {
+                //         without_ia.push( countries[i] )
+                //     }
+                // }
+                // console.log( countries_ia ); // -> (3) ['Albania', 'Bolivia', 'Ethiopia']
+                // console.log( 'These are countries ends without ia: ' + without_ia ); // -> These are countries ends without ia: Canada,Denmark,Finland,Germany,Hungary,Ireland,Japan,Kenya,Iceland
+
         //? 9. -> Using the above countries array, find the country containing the biggest number of characters.
                 //* Ethiopia
+
+                // let longestCountry = countries[0];
+                // for (let i = 1; i < countries.length; i++) {
+                //     if (countries[i].length > longestCountry.length) {
+                //         longestCountry = countries[i];
+                //     }
+                // }
+                // console.log(longestCountry); // -> "Ethiopia"
 
         //? 10. -> Using the above countries array, find the country containing only 5 characters.
                 //* ['Japan', 'Kenya']
 
+                // let onlyFiveChar = [];
+                // for (let i = 0; i <= countries.length; i++) {
+                //     if (5 == countries[i].length) {
+                //         onlyFiveChar.push(countries[i]);
+                //         console.log(onlyFiveChar); // -> (2) ['Japan', 'Kenya']
+                //     }
+                // }
+
         //? 11. -> Find the longest word in the webTechs array
+
+                /*
+                    webTechs = [
+                    'HTML',
+                    'CSS',
+                    'JavaScript',
+                    'React',
+                    'Redux',
+                    'Node',
+                    'MongoDB'
+                    ]
+                */
+
+                // let longestWord = webTechs[0];
+                // for (let i = 0; i < webTechs.length; i++) {
+                //     if (longestWord.length < webTechs[i].length) {
+                //         longestWord = webTechs[i];
+                //         console.log(longestWord); // -> JavaScript
+                //     }
+                // }
 
         //? 12. -> Use the webTechs array to create the following array of arrays:
                 // [["HTML", 4], ["CSS", 3],["JavaScript", 10],["React", 5],["Redux", 5],["Node", 4],["MongoDB", 7]]
+                
+                // let arrayOfArrays = [];
+
+                // for (let i = 0; i < webTechs.length; i++) {
+                //     arrayOfArrays.push(webTechs[i] + ", " + (webTechs[i].length));
+                // } console.log(arrayOfArrays);  // -> ['HTML, 4', 'CSS, 3', 'JavaScript, 10', 'React, 5', 'Redux, 5', 'Node, 4', 'MongoDB, 7']
 
         //? 13. -> An application created using MongoDB, Express, React and Node is called a MERN stack app. Create the acronym MERN by using the array mernStack
 
+                // const mernStackArray = ["MongoDB", "Express", "React", "Node"];
+                // let mern_stack = [];
+
+                // for (let i = 0; i < mernStackArray.length; i++) {
+                //     let initalLetters = mernStackArray[i].slice(0, 1)
+                //     mern_stack += initalLetters;
+                    
+                // } console.log(`MERN stack app: ${mern_stack}`) // -> MERN stack app: MERN
+
         //? 14. -> Iterate through the array, ["HTML", "CSS", "JS", "React", "Redux", "Node", "Express", "MongoDB"] using a for loop or for of loop and print out the items.
+
+                // for (let items of webTechs) {
+                //     console.log(items); 
+                // }
 
         //? 15. -> This is a fruit array , ['banana', 'orange', 'mango', 'lemon'] reverse the order using loop without using a reverse method.
 

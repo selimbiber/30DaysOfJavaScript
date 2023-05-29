@@ -757,6 +757,25 @@ Tekrar eden görevleri gerçekleştirmek için programlama dillerinde farklı d�
 
         //? 15. -> This is a fruit array , ['banana', 'orange', 'mango', 'lemon'] reverse the order using loop without using a reverse method.
 
+            // let fruits = ['banana', 'orange', 'mango', 'lemon'];
+            // let reversedFruits = [];
+
+            // for(let i = fruits.length -1; i >= 0; i--) {
+            //     reversedFruits.push(fruits[i]);
+            //     console.log(reversedFruits);
+            // }
+            // for (let each of reversedFruits) {
+            //     console.log(each);
+            // }
+
+            /* Output:
+
+                lemon
+                mango
+                orange
+                banana
+            */
+
         //? 16. -> Print all the elements of array as shown below.
                 /*
                     const fullStack = [
@@ -774,26 +793,101 @@ Tekrar eden görevleri gerçekleştirmek için programlama dillerinde farklı d�
                     EXPRESS
                     MONGODB
                 */
+                
+                // const fullStack = [
+                //     ['HTML', 'CSS', 'JS', 'React'],
+                //     ['Node', 'Express', 'MongoDB']
+                // ]
+                // console.log(fullStack); // lengths: 4 + 3 = 7
+
+                // const favTechs = [];
+
+                // for (let i = 0; i < fullStack.length; i++) {
+                //     for (let j = 0; j < fullStack[i].length; j++) {
+                //         favTechs.push(fullStack[i][j]);
+                //         favTechs[i][j].replace();
+                //         console.log(favTechs)
+                //     }
+                // }
+
+                // for (let each of favTechs) {
+                //     console.log(each.toUpperCase());
+                // } 
+
+                /*  Output:
+
+                HTML
+                CSS
+                JS
+                REACT
+                NODE
+                EXPRESS
+                MONGODB
+                */
 
     // todo Exercises: Level 3
 
         //? 1. -> Copy countries array(Avoid mutation)
 
+            // Expected copy solution is not like this!
+
+            // const copyCountriesArray = countries;
+            // console.log(copyCountriesArray); // -> Expected copy solution is not like this!
+
+            // const newCountriesArray = []
+
+            // for (let eachCountry of countries) {
+            //     newCountriesArray.push(eachCountry);
+            // } console.log(newCountriesArray); // -> (12) ['Albania', 'Bolivia', 'Canada', 'Denmark', 'Ethiopia', 'Finland', 'Germany', 'Hungary', 'Ireland', 'Japan', 'Kenya', 'Iceland']
+
         //? 2. -> Arrays are mutable. Create a copy of array which does not modify the original. Sort the copied array and store in a variable sortedCountries
+
+            // let sortedCountries = newCountriesArray.sort();
+            // console.log(sortedCountries); // -> (12) ['Albania', 'Bolivia', 'Canada', 'Denmark', 'Ethiopia', 'Finland', 'Germany', 'Hungary', 'Iceland', 'Ireland', 'Japan', 'Kenya']
 
         //? 3. -> Sort the webTechs array and mernStack array
 
+        // console.log( webTechs.sort() ); // -> (7) ['CSS', 'HTML', 'JavaScript', 'MongoDB', 'Node', 'React', 'Redux']
+        // console.log( mernStack.sort() ); // -> (4) ['Express', 'MongoDB', 'Node', 'React']
+
         //? 4. -> Extract all the countries contain the word 'land' from the countries array and print it as array
+
+        // const land = [];
+
+        // for (let i = 0; i < countries.length; i++) {
+        //     if ( countries[i].includes('land') ) {
+        //         land.push(countries[i])
+        //     }
+        // }   console.log(land); // -> (3) ['Finland', 'Ireland', 'Iceland']
 
         //? 5. -> Find the country containing the hightest number of characters in the countries array
 
-        //? 6. -> Extract all the countries contain the word 'land' from the countries array and print it as array
+            // let charNumber = countries[0];
 
-        //? 7. -> Extract all the countries containing only four characters from the countries array and print it as array
+            // for (let i = 0; i < countries.length; i++) {
+            //     if ( charNumber.length < countries[i].length) {
+            //         console.log(countries[i]); // -> Ethiopia
+            //     }
+            // }
 
-        //? 8. -> Extract all the countries containing two or more words from the countries array and print it as array
+        //? 6. -> Extract all the countries containing only four characters from the countries array and print it as array
 
-        //? 9. -> Reverse the countries array and capitalize each country and stored it as an array
+            // const fourCharCountry = [];
+
+            // for (const eachCountry of countries) {
+            //     if (eachCountry.length -1 == 4) {
+            //         fourCharCountry.push(eachCountry);
+            //     }
+            // }   console.log(fourCharCountry); // -> (2) ['Japan', 'Kenya']
+
+        //? 7. -> Reverse the countries array and capitalize each country and stored it as an array
+
+            const reverseCountries = countries.reverse();
+            const capitalizeCountries = [];
+
+            for (const eachCountry of reverseCountries) {
+                capitalizeCountries.push( eachCountry.toUpperCase() );
+            } console.log(capitalizeCountries); // -> (12) ['ICELAND', 'KENYA', 'JAPAN', 'IRELAND', 'HUNGARY', 'GERMANY', 'FINLAND', 'ETHIOPIA', 'DENMARK', 'CANADA', 'BOLIVIA', 'ALBANIA']
 
 //! 🎉 CONGRATULATIONS ! 🎉
 

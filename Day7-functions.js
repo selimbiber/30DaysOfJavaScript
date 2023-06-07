@@ -1009,9 +1009,9 @@
             //     }
             // }
             
-            console.log(factorial(5)); // Output: 120
-            console.log(factorial(0)); // Output: 1
-            console.log(factorial(-5)); // Output: NaN
+            // console.log(factorial(5)); // Output: 120
+            // console.log(factorial(0)); // Output: 1
+            // console.log(factorial(-5)); // Output: NaN
 
         //? 10. -> Call your function isEmpty, it takes a parameter and it checks if it is empty or not.
 
@@ -1022,8 +1022,8 @@
             //         return "Not empty value!"
             //     }
             // }
-            console.log( isEmpty() ); // -> Output: Empty value!
-            console.log( isEmpty("Hello World") ); // -> Output: Not empty value!
+            // console.log( isEmpty() ); // -> Output: Empty value!
+            // console.log( isEmpty("Hello World") ); // -> Output: Not empty value!
 
         //? 11. -> Call your function sum, it takes any number of arguments and it returns the sum.
 
@@ -1036,22 +1036,42 @@
             // }
             // console.log( sum(5, 3, 2) ); // -> Output: 10
 
-        //todo 12. -> Write a function called sumOfArrayItems, it takes an array parameter and return the sum of all the items. Check if all the array items are number types. If not give return reasonable feedback.
+        //? 12. -> Write a function called sumOfArrayItems, it takes an array parameter and return the sum of all the items. Check if all the array items are number types. If not give return reasonable feedback.
 
-            const numbersArray = [1, 2, 3, 4]
+            // const numbersArray = [1, 2, 3, 4]
+                
+            // const sumOfArrayItems = (array) => {
+            //     let totalValue = 0;
+            //     for (let i = 0; i < array.length; i++) {
+            //         if (typeof array[i] !== 'number') {
+            //             return 'Invalid Value!'
+            //         } else {
+            //             totalValue += array[i];
+            //         } 
+            //     }
+            //     return totalValue
+            // }
+            // console.log( sumOfArrayItems(numbersArray) ); // -> 10
 
-            const sumOfArrayItems = (array) => {
-                let totalValue = 0;
-                for (let each of array) {
-                    totalValue += each
-                }
-                return totalValue
-            }
-            console.log( sumOfArrayItems(numbersArray) ); // -> 10
+        //? 13. -> Write a function called average, it takes an array parameter and returns the average of the items. Check if all the array items are number types. If not give return reasonable feedback.
 
-        //todo 13. -> Write a function called average, it takes an array parameter and returns the average of the items. Check if all the array items are number types. If not give return reasonable feedback.
+            // const numbersArray = [1, 2, 3, 4]
+                
+            // const average = (array) => {
+            //     let totalValue = 0;
+            //     for (let i = 0; i < array.length; i++) {
+            //         if (typeof array[i] !== 'number') {
+            //             return 'Invalid Value!'
+            //         } else {
+            //             totalValue += array[i];
+            //         }
+            //     }
+            //     const averageOfItems = totalValue / array.length
+            //     return averageOfItems
+            // }
+            // console.log( average(numbersArray) ); // -> 2.5
 
-        //todo 14. -> Write a function called modifyArray takes array as parameter and modifies the fifth item of the array and return the array. If the array length is less than five it return 'item not found'.
+        //? 14. -> Write a function called modifyArray takes array as parameter and modifies the fifth item of the array and return the array. If the array length is less than five it return 'item not found'.
 
             /*
                 console.log(modifyArray(['Avocado', 'Tomato', 'Potato','Mango', 'Lemon','Carrot']);
@@ -1064,56 +1084,119 @@
                   'Not Found'
             */
 
-        //todo 15. -> Write a function called isPrime, which checks if a number is prime number.
+            // const modifyArray = (array) => {
+            //     if (array.length < 5) {
+            //         return 'item not found'
+            //     } else {
+            //         array[4] = array[4].toUpperCase();
+            //     }
+            //     return array
+            // }
+            // console.log( modifyArray(['Avocado', 'Tomato', 'Potato','Mango', 'Lemon','Carrot']) ); 
+            // -> ['Avocado', 'Tomato', 'Potato','Mango', 'LEMON', 'Carrot']
 
-        //todo 16. -> Write a functions which checks if all items are unique in the array.
+        //? 15. -> Write a function called isPrime, which checks if a number is prime number.
+
+            // const isPrime = (number) => {
+                
+            //     if (number < 2) {
+            //         return false;
+            //     } if (number == 2) {
+            //         return true;
+            //     } else {
+            //         for (let i = 2; i <= 10; i++) {
+            //             if (number % i == 0) {
+            //                 return false;
+            //             } else {
+            //                 return true;
+            //             }
+            //         }
+            //     }
+            // }
+            // console.log( isPrime(2) ); // -> true
+            // console.log( isPrime(1) ); // -> false
+            // console.log( isPrime(97) ); // -> true
+            // console.log( isPrime(20) ); // -> false
+
+        //? 16. -> Write a functions which checks if all items are unique in the array.
 
             // chatGPT solution:
 
-        // function allUnique(arr) {
-        //     let unique = new Set(arr);
-        //     return unique.size === arr.length;
-        //     }
+            // function allUnique(array) {
+            //     let unique = new Set(array);
+            //     return unique.size === array.length;
+            // }
+            // console.log( allUnique( ['A', 'B', 'C'] ) ); // -> true
+            // console.log( allUnique( ['A', 'B', 'C', 'A'] ) ); // -> false
+                
+            // -> This function uses a Set to check if all items in the array are unique. A Set only allows unique values, so if the size of the Set matches the length of the original array, then all items are unique.
+
+        //? 17. -> Write a function which checks if all the items of the array are the same data type.
+
+            // const checkSameDataType = (array) => {
+            //     const dataType = typeof array[0];
+
+            //     for (let i = 0; i < array.length; i++) {
+            //         if (typeof array[i] !== dataType) {
+            //             return 'All the items of the array are the not same data type! (False)'
+            //         }
+            //     }
+            //     return 'All the items of the array are the same data type! (True)'
+            // }
+            // console.log( checkSameDataType( ['A', 'B', 'C'] ) ); 
+            // // -> All the items of the array are the same data type! (True)
+            // console.log( checkSameDataType( ['A', 1, 'B', 2, 'B', 3] ) ); 
+            // // -> All the items of the array are the not same data type! (False)
+            // console.log( checkSameDataType( [1, 2, 3] ) ); 
+            // // -> All the items of the array are the same data type! (True)
+            // console.log( checkSameDataType( [1, 2, 3, 'A', 'B', 'C'] ) ); 
+            // // -> All the items of the array are the not same data type! (False)
+
+        //? 18. -> JavaScript variable name does not support special characters or symbols except \$ or _. Write a function isValidVariable which check if a variable is valid or invalid variable.
+
+            // -> chatGPT solution: 
+
+                // const isValidVariable = (variable) => {
+
+                //     if (!variable.match(/^[a-zA-Z\$_]/)) {
+                //         return false;
+                //     }
+                //     if (!variable.match(/^[a-zA-Z\$_][a-zA-Z0-9\$_]*$/)) {
+                //         return false;
+                //     }
+                //     return true;
+                // }
+                // console.log(isValidVariable('example')); // true
+                // console.log(isValidVariable('$var')); // true
+                // console.log(isValidVariable('_var1')); // true
+                // console.log(isValidVariable('1var')); // false
+                // console.log(isValidVariable('ex.ample')); // false
+
+                // The isValidVariable function checks if the given variable name is valid or not by using regular expressions. The function first checks if the first character is a letter, $, or _. Then it checks if subsequent characters are letters, digits, $, or _. If the variable name passes both these checks, the function returns true. Otherwise, it returns false.
             
-        //     This function uses a Set to check if all items in the array are unique. A Set only allows unique values, so if the size of the Set matches the length of the original array, then all items are unique.
 
-        //todo 17. -> Write a function which checks if all the items of the array are the same data type.
-
-        //todo 18. -> JavaScript variable name does not support special characters or symbols except \$ or _. Write a function isValidVariable which check if a variable is valid or invalid variable.
-
-            /* chatGPT solution: 
-
-                function isValidVariable(variable) {
-                check if first character is a letter, $, or _
-                if (!variable.match(/^[a-zA-Z\$_]/)) {
-                    return false;
-                }
-                check if subsequent characters are letters, digits, $, or _
-                if (!variable.match(/^[a-zA-Z\$_][a-zA-Z0-9\$_]*$/)) {
-                    return false;
-                }
-                return true;
-                }
-
-                Example usage:
-                console.log(isValidVariable('example')); // true
-                console.log(isValidVariable('$var')); // true
-                console.log(isValidVariable('_var1')); // true
-                console.log(isValidVariable('1var')); // false
-                console.log(isValidVariable('ex.ample')); // false
-                The isValidVariable function checks if the given variable name is valid or not by using regular expressions. The function first checks if the first character is a letter, $, or _. Then it checks if subsequent characters are letters, digits, $, or _. If the variable name passes both these checks, the function returns true. Otherwise, it returns false.
-
-                The above code includes some sample usage of the function for testing.
-            */
-
-        //todo 19. -> Write a function which returns array of seven random numbers in a range of 0-9. All the numbers must be unique.
+        //? 19. -> Write a function which returns array of seven random numbers in a range of 0-9. All the numbers must be unique.
 
             /*
                 sevenRandomNumbers()
                 [(1, 4, 5, 7, 9, 8, 0)]
             */
 
-        //todo 20. -> Write a function called reverseCountries, it takes countries array and first it copy the array and returns the reverse of the original array.
+            // const generateRandomNumbers = () => {
+            //     const randomUniqueSevenNumbers = [];
+                
+            //     while ( randomUniqueSevenNumbers.length < 7 ) {
+            //         let randomNumber = Math.floor(Math.random() * 10);
+            //         if ( !randomUniqueSevenNumbers.includes(randomNumber) ) {
+            //             randomUniqueSevenNumbers.push(randomNumber);
+            //         }
+            //     }
+            //     return randomUniqueSevenNumbers
+            // };
+
+            // console.log( generateRandomNumbers() );
+
+        //? 20. -> Write a function called reverseCountries, it takes countries array and first it copy the array and returns the reverse of the original array.
 
             // let countries = ["USA", "Canada", "Mexico", "Brazil"];
 
@@ -1121,6 +1204,7 @@
             //     let copy = countries.slice(); // create a copy of the original array
             //     return copy.reverse(); // reverse the copy and return it
             // }
+            // console.log( reverseCountries(countries) ); // -> (4) ['Brazil', 'Mexico', 'Canada', 'USA']
             
 //! 🎉 CONGRATULATIONS ! 🎉
 

@@ -243,7 +243,7 @@
             // let kullanici = kullaniciOlustur("Selim", "Erkek");
             // console.log( kullanici ); // -> {isim: 'Selim', cinsiyet: 'Erkek'}
 
-            //! Dipnot: Yukarıdaki örnekte özellikler değişkenler ile aynı isme sahipler. Bu çeşit kullanım çok yaygındır,
+            //! Dipnot: Yukarıdaki örnekte özellikler değişkenler ile aynı isme sahipler. Bu çeşit kullanım çok yaygındır.
 
         //! Varlık kontrolü: Bir nesnedeki her özellik erişilebilirdir, erişilmek istenen o özellik nesnenin içinde yoksa bile kendinden sonraki kodların çalışmasını durdurmaz sadece "undefined" değer döner. Bu da kolayca o özelliğin olup olmadığını kontrol etmemizi sağlar.
 
@@ -472,7 +472,7 @@
 
 //! 💻 Exercises:
 
-    // todo Exercises: Level 1:
+    //? Exercises: Level 1:
 
         //? 1. -> Create an empty object called dog.
 
@@ -511,127 +511,288 @@
             // console.log( dog.getDogInfo() ); 
             // -> Name: Chiko, Legs: Quadrupedal, Color: Black, Age: 6, Breed: Hound.
 
-    // todo Exercises: Level 2:
+    //? Exercises: Level 2:
+
+                
+        const users = {
+            Alex: {
+                email: 'alex@alex.com',
+                skills: ['HTML', 'CSS', 'JavaScript'],
+                age: 20,
+                isLoggedIn: false,
+                points: 30
+            },
+            Asab: {
+                email: 'asab@asab.com',
+                skills: ['HTML', 'CSS', 'JavaScript', 'Redux', 'MongoDB', 'Express', 'React', 'Node.js'],
+                age: 25,
+                isLoggedIn: false,
+                points: 50
+            },
+            Brook: {
+                email: 'daniel@daniel.com',
+                skills: ['HTML', 'CSS', 'JavaScript', 'React', 'Redux'],
+                age: 30,
+                isLoggedIn: true,
+                points: 50
+            },
+            Daniel: {
+                email: 'daniel@alex.com',
+                skills: ['HTML', 'CSS', 'JavaScript', 'Python'],
+                age: 20,
+                isLoggedIn: false,
+                points: 40
+            },
+            John: {
+                email: 'john@john.com',
+                skills: ['HTML', 'CSS', 'JavaScript', 'React', 'Redux', 'Node.js'],
+                age: 20,
+                isLoggedIn: true,
+                points: 50
+            },
+            Thomas: {
+                email: 'thomas@thomas.com',
+                skills: ['HTML', 'CSS', 'JavaScript', 'React'],
+                age: 20,
+                isLoggedIn: false,
+                points: 40
+            },
+            Paul: {
+                email: 'paul@paul.com',
+                skills: ['HTML', 'CSS', 'JavaScript', 'MongoDB', 'Express', 'React', 'Node.js'],
+                age: 20,
+                isLoggedIn: false,
+                points: 40
+            }
+        }
+            
 
         //? 1. -> Find the person who has many skills in the users object.
 
+            for ( const user of Object.keys(users) ) {
+                let maxSkills = 0;
+                let mostSkilledPerson;
+
+                if ( users[user].skills.length > maxSkills ) {
+                    maxSkills = users[user].skills.length;
+                    mostSkilledPerson = Object.assign({}, users[user]);
+
+                    console.log(mostSkilledPerson.email, maxSkills); 
+                    // -> asab@asab.com 8
+                }
+            }
+
         //? 2. -> Count logged in users, count users having greater than equal to 50 points from the following object.
 
-            /*
-                const users = {
-                    Alex: {
-                        email: 'alex@alex.com',
-                        skills: ['HTML', 'CSS', 'JavaScript'],
-                        age: 20,
-                        isLoggedIn: false,
-                        points: 30
-                    },
-                    Asab: {
-                        email: 'asab@asab.com',
-                        skills: ['HTML', 'CSS', 'JavaScript', 'Redux', 'MongoDB', 'Express', 'React', 'Node'],
-                        age: 25,
-                        isLoggedIn: false,
-                        points: 50
-                    },
-                    Brook: {
-                        email: 'daniel@daniel.com',
-                        skills: ['HTML', 'CSS', 'JavaScript', 'React', 'Redux'],
-                        age: 30,
-                        isLoggedIn: true,
-                        points: 50
-                    },
-                    Daniel: {
-                        email: 'daniel@alex.com',
-                        skills: ['HTML', 'CSS', 'JavaScript', 'Python'],
-                        age: 20,
-                        isLoggedIn: false,
-                        points: 40
-                    },
-                    John: {
-                        email: 'john@john.com',
-                        skills: ['HTML', 'CSS', 'JavaScript', 'React', 'Redux', 'Node.js'],
-                        age: 20,
-                        isLoggedIn: true,
-                        points: 50
-                    },
-                    Thomas: {
-                        email: 'thomas@thomas.com',
-                        skills: ['HTML', 'CSS', 'JavaScript', 'React'],
-                        age: 20,
-                        isLoggedIn: false,
-                        points: 40
-                    },
-                    Paul: {
-                        email: 'paul@paul.com',
-                        skills: ['HTML', 'CSS', 'JavaScript', 'MongoDB', 'Express', 'React', 'Node'],
-                        age: 20,
-                        isLoggedIn: false,
-                        points: 40
+            for ( const user of Object.keys(users) ) {
+                let maxPoints = 0;
+                let topUsers;
+
+                if ( users[user].isLoggedIn == true ) {
+                    if ( users[user].points >= 50 ) {
+                        maxPoints = users[user].points;
+                        topUsers = Object.assign({}, users[users]);
+
+                        console.log(maxPoints.length); // -> 2
                     }
                 }
-            */
+            }
         
         //? 3. -> Find people who are MERN stack developer from the users object.
 
+            for ( const user of Object.keys(users) ) {
+                let mernStackDeveloper;
+
+                if ( users[user].skills.includes('MongoDB') &&  'Express' && 'React' && 'Node.js' ) {
+                    mernStackDeveloper = Object.assign({}, users[user]);
+
+                    console.log(mernStackDeveloper);
+                    /* -> {email: 'asab@asab.com', skills: Array(8), age: 25, isLoggedIn: false, points: 50}
+                    -> {email: 'paul@paul.com', skills: Array(7), age: 20, isLoggedIn: false, points: 40} */
+                }
+            }
+
         //? 4. -> Set your name in the users object without modifying the original users object.
+
+            const copyUsers = Object.assign({}, users);
+            copyUsers['Selim'] = {};
+            console.log(copyUsers); // -> Selim: {}
 
         //? 5. -> Get all keys or properties of users object.
 
+            const userKeys = Object.keys(users);
+            console.log(userKeys); // -> (7) ['Alex', 'Asab', 'Brook', 'Daniel', 'John', 'Thomas', 'Paul']
+
         //? 6. -> Get all the values of users object.
+
+            const userValues = Object.values(users);
+            console.log(userValues); // -> (7) [{…}, {…}, {…}, {…}, {…}, {…}, {…}]
 
         //? 7. -> Use the countries object to print a country name, capital, populations and languages.
 
-    // todo Exercises: Level 3
+        const countries = [
+            {
+              name: 'Afghanistan',
+              capital: 'Kabul',
+              languages: ['Pashto', 'Uzbek', 'Turkmen'],
+              population: 27657145,
+              flag: 'https://restcountries.eu/data/afg.svg',
+              currency: 'Afghan afghani'
+            },
+            {
+              name: 'Belgium',
+              capital: 'Brussels',
+              languages: ['Dutch', 'French', 'German'],
+              population: 11319511,
+              flag: 'https://restcountries.eu/data/bel.svg',
+              currency: 'Euro'
+            },
+            {
+              name: 'China',
+              capital: 'Beijing',
+              languages: ['Chinese'],
+              population: 1377422166,
+              flag: 'https://restcountries.eu/data/chn.svg',
+              currency: 'Chinese yuan'
+            },
+            {
+              name: 'Germany',
+              capital: 'Berlin',
+              languages: ['German'],
+              population: 81770900,
+              flag: 'https://restcountries.eu/data/deu.svg',
+              currency: 'Euro'
+            },
+            {
+              name: 'Myanmar',
+              capital: 'Naypyidaw',
+              languages: ['Burmese'],
+              population: 51419420,
+              flag: 'https://restcountries.eu/data/mmr.svg',
+              currency: 'Burmese kyat'
+            },
+            {
+              name: 'Turkey',
+              capital: 'Ankara',
+              languages: ['Turkish'],
+              population: 78741053,
+              flag: 'https://restcountries.eu/data/tur.svg',
+              currency: 'Turkish lira'
+            },
+        ]
+
+            const myCountry = countries[Object.keys(countries)[5]];
+            
+            console.log("Name: ", myCountry.name) // -> Name:  Turkey
+            console.log("Capital: ", myCountry.capital) // -> Capital:  Ankara
+            console.log("Population: ", myCountry.population); // -> Population:  78741053
+            console.log("Languages: ", myCountry.languages); // -> Languages:  ['Turkish']
+
+    //? Exercises: Level 3
 
         //? 1. -> Create an object literal called personAccount. It has firstName, lastName, incomes, expenses properties and it has totalIncome, totalExpense, accountInfo,addIncome, addExpense and accountBalance methods. Incomes is a set of incomes and its description and expenses is a set of incomes and its description.
 
-        //? 2. -> **** Questions:2, 3 and 4 are based on the following two arrays:users and products ()
+            const personAccount = {
+                firstName: 'Mark',
+                lastName: 'Beeler',
+                incomes: {
+                    courses: 2000,
+                    salary: 2300,
+                    tutoring: 1800
+                },
+                expenses: {
+                    rent: 1200,
+                    bill: 400,
+                    saloon: 150
+                },
+                // Methods of personAccount
+                totalIncome: function () {
+                    let totalIncomes = 0;
+                    let values = Object.values(this.incomes)
+                    for (let i = 0; i < values.length; i++) {
+                        totalIncomes += values[i]
+                    }
+                    return totalIncomes;
+                },
+                totalExpense: function () {
+                    let totalExpenses = 0;
+                    let values = Object.values(this.expenses)
+                    for (let i = 0; i < values.length; i++) {
+                        totalExpenses += values[i];
+                    }
+                    return totalExpenses;
+                },
+                accountInfo: function () {
+                    console.log( `Name: ${this.firstName} ${this.lastName}` );
+                    console.log( `Account Balance: ${this.accountBalance()}` );
+                },
+                addIncome: function (type, amount) {
+                    this.incomes[type] = amount;
+                },
+                addExpense: function (type, amount) {
+                    this.expenses[type] = amount;
+                },
+                accountBalance: function () {
+                    let balance = this.totalIncome() - this.totalExpense();
+                    return balance;
+                }
+            }
 
-            /*
-                        const users = [
-                        {
-                            _id: 'ab12ex',
-                            username: 'Alex',
-                            email: 'alex@alex.com',
-                            password: '123123',
-                            createdAt:'08/01/2020 9:00 AM',
-                            isLoggedIn: false
-                        },
-                        {
-                            _id: 'fg12cy',
-                            username: 'Asab',
-                            email: 'asab@asab.com',
-                            password: '123456',
-                            createdAt:'08/01/2020 9:30 AM',
-                            isLoggedIn: true
-                        },
-                        {
-                            _id: 'zwf8md',
-                            username: 'Brook',
-                            email: 'brook@brook.com',
-                            password: '123111',
-                            createdAt:'08/01/2020 9:45 AM',
-                            isLoggedIn: true
-                        },
-                        {
-                            _id: 'eefamr',
-                            username: 'Martha',
-                            email: 'martha@martha.com',
-                            password: '123222',
-                            createdAt:'08/01/2020 9:50 AM',
-                            isLoggedIn: false
-                        },
-                        {
-                            _id: 'ghderc',
-                            username: 'Thomas',
-                            email: 'thomas@thomas.com',
-                            password: '123333',
-                            createdAt:'08/01/2020 10:00 AM',
-                            isLoggedIn: false
-                        }
-                        ];
+            console.log(personAccount.totalIncome()); // -> 6100
+            console.log(personAccount.totalExpense()); // -> 1750
+            personAccount.accountInfo(); // -> Name: Mark Beeler Account Balance: 4350
+            personAccount.addIncome('freelancing', 1200);
+            personAccount.addExpense('food', 330);
+            console.log(personAccount.totalIncome()); // -> 7300
+            console.log(personAccount.totalExpense()); // -> 2080
+            console.log(personAccount.accountBalance()); // -> 5220
 
-                        const products = [
+        //**** Questions:2, 3 and 4 are based on the following two arrays:newUsers and products ()
+
+                const newUsers = [
+                    {
+                        _id: 'ab12ex',
+                        username: 'Alex',
+                        email: 'alex@alex.com',
+                        password: '123123',
+                        createdAt: '08/01/2020 9:00 AM',
+                        isLoggedIn: false
+                    },
+                    {
+                        _id: 'fg12cy',
+                        username: 'Asab',
+                        email: 'asab@asab.com',
+                        password: '123456',
+                        createdAt: '08/01/2020 9:30 AM',
+                        isLoggedIn: true
+                    },
+                    {
+                        _id: 'zwf8md',
+                        username: 'Brook',
+                        email: 'brook@brook.com',
+                        password: '123111',
+                        createdAt: '08/01/2020 9:45 AM',
+                        isLoggedIn: true
+                    },
+                    {
+                        _id: 'eefamr',
+                        username: 'Martha',
+                        email: 'martha@martha.com',
+                        password: '123222',
+                        createdAt: '08/01/2020 9:50 AM',
+                        isLoggedIn: false
+                    },
+                    {
+                        _id: 'ghderc',
+                        username: 'Thomas',
+                        email: 'thomas@thomas.com',
+                        password: '123333',
+                        createdAt: '08/01/2020 10:00 AM',
+                        isLoggedIn: false
+                    }
+                ];
+
+                const products = [
                     {
                         _id: 'eedfcf',
                         name: 'mobile phone',
@@ -660,15 +821,11 @@
                         likes: ['fg12cy']
                     }
                 ]
-            */
 
-            /*
-            Imagine you are getting the above users collection from a MongoDB database. a. Create a function called signUp which allows user to add to the collection. If user exists, inform the user that he has already an account.
-            b. Create a function called signIn which allows user to sign in to the application
-            */
+        // todo 2. -> Imagine you are getting the above users collection from a MongoDB database. a. Create a function called signUp which allows user to add to the collection. If user exists, inform the user that he has already an account. b. Create a function called signIn which allows user to sign in to the application
 
-        //? 3. -> The products array has three elements and each of them has six properties. a. Create a function called rateProduct which rates the product b. Create a function called averageRating which calculate the average rating of a product.
+        // todo 3. -> The products array has three elements and each of them has six properties. a. Create a function called rateProduct which rates the product b. Create a function called averageRating which calculate the average rating of a product.
 
-        //? 4. ->  Create a function called likeProduct. This function will helps to like to the product if it is not liked and remove like if it was liked.
+        // todo 4. ->  Create a function called likeProduct. This function will helps to like to the product if it is not liked and remove like if it was liked.
 
 //! 🎉 CONGRATULATIONS ! 🎉

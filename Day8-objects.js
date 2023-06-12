@@ -577,7 +577,7 @@
                     maxSkills = users[user].skills.length;
                     mostSkilledPerson = Object.assign({}, users[user]);
 
-                    console.log(mostSkilledPerson.email, maxSkills); 
+                    // console.log(mostSkilledPerson.email, maxSkills); 
                     // -> asab@asab.com 8
                 }
             }
@@ -593,7 +593,7 @@
                         maxPoints = users[user].points;
                         topUsers = Object.assign({}, users[users]);
 
-                        console.log(maxPoints.length); // -> 2
+                        // console.log(maxPoints.length); // -> 2
                     }
                 }
             }
@@ -606,7 +606,7 @@
                 if ( users[user].skills.includes('MongoDB') &&  'Express' && 'React' && 'Node.js' ) {
                     mernStackDeveloper = Object.assign({}, users[user]);
 
-                    console.log(mernStackDeveloper);
+                    // console.log(mernStackDeveloper);
                     /* -> {email: 'asab@asab.com', skills: Array(8), age: 25, isLoggedIn: false, points: 50}
                     -> {email: 'paul@paul.com', skills: Array(7), age: 20, isLoggedIn: false, points: 40} */
                 }
@@ -616,17 +616,17 @@
 
             const copyUsers = Object.assign({}, users);
             copyUsers['Selim'] = {};
-            console.log(copyUsers); // -> Selim: {}
+            // console.log(copyUsers); // -> Selim: {}
 
         //? 5. -> Get all keys or properties of users object.
 
             const userKeys = Object.keys(users);
-            console.log(userKeys); // -> (7) ['Alex', 'Asab', 'Brook', 'Daniel', 'John', 'Thomas', 'Paul']
+            // console.log(userKeys); // -> (7) ['Alex', 'Asab', 'Brook', 'Daniel', 'John', 'Thomas', 'Paul']
 
         //? 6. -> Get all the values of users object.
 
             const userValues = Object.values(users);
-            console.log(userValues); // -> (7) [{…}, {…}, {…}, {…}, {…}, {…}, {…}]
+            // console.log(userValues); // -> (7) [{…}, {…}, {…}, {…}, {…}, {…}, {…}]
 
         //? 7. -> Use the countries object to print a country name, capital, populations and languages.
 
@@ -683,10 +683,10 @@
 
             const myCountry = countries[Object.keys(countries)[5]];
             
-            console.log("Name: ", myCountry.name) // -> Name:  Turkey
-            console.log("Capital: ", myCountry.capital) // -> Capital:  Ankara
-            console.log("Population: ", myCountry.population); // -> Population:  78741053
-            console.log("Languages: ", myCountry.languages); // -> Languages:  ['Turkish']
+            // console.log("Name: ", myCountry.name) // -> Name:  Turkey
+            // console.log("Capital: ", myCountry.capital) // -> Capital:  Ankara
+            // console.log("Population: ", myCountry.population); // -> Population:  78741053
+            // console.log("Languages: ", myCountry.languages); // -> Languages:  ['Turkish']
 
     //? Exercises: Level 3
 
@@ -738,14 +738,14 @@
                 }
             }
 
-            console.log(personAccount.totalIncome()); // -> 6100
-            console.log(personAccount.totalExpense()); // -> 1750
-            personAccount.accountInfo(); // -> Name: Mark Beeler Account Balance: 4350
-            personAccount.addIncome('freelancing', 1200);
-            personAccount.addExpense('food', 330);
-            console.log(personAccount.totalIncome()); // -> 7300
-            console.log(personAccount.totalExpense()); // -> 2080
-            console.log(personAccount.accountBalance()); // -> 5220
+            // console.log(personAccount.totalIncome()); // -> 6100
+            // console.log(personAccount.totalExpense()); // -> 1750
+            // personAccount.accountInfo(); // -> Name: Mark Beeler Account Balance: 4350
+            // personAccount.addIncome('freelancing', 1200);
+            // personAccount.addExpense('food', 330);
+            // console.log(personAccount.totalIncome()); // -> 7300
+            // console.log(personAccount.totalExpense()); // -> 2080
+            // console.log(personAccount.accountBalance()); // -> 5220
 
         //**** Questions:2, 3 and 4 are based on the following two arrays:newUsers and products ()
 
@@ -822,10 +822,120 @@
                     }
                 ]
 
-        // todo 2. -> Imagine you are getting the above users collection from a MongoDB database. a. Create a function called signUp which allows user to add to the collection. If user exists, inform the user that he has already an account. b. Create a function called signIn which allows user to sign in to the application
+        //? 2. -> Imagine you are getting the above users collection from a MongoDB database. 
 
-        // todo 3. -> The products array has three elements and each of them has six properties. a. Create a function called rateProduct which rates the product b. Create a function called averageRating which calculate the average rating of a product.
+            //? a. Create a function called signUp which allows user to add to the collection. If user exists, inform the user that he has already an account. 
 
-        // todo 4. ->  Create a function called likeProduct. This function will helps to like to the product if it is not liked and remove like if it was liked.
+                function signUp(user) {
+                    const userCollection = {
+                        Selim: {},
+                    };
+                    if ( userCollection.hasOwnProperty(user) ) {
+                        return 'User already have an account!'
+                    } else {
+                        userCollection[user] = {};
+                    }
+                    return userCollection;
+                }
+                // console.log( signUp('Selim') ); // -> User already have an account!
+                // console.log( signUp('Salim') ); // -> {Selim: {…}, Salim: {…}}
+
+            //?  b. Create a function called signIn which allows user to sign in to the application.
+
+                function signIn(user) {
+                    const allowedUsers = {
+                        Selim: {},
+                        Salim: {},
+                    };
+                    if ( !allowedUsers.hasOwnProperty(user) ) {
+                        return 'You are not allowed for the sign in to application!'
+                    } else {
+                        return 'You have successfully sign in into the application!'
+                    }
+                }
+                // console.log( signIn('Halim') ); // -> You are not allowed for the sign in to application!
+                // console.log( signIn('Selim') ); // -> You have successfully sign in into the application!
+
+        //? 3. -> The products array has three elements and each of them has six properties. 
+        
+            //? a. Create a function called rateProduct which rates the product.
+
+                function userIdGenerator() {
+                    let randomUserId = []
+                    const letters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMOPQRSTUVWXYZ';
+                    const randomChar = letters.split("")
+                    const randomNumber = Math.floor( Math.random() * (12345678) );
+                    randomUserId = randomNumber.toString(36);
+                    randomUserId += randomChar[parseInt(Math.random(10) * 51)]
+                    if (randomUserId.length < 6) {
+                        randomUserId += randomChar[parseInt(Math.random(10) * 51)]
+                    }
+                    return randomUserId
+                }
+                
+                function rateProduct (name, rate) {
+                    const proName = name.toLowerCase();
+                    const newRating = { userId: userIdGenerator(), rate: rate };
+                    const matchingProducts = [];
+                    for (let i = 0; i < products.length; i++) {
+                        if ( products[i].name.toLowerCase().includes(proName) && rate >= 1 && rate <= 5 ) {
+                            matchingProducts.push(i);
+                        }
+                    }
+                    if (matchingProducts.length === 0) {
+                        return 'Product name not found or your rating is below 1 or above 5!';
+                    }
+                    for (let i = 0; i < matchingProducts.length; i++) {
+                        products[matchingProducts].ratings.unshift(newRating);
+                    }
+                    return 'Rating added successfully';
+                } 
+                // console.log( rateProduct('mobile phone', 3) ); 
+                // console.log( products[0].ratings[0] ); // -> {userId: 'olc4uE', rate: 3}
+            
+            //? b. Create a function called averageRating which calculate the average rating of a product.
+
+                function averageRating(product) {
+                    let sum = 0;
+                    if (product.ratings.length === 0) {
+                        return 0;
+                    } else {
+                        for (let i = 0; i < product.ratings.length; i++) {
+                            sum += product.ratings[i].rate;
+                        }
+                        return sum / product.ratings.length;
+                    }
+                }
+                // console.log(averageRating(products[0])); // -> 4.166666666666667
+
+        //? 4. ->  Create a function called likeProduct. This function will helps to like to the product if it is not liked and remove like if it was liked.
+            
+                function likeProduct(productId, userId) {
+                    let productLiked = false;
+
+                    for (let i = 0; i < products.length; i++) {
+                        if (products[i]._id === productId) {
+                            if (products[i].likes.includes(userId)) {
+                                products[i].likes.splice(products[i].likes.indexOf(userId), 1);
+                                productLiked = false;
+                            } else {
+                                products[i].likes.push(userId);
+                                productLiked = true;
+                            }
+                            break;
+                        }
+                    }
+
+                    if (productLiked) {
+                        return 'Product liked.';
+                    } else {
+                        return 'Product unliked.';
+                    }
+                }
+                // console.log( products[1].likes ) // -> ['fg12cy']
+                // console.log( likeProduct( 'aegfal', 'fg12cy' ) ); // -> Product unliked.
+                // console.log( products[1].likes ); // -> []
+                // console.log( likeProduct( 'aegfal', userIdGenerator() ) ); // -> Product liked.
+                // console.log( products[1].likes ) // -> ['5umg9T']
 
 //! 🎉 CONGRATULATIONS ! 🎉

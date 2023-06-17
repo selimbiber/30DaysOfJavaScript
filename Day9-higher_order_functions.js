@@ -160,9 +160,9 @@
             // evenNumbers.forEach(number => sum+=number );
             // console.log(sum); // -> 20
 
-            const countries = ['Finland', 'Denmark', 'Sweden', 'Norway', 'Iceland'];
+            // const europeanCountries = ['Finland', 'Denmark', 'Sweden', 'Norway', 'Iceland'];
 
-            // countries.forEach( (country) => console.log( country.toUpperCase() ) );
+            // europeanCountries.forEach( (country) => console.log( country.toUpperCase() ) );
             // -> FINLAND DENMARK SWEDEN NORWAY ICELAND
             
     //* map: Bir dizi elemanını yinelemek ve dizi öğelerini değiştirmek. callback fonksiyonla birlikte "elements", "index" yeni bir diziyi parametre olarak alabilir.
@@ -176,7 +176,7 @@
         // const numbersSquare = numbers.map( (num) => num * num );
         // console.log(numbersSquare); // -> (5) [1, 4, 9, 16, 25]
 
-        const randomNames = ['Ali', 'Veli', 'Hasan', 'Mustafa'];
+        // const randomNames = ['Ali', 'Veli', 'Hasan', 'Mustafa'];
 
         // const namesToUpperCase = randomNames.map ( (name) => name.toUpperCase() );
         // console.log(namesToUpperCase); // -> (4) ['ALI', 'VELI', 'HASAN', 'MUSTAFA']
@@ -249,12 +249,12 @@
         // console.log(sum); // -> 15
 
         const sum = numbers.reduce( (acc,cur) => acc+cur, 5 );
-        console.log(sum); // -> 20
+        // console.log(sum); // -> 20
 
     //* every: Tüm elemanların tek bir açıdan benzer olup olmadığını kontrol eder. Booelan türünde geri dönüş yapar.
 
-        const areAllStr = randomNames.every( (name) => typeof name === 'string' );
-        console.log(areAllStr); // -> true
+        // const areAllStr = randomNames.every( (name) => typeof name === 'string' );
+        // console.log(areAllStr); // -> true
 
         const randomArray = [
             1,
@@ -262,32 +262,32 @@
             'Selim'
         ]
         const areAllNum = randomArray.every( (areAllNum) => typeof areAllNum === 'number' );
-        console.log(areAllNum); // -> false
+        // console.log(areAllNum); // -> false
 
         const trueBools = [true, true, true]
 
         const areAllTrue = trueBools.every( (element) => element === true );
-        console.log(areAllTrue); // -> true
+        // console.log(areAllTrue); // -> true
 
     //* find: İstenilen koşulu karşılayan ilk elemanı geri döndürür.
 
         const ages = [24, 22, 25, 32, 35, 18]
         const age = ages.find( (age) => age >= 23 );
-        console.log(age); // -> 24
+        // console.log(age); // -> 24
 
-        const name = randomNames.find( (name) => name.length > 5 );
-        console.log(name); // -> Mustafa
+        // const name = randomNames.find( (name) => name.length > 5 );
+        // console.log(name); // -> Mustafa
 
         const score = scores.find( (user) => user.score < 90 );
-        console.log(score); // -> {name: 'Ucuncu', score: 80}
+        // console.log(score); // -> {name: 'Ucuncu', score: 80}
 
     //* findIndex: koşulu karşılayan ilk elemanın index değerini döndürür.
 
-        const nameIndex = randomNames.findIndex( (name) => name.length > 5 );
-        console.log(nameIndex); // -> 3
+        // const nameIndex = randomNames.findIndex( (name) => name.length > 5 );
+        // console.log(nameIndex); // -> 3
 
         const ageIndex = ages.findIndex( (age) => age < 24 );
-        console.log(ageIndex); // -> 1
+        // console.log(ageIndex); // -> 1
 
     //* some: Dizinin en az bir öğesinin sağlanan ölçütü karşılayıp karşılamadığını belirlemek için kullanılır.
 
@@ -299,17 +299,17 @@
             {},
         ]
         const areAllObj = objects.some( (nesne) => typeof nesne === 'string' ); // -> are all objects?
-        console.log(areAllObj); // -> false
+        // console.log(areAllObj); // -> false
 
     //* sort: sort fonksiyonu, bir diziyi, öğelerini dizelere dönüştürerek ve bu dizeleri Unicode kod karakterleri sırasına göre karşılaştırarak (diziyi alfabetik olarak sıralar) sıralamanıza olanak tanır. Yeni bir dizi oluşturmadan eldeki olan diziyi düzenler.
         
         // String değerleri sıralama:
-        console.log( randomNames.sort() ); // -> (4) ['Ali', 'Hasan', 'Mustafa', 'Veli']
+        // console.log( randomNames.sort() ); // -> (4) ['Ali', 'Hasan', 'Mustafa', 'Veli']
 
         // Number değerleri sıralamak ise o kadar basit değil. Sıralama yöntemini doğrudan bir sayı dizisine uygularsak, beklenmedik bir sonuç göreceğiz:
 
         const randomNumbers = [9.81, 3.14, 100, 37]
-        console.log( randomNumbers.sort() ); // -> (4) [100, 3.14, 37, 9.81]
+        // console.log( randomNumbers.sort() ); // -> (4) [100, 3.14, 37, 9.81]
 
         /*
             Sayısal değerleri artan veya azalan düzende sıralamak için, sıralama kriterini belirleyen bir fonksiyon kullanmamız gerekir. Sıralama yöntemi neyse ki negatif, sıfır ve pozitif değerleri doğru sırada sıralayabilir. Sort() methodu iki değeri karşılaştırdığında, değerleri karşılaştırma fonksiyonuna gönderir ve döndürülen değere göre sıralar.
@@ -324,14 +324,14 @@
             randomNumbers.sort(function (a, b) {
                 return a-b;
             })
-            console.log(randomNumbers); // -> (4) [3.14, 9.81, 37, 100]
+            // console.log(randomNumbers); // -> (4) [3.14, 9.81, 37, 100]
 
             // tersinden sıralamak istersek:
 
             randomNumbers.sort(function (a, b) {
                 return b-a;
             })
-            console.log(randomNumbers); // -> (4) [100, 37, 9.81, 3.14]
+            // console.log(randomNumbers); // -> (4) [100, 37, 9.81, 3.14]
 
         // Array nesnelerini sıralamak: Bir dizideki nesneleri sıraladığımız zaman karşılaştırmak için key objesini kullanırız.
 
@@ -354,7 +354,7 @@
             if (a.key > b.key) return 1
             return 0
         })
-        console.log(someCountries); 
+        // console.log(someCountries); 
         // -> (11) ['Albania', 'Bolivia', 'Canada', 'Denmark', 'Ethiopia', 'Finland', 'Germany', 'Hungary', 'Ireland', 'Japan', 'Kenya']
 
 //! 💻 Exercises
@@ -362,96 +362,320 @@
     //* Exercises: Level 1
 
     const northCountries = ['Finland', 'Sweden', 'Denmark', 'Norway', 'IceLand']
-    const someNames = ['Asabeneh', 'Mathias', 'Elias', 'Brook']
+    const someNames = ['Hasan', 'Ali', 'Veli', 'Mustafa']
     const firstNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     const products = [
         { product: 'banana', price: 3 },
         { product: 'mango', price: 6 },
         { product: 'potato', price: ' ' },
         { product: 'avocado', price: 8 },
-        { product: 'coffee', price: 10 },
+        { product: 'milk', price: 10 },
         { product: 'tea', price: '' },
     ]
 
         //? 1. -> Explain the difference between forEach, map, filter, and reduce.
 
             /*
+                forEach() fonksiyonu ile bir dizideki tüm elemanlara kolaylıkla dolaşabiliriz.
+                forEach() fonksiyonu Array nesnesi yani bir dizi üzerinden çağrılmalıdır.
+                forEach() fonksiyonuna gönderdiğimiz callback fonksiyonu dizideki her bir elemana ulaşıldığında çağrılır.
 
+                map() fonksiyonu, kendisine parametre olarak gönderilen diziye herhangi bir müdahalede bulunmaz. O dizinin her elemanını belli bir işleme tabi tutarak yeni bir dizi meydana getirir.
+
+                filter() fonksiyonu, bir dizi içerisinden birden fazla elemanı olan bir liste döndüreceksek kullanılabilir, lakin eğer belirlediğimiz koşula göre tek bir elemanı istiyorsak o zaman find() fonksiyonu kullanılabilir.
+
+                reduce() fonksiyonu, verilen bir koşula göre diziden tek bir eleman almak için kullanılır. En yüksek değerli elemanı alma, elemanların toplamını bulma gibi işlemlerde kullanılabilir. 
             */
 
         //? 2. -> Define a callback function before you use it in forEach, map, filter or reduce.
 
+            // function callback(element, index, array) {
+
+            // }
+
         //? 3. -> Use forEach to console.log each country in the northCountries array.
+
+            // northCountries.forEach( country => console.log(country) );
+            // -> Finland Sweden Denmark Norway Iceland
 
         //? 4. -> Use forEach to console.log each name in the someNames array.
 
+            // someNames.forEach( name => console.log(name) );
+            // -> Hasan Ali Veli Mustafa
+
         //? 5. -> Use forEach to console.log each number in the firstNumbers array.
+
+            // firstNumbers.forEach( num => console.log(num) );
+            // -> 1 2 3 4 5 6 7 8 9 10
 
         //? 6. -> Use map to create a new array by changing each country to uppercase in the northCountries array.
 
+            // let bigCountries = northCountries.map( country => country.toUpperCase() ); console.log(bigCountries);
+            // -> (5) ['FINLAND', 'SWEDEN', 'DENMARK', 'NORWAY', 'ICELAND']
+
         //? 7. -> Use map to create an array of countries length from northCountries array.
+
+            // countriesLengths = northCountries.map( country => country.length ); console.log(countriesLengths);
+            // -> (5) [7, 6, 7, 6, 7]
 
         //? 8. -> Use map to create a new array by changing each number to square in the firstNumbers array.
 
+            // let squareOfNumbers =  firstNumbers.map( num => num * num ); console.log(squareOfNumbers);
+            // -> (10) [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+
         //? 9. -> Use map to change to each name to uppercase in the someNames array.
+
+            // let bigNames = someNames.map ( name => name.toUpperCase() ); console.log(bigNames);
+            // -> (4) ['HASAN', 'ALI', 'VELI', 'MUSTAFA']
 
         //? 10. -> Use map to map the products array to its corresponding prices.
 
+            // products.map( product => console.log( product.product + " = " + product.price ) );
+            // -> banana = 3 | mango = 6 | potato | avocado = 8 | milk = 10 | tea =
+
         //? 11. -> Use filter to filter out northCountries containing land.
+
+            let containingLand = northCountries.filter( country => country.includes('land') );
+            // console.log(containingLand); // -> ['Finland']
 
         //? 12. -> Use filter to filter out northCountries having six character.
 
+            let sixCharCountry = northCountries.filter( country => country.length === 6 );
+            // console.log(sixCharCountry); // -> (2) ['Sweden', 'Norway']
+
         //? 13. -> Use filter to filter out northCountries containing six letters and more in the country array.
+
+            // northCountries.filter( country => console.log(country.length >= 6) ); // -> 5 True
 
         //? 14. -> Use filter to filter out country start with 'E';
 
+            // northCountries.filter( country => console.log( country.startsWith('E') ) ); // -> 5 False
+
         //? 15. -> Use filter to filter out only prices with values.
+
+            let onlyPricesWithValues = products.filter( product => typeof product.price === 'number');
+            // console.log(onlyPricesWithValues); // -> (4) [{…}, {…}, {…}, {…}]
 
         //? 16. -> Declare a function called getStringLists which takes an array as a parameter and then returns an array only with string items.
 
+            const someRandomTypesArray = [1, true, null, undefined, {}, [], 'Selim', 'Biber']
+        
+            function getStringsLists(array) {
+                return array.filter( item => typeof item === 'string' );
+            }; 
+            // console.log( getStringsLists(someRandomTypesArray) ); // -> (2) ['Selim', 'Biber']
+
         //? 17. -> Use reduce to sum all the numbers in the firstNumbers array.
 
-        //? 18. -> Use reduce to concatenate all the northCountries and to produce this sentence: Estonia, Finland, Sweden, Denmark, Norway, and IceLand are north European countries.
+            // let firstNumbersSum = firstNumbers.reduce( num => num + num ); console.log(firstNumbersSum);
+            // -> 512
+
+        //? 18. -> Use reduce to concatenate all the northCountries and to produce this sentence: Finland, Sweden, Denmark, Norway, and IceLand are north European countries.
+
+            function createSentence(northCountries) {
+                let endCountry = northCountries.splice(-1);
+                let joinCountries = northCountries.reduce( (sentence, country) => sentence + ", " + country)
+                let sentence = joinCountries + ", and " + endCountry + " are north European countries."
+                return sentence;
+            } 
+            // console.log(createSentence(northCountries) ); 
+            // -> Finland, Sweden, Denmark, Norway, and IceLand are north European countries.
 
         //? 19. -> Explain the difference between some and every.
 
             /*
-
+                some() fonksiyonu bir dizi içinden istediğimiz herhangi bir değerin bulunup bulunmadığını kontrol eder ve bir tane bile varsa true değerini döndürür aksi halde de false değeri döndürür. Lakin every() fonksiyonu ise istediğimiz değerin dizinin tamamında mevcut olup olmadığını kontrol eder ve buna göre yine Boolean bir ifade döndürür.
             */
 
         //? 20. -> Use some to check if some names' length greater than seven in someNames array.
 
+            // console.log(someNames.some( name => name.length > 7 )) // -> false
+
         //? 21. -> Use every to check if all the northCountries contain the word land.
+
+            // console.log(northCountries.some( country => country.includes('land') ) ); // -> true
 
         //? 22. -> Explain the difference between find and findIndex.
 
+            /*
+                find() fonksiyonu ile bir dizinin içinden belirlediğimiz koşula uyan ilk elemanı bulabiliriz. 
+                findIndex() fonksiyonu ise bize bir dizinin içinden belirlediğimiz koşula uyan ilk elemanın Index numarasını dönüş yapar.
+            */
+
         //? 23. -> Use find to find the first country containing only six letters in the northCountries array.
+
+            // console.log(northCountries.find( firstCountry => firstCountry.length === 6 ) ); // -> Sweden
 
         //? 24. -> Use findIndex to find the position of the first country containing only six letters in the northCountries array.
 
+            // console.log(northCountries.findIndex( firstCountryIndex => firstCountryIndex.length === 6 ) ); // -> 1
+
         //? 25. -> Use findIndex to find the position of Norway if it doesn't exist in the array you will get -1.
 
+            // console.log(northCountries.findIndex( findNorwayIndex => findNorwayIndex.includes('Norway') ) ); // -> 3
+
         //? 26. -> Use findIndex to find the position of Russia if it doesn't exist in the array you will get -1.
+
+            // console.log(northCountries.findIndex( findRussiaIndex => findRussiaIndex.includes('Russia') ) ); // -> -1
 
     //* Exercises: Level 2
 
         //? 1. -> Find the total price of products by chaining two or more array iterators( eg. arr.map(callback).filter(callback).reduce(callback) )
 
+        function totalPrice(products) {
+            let prices = products.map( product => product.price );
+            let notEmptyPrices = prices.filter( onlyNumbers => typeof onlyNumbers === 'number' )
+            let totalPriceOfProducts = notEmptyPrices.reduce( (sum, prices) => sum + prices )
+            return totalPriceOfProducts;
+        }; 
+        // console.log( totalPrice(products) ); // -> 27
+
         //? 2. -> Find the sum of price of products using only reduce reduce(callback) )
 
-        //? 3. -> Declare a function called categorizeCountries which returns an array of northCountries which have some common pattern(you find the northCountries array in this repository as countries.js(eg 'land', 'ia', 'island','stan')).
+            let sumOfPrices = products.reduce( (total, product) => {
+                if ( typeof product.price === 'number' && !isNaN(product.price) ) {
+                    return total + product.price;
+                } else {
+                    return total;
+                }
+            }, 0); 
+            // console.log(sumOfPrices); // -> 27
+
+        //? 3. -> Declare a function called categorizeCountries which returns an array of countries which have some common pattern(you find the countries array in this repository as countries.js(eg 'land', 'ia', 'island','stan')).
+
+            const categorizeCountries = (commonPatterns) => {
+                return commonPatterns.filter( country => country.includes('land') || country.includes('ia'))
+            }; 
+            // console.log(categorizeCountries(countries)); 
+            // -> (5) ['Albania', 'Bolivia', 'Ethiopia', 'Finland', 'Ireland']
 
         //? 4. -> Create a function which return an array of objects, which is the letter and the number of times the letter use to start with a name of a country.
 
+            // -> ChatGPT solution:
+
+            function countCountryLetters(countries) {
+                const counts = {};
+                for (const country of countries) {
+                  const letter = country.charAt(0).toUpperCase();
+                  counts[letter] = (counts[letter] || 0) + 1;
+                }
+                return Object.entries(counts).map(([letter, count]) => ({ letter, count }));
+            }; 
+            // console.log( countCountryLetters(countries) ); // -> (11) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}] -> {letter: 'A', count: 1} etc.
+
         //? 5. -> Declare a getFirstTenCountries function and return an array of ten countries. Use different functional programming to work on the countries.js array.
+
+            function getFirstTenCountries(countries) {
+                return countries.filter( index => countries.indexOf(index)<10 )
+            }; 
+            // console.log( getFirstTenCountries(countries) );
+            // -> (10) ['Albania', 'Bolivia', 'Canada', 'Denmark', 'Ethiopia', 'Finland', 'Germany', 'Hungary', 'Ireland', 'Japan']
 
         //? 6. -> Declare a getLastTenCountries function which which returns the last ten countries in the countries array.
 
+            function getLastTenCountries(countries) {
+                return countries.filter( index => countries.indexOf(index)>0 )
+            }; 
+            // console.log( getLastTenCountries(countries) );
+            // -> (10) ['Bolivia', 'Canada', 'Denmark', 'Ethiopia', 'Finland', 'Germany', 'Hungary', 'Ireland', 'Japan', 'Kenya']
+
         //? 7. -> Find out which letter is used many times as initial for a country name from the countries array (eg. Finland, Fiji, France etc).
+
+            // -> ChatGPT Solution:
+
+            const worldCountries = ["Finland", "Fiji", "France", "Germany", "Greece", "Hungary", "Italy", "Japan", "Jamaica", "Kenya", "Liberia", "Mexico", "Nigeria", "Norway", "Pakistan", "Panama", "Qatar", "Russia", "Romania", "Spain", "Sweden", "Switzerland", "Thailand", "Turkey", "Ukraine", "United Kingdom", "United States", "Venezuela", "Vietnam", "Yemen", "Zimbabwe"];
+
+            const initialCounts = {};
+
+            // count initial letters
+            for (const country of worldCountries) {
+                const initial = country.charAt(0).toUpperCase();
+                initialCounts[initial] = (initialCounts[initial] || 0) + 1;
+            }
+
+            // get highest count
+            let highestCount = 0;
+            let mostCommonInitial = "";
+            for (const initial in initialCounts) {
+                if (initialCounts[initial] > highestCount) {
+                    highestCount = initialCounts[initial];
+                    mostCommonInitial = initial;
+                }
+            }
+
+            // console.log(`The letter "${mostCommonInitial}" is used most often as initial for a country name, with ${highestCount} occurrences.`);
+            // -> The letter "F" is used most often as initial for a country name, with 3 occurrences.
 
     //* Exercises: Level 3
         
-        //? 1. -> Use the countries information, in the data folder. Sort countries by name, by capital, by population.
+        //? 1. -> Use the randomCountries information. Sort countries by name, by capital, by population.
+
+        const randomCountries = [
+            {
+              name: 'Afghanistan',
+              capital: 'Kabul',
+              languages: ['Pashto', 'Uzbek', 'Turkmen'],
+              population: 27657145,
+              flag: 'https://restcountries.eu/data/afg.svg',
+              currency: 'Afghan afghani'
+            },
+            {
+              name: 'Belgium',
+              capital: 'Brussels',
+              languages: ['Dutch', 'French', 'German'],
+              population: 11319511,
+              flag: 'https://restcountries.eu/data/bel.svg',
+              currency: 'Euro'
+            },
+            {
+              name: 'China',
+              capital: 'Beijing',
+              languages: ['Chinese'],
+              population: 1377422166,
+              flag: 'https://restcountries.eu/data/chn.svg',
+              currency: 'Chinese yuan'
+            },
+            {
+              name: 'Germany',
+              capital: 'Berlin',
+              languages: ['German'],
+              population: 81770900,
+              flag: 'https://restcountries.eu/data/deu.svg',
+              currency: 'Euro'
+            },
+            {
+              name: 'Myanmar',
+              capital: 'Naypyidaw',
+              languages: ['Burmese'],
+              population: 51419420,
+              flag: 'https://restcountries.eu/data/mmr.svg',
+              currency: 'Burmese kyat'
+            },
+            {
+              name: 'Turkey',
+              capital: 'Ankara',
+              languages: ['Turkish'],
+              population: 78741053,
+              flag: 'https://restcountries.eu/data/tur.svg',
+              currency: 'Turkish lira'
+            },
+        ]
+
+            // -> Sort by Name of Countries:
+
+                // let countriesNames = randomCountries.map( country => country.name );
+                // countriesNames.forEach( name => console.log(name)  );
+                // -> Afghanistan Belgium China Germany Myanmar Turkey
+
+            // -> Sort by Capital of Countries:
+
+                // let countriesCapitals = randomCountries.forEach( country => console.log( country.capital) );
+                // -> Kabul Brussels Beijing Berlin Naypyidaw Ankara
+
+            // -> Sort by Population of Countries:
+
+                // let countriesPopulations = randomCountries.forEach( country => console.log( country.population) );
+                // -> 27657145 11319511 1377422166 81770900 51419420 78741053
 
         //? 2. -> *** Find the 10 most spoken languages:
 
@@ -480,7 +704,28 @@
                 ]
             */
 
-        //? 3. -> *** Use countries_data.js file create a function which create the ten most populated countries
+                // ChatGPT Solution:
+
+                function mostSpokenLanguages(countries, numLanguages) {
+                    let languageCount = {};
+                    countries.forEach((country) => {
+                        country.languages.forEach((language) => {
+                            if (languageCount.hasOwnProperty(language.name)) {
+                                languageCount[language.name] += 1;
+                            } else {
+                                languageCount[language.name] = 1;
+                            }
+                        });
+                    });
+                    let topLanguages = Object.entries(languageCount).sort((a, b) => b[1] - a[1]).slice(0, numLanguages);
+                        return topLanguages.map((language) => {
+                        return { country: language[0], count: language[1] };
+                    });
+                }
+    
+                // console.log(mostSpokenLanguages(randomCountries, 10));
+
+        //? 3. -> *** Use randomCountries array and create a function which create the ten most populated countries
 
             /*
                 console.log(mostPopulatedCountries(countries, 10))
@@ -505,6 +750,22 @@
                 {country: 'United States of America', population: 323947000}
                 ]
             */
+
+                // function mostPopulatedCountries(countries) {
+                //     let sortedCountries = countries.sort( (a, b) => b.population - a.population)
+                //     return sortedCountries.slice(0, 10);
+                // }; console.log([
+                //     {country: 'China', population: 1377422166},
+                //     {country: 'India', population: 1295210000},
+                //     {country: 'United States of America', population: 323947000},
+                //     {country: 'Indonesia', population: 258705000},
+                //     {country: 'Brazil', population: 206135893},
+                //     {country: 'Pakistan', population: 194125062},
+                //     {country: 'Nigeria', population: 186988000},
+                //     {country: 'Bangladesh', population: 161006790},
+                //     {country: 'Russian Federation', population: 146599183},
+                //     {country: 'Japan', population: 126960000}
+                // ])
 
         //? 4. -> ** Try to develop a program which calculate measure of central tendency of a sample(mean, median, mode) and measure of variability(range, variance, standard deviation). In addition to those measures find the min, max, count, percentile, and frequency distribution of the sample. You can create an object called statistics and create all the functions which do statistical calculations as method for the statistics object. Check the output below.
 

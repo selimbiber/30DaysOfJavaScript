@@ -76,11 +76,11 @@
     // Destructuring Object | Objeye Destructuring işlemi yapma
         /* Destruct işleminde kullandığımız değişkenin adı, nesnenin anahtarı veya özelliği ile tamamen aynı olmalıdır */
         
-        const rectangle = {
-            width: 20,
-            height: 10,
-            area: 200
-        }
+        // const rectangle = {
+        //     width: 20,
+        //     height: 10,
+        //     area: 200
+        // }
 
         // let {width, height, area, perimeter} = rectangle;
         // console.log(width, height, area, perimeter); // -> 20 10 200 undefined
@@ -92,17 +92,17 @@
 
         //! Dipnot: Eğer anahtar nesnede bulunmazsa, değişken tanımsız olarak atanır. Anahtar nesnede olmadığında bildirim sırasında varsayılan bir değer verilebilir. 
 
-        let {width, height, area, perimeter = 60} = rectangle;
-        console.log(width, height, area, perimeter); // -> 20 10 200 60
+        // let {width, height, area, perimeter = 60} = rectangle;
+        // console.log(width, height, area, perimeter); // -> 20 10 200 60
 
     // Object parameter without destructuring | Destructuring olmadan obje parametresi
         //! Bir dikdörtgen nesnesi alan ve bir dikdörtgenin çevresini döndüren bir fonksiyon oluşturalım.
 
             // Destructuring yok
-            const rect = {
-                width: 20,
-                height: 10
-            }
+            // const rect = {
+            //     width: 20,
+            //     height: 10
+            // }
 
             // const calculatePerimeter = rectangle => {
             //     return 2 * (rectangle.width + rectangle.height)
@@ -111,9 +111,9 @@
     
     // Object parameter with destructuring | Destructuring ile obje parametresi
     
-        const calculatePerimeter = ( {width, height} ) => {
-            return 2 * (width + height);
-        }; console.log( calculatePerimeter(rect) ); // -> 60
+        // const calculatePerimeter = ( {width, height} ) => {
+        //     return 2 * (width + height);
+        // }; console.log( calculatePerimeter(rect) ); // -> 60
 
         //* person nesnesi hakkında destructuring kullanarak bilgi veren bir fonksiyon oluşturalım
 
@@ -154,19 +154,19 @@
 
         const todoList = [
             {
-            task:'Prepare JS Test',
-            time:'4/1/2020 8:30',
-            completed:true
+                task:'Prepare JS Test',
+                time:'4/1/2020 8:30',
+                completed:true
             },
             {
-            task:'Give JS Test',
-            time:'4/1/2020 10:00',
-            completed:false
+                task:'Give JS Test',
+                time:'4/1/2020 10:00',
+                completed:false
             },
             {
-            task:'Assess Test Result',
-            time:'4/1/2020 1:00',
-            completed:false
+                task:'Assess Test Result',
+                time:'4/1/2020 1:00',
+                completed:false
             }
         ]
 
@@ -240,8 +240,261 @@
 
     //*Exercises: Level 1
 
+        const constants = [2.72, 3.14, 9.81, 37, 100]
+        const norCountries = ['Finland', 'Estonia', 'Sweden', 'Denmark', 'Norway']
+        const theRectangle = {
+            width: 20,
+            height: 10,
+            area: 200,
+            perimeter: 60
+        }
+        const users = [
+            {
+                name:'Brook',
+                scores:75,
+                skills:['HTM', 'CSS', 'JS'],
+                age:16
+            },
+            {
+                name:'Alex',
+                scores:80,
+                skills:['HTM', 'CSS', 'JS'],
+                age:18
+            },
+            {
+                name:'David',
+                scores:75,
+                skills:['HTM', 'CSS'],
+                age:22
+            },
+            {
+                name:'John',
+                scores:85,
+                skills:['HTML'],
+                age:25
+            },
+            {
+                name:'Sara',
+                scores:95,
+                skills:['HTM', 'CSS', 'JS'],
+                age: 26
+            },
+            {
+                name:'Martha',
+                scores:80,
+                skills:['HTM', 'CSS', 'JS'],
+                age:18
+            },
+            {
+                name:'Thomas',
+                scores:90,
+                skills:['HTM', 'CSS', 'JS'],
+                age:20
+            }
+        ]
+    
+        //? 1. -> Destructure and assign the elements of constants array to e, pi, gravity, humanBodyTemp, waterBoilingTemp.
+
+            const [e, pi, gravity, humanBodyTemp, waterBoilingTemp] = constants;
+            console.log(e, pi, gravity, humanBodyTemp, waterBoilingTemp); // -> 2.72 3.14 9.81 37 100
+
+        //? 2. -> Destructure and assign the elements of norCountries array to fin, est, sw, den, nor.
+
+            const [fin, est, sw, den, nor] = norCountries;
+            console.log(fin, est, sw, den, nor); // -> Finland Estonia Sweden Denmark Norway
+
+        //? 3. -> Destructure the theRectangle object by its properties or keys.
+
+            const {width, height, area, perimeter} = theRectangle;
+            console.log(width, height, area, perimeter); // => 20 10 200 60
+
     //*Exercises: Level 2
+
+        //? 1. -> Iterate through the users array and get all the keys of the object using destructuring.
+
+            for (const {name, scores, skills, age} of users) {
+                console.log(`
+                Name: ${name}, 
+                Scores: ${scores},
+                Skills: ${skills}.
+                Age: ${age}
+                `);
+            };
+
+            /* OUTPUT:
+
+                Name: Brook, 
+                Scores: 75,
+                Skills: HTM,CSS,JS.
+                Age: 16
+
+                Name: Alex, 
+                Scores: 80,
+                Skills: HTM,CSS,JS.
+                Age: 18
+
+                Name: David, 
+                Scores: 75,
+                Skills: HTM,CSS.
+                Age: 22
+
+                Name: John, 
+                Scores: 85,
+                Skills: HTML.
+                Age: 25
+
+                Name: Sara, 
+                Scores: 95,
+                Skills: HTM,CSS,JS.
+                Age: 26
+
+                Name: Martha, 
+                Scores: 80,
+                Skills: HTM,CSS,JS.
+                Age: 18
+
+                Name: Thomas, 
+                Scores: 90,
+                Skills: HTM,CSS,JS.
+                Age: 20
+            */
+
+        //? 2. -> Find the persons who have less than two skills.
+
+            const lessThanTwoSkills = users.filter((user) => {
+                return user.skills.length < 2
+            }); console.log(lessThanTwoSkills); // -> 0 {name: 'John', scores: 85, skills: Array(1), age: 25}
     
     //*Exercises: Level 3
+
+        //? 1. -> Destructure the countries object print name, capital, population and languages of all countries.
+
+            for (const {name, capital, population, languages} of allCountries) {
+                console.log(`
+                Name: ${name}
+                Capital: ${capital}
+                Population: ${population}
+                Languages: ${languages}
+                `);
+            };
+
+            /* An example from output:
+
+                Name: Turkey
+                Capital: Ankara
+                Population: 78741053
+                Languages: Turkish
+            */
+
+        //? 2. -> A junior developer structure student name, skills and score in array of arrays which may not easy to read. Destructure the following array name to name, skills array to skills, scores array to scores, JavaScript score to jsScore and React score to reactScore variable in one line.
+
+            // const student = ['David', ['HTML', 'CSS', 'JS', 'React'], [96, 85, 90, 95]]
+            // console.log(name, skills, jsScore, reactScore); // -> David (4) ["HTML", "CSS", "JS", "React"] 90 95
+
+                // const [ Name, Skills, [htmlScore, cssScore, jsScore, reactScore] ] = student;
+                // console.log(`
+                // Name: ${Name} 
+                // Skills: ${Skills}
+                // HTML Score: ${htmlScore}, CSS Score: ${cssScore}, JS Score: ${jsScore}, React Score: ${reactScore}`);
+
+                /* OUTPUT:
+
+                    Name: David 
+                    Skills: HTML,CSS,JS,React
+                    HTML Score: 96, CSS Score: 85, JS Score: 90, React Score: 95
+                */
+
+        //? 3. -> Write a function called convertArrayToObject which can convert the array to a structure object.
+
+            const students = [
+                    ['David', ['HTM', 'CSS', 'JS', 'React'], [98, 85, 90, 95]],
+                    ['John', ['HTM', 'CSS', 'JS', 'React'], [85, 80, 85, 80]]
+            ]
+            
+                // console.log(convertArrayToObject(students))
+                // [
+                //     {
+                //         name: 'David',
+                //         skills: ['HTM','CSS','JS','React'],
+                //         scores: [98,85,90,95]
+                //     },
+                //     {
+                //         name: 'John',
+                //         skills: ['HTM','CSS','JS','React'],
+                //         scores: [85, 80,85,80]
+                //     }
+                // ]
+
+            function convertArrayToObject(array) {
+                let convertedObjs = [];
+                for (const [name, skills, scores] of array) {
+                    convertedObjs.push({name, skills, scores});
+                }
+                return convertedObjs;
+            }; console.log( convertArrayToObject(students) ); // -> (2) [{…}, {…}]
+
+            //? 3.1. -> Copy the student object to newStudent without mutating the original object. In the new object add the following.
+
+            const student = {
+                name: 'David',
+                age: 25,
+                skills: {
+                    frontEnd: [
+                        { skill: 'HTML', level: 10 },
+                        { skill: 'CSS', level: 8 },
+                        { skill: 'JS', level: 8 },
+                        { skill: 'React', level: 9 }
+                    ],
+                    backEnd: [
+                        { skill: 'Node',level: 7 },
+                        { skill: 'GraphQL', level: 8 },
+                    ],
+                    dataBase:[
+                        { skill: 'MongoDB', level: 7.5 },
+                    ],
+                    dataScience:['Python', 'R', 'D3.js']
+                }
+            }
+
+                const newStudent = {...student};
+                console.log(newStudent); // -> {name: 'David', age: 25, skills: {…}}
+
+            //? 3.2. -> Add Bootstrap with level 8 to the front end skill sets.
+            //? 3.3. -> Add Express with level 9 to the back end skill sets.
+            //? 3.4. -> Add SQL with level 8 to the data base skill sets.
+            //? 3.5. -> Add SQL without level to the data science skill sets.
+
+            // -> The copied object output should look like this:
+
+                    // {
+                    // name: 'David',
+                    // age: 25,
+                    // skills: {
+                    // frontEnd: [
+                    //         {skill: 'HTML',level: 10},
+                    //         {skill: 'CSS',level: 8},
+                    //         {skill: 'JS',level: 8},
+                    //         {skill: 'React',level: 9},
+                    //         {skill: 'BootStrap',level: 8}
+                    //     ],
+                    //     backEnd: [
+                    //         {skill: 'Node',level: 7},
+                    //         {skill: 'GraphQL',level: 8},
+                    //         {skill: 'Express',level: 9}
+                    //     ],
+                    //     dataBase: [
+                    //         { skill: 'MongoDB',level: 7.5},
+                    //         { skill: 'SQL',level: 8}
+                    //     ],
+                    //     dataScience: ['Python','R','D3.js','SQL']
+                    //     }
+                    // }
+
+                newStudent.skills.frontEnd.push({ skill: 'BootStrap', level: 8 });
+                newStudent.skills.backEnd.push({ skill: 'Express', level: 9 });
+                newStudent.skills.dataBase.push({ skill: 'SQL', level: 8 });
+                newStudent.skills.dataScience.push('SQL');
+                
+                console.log(newStudent);
 
 //! 🎉 CONGRATULATIONS ! 🎉

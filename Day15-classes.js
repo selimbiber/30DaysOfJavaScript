@@ -428,19 +428,63 @@
 
         //? 1. -> Create an Animal class. The class will have name, age, color, legs properties and create different methods.
 
+          class animal {
+            constructor(name, age, color, legs) {
+              this.name = name,
+              this.age = age,
+              this.color = color,
+              this.legs = legs 
+            }
+            bark() {
+              return 'bark! bark! bark!'
+            }
+            meow() {
+              return 'meow! meow! meow!'
+            }
+          };
+
         //? 2. -> Create a Dog and Cat child class from the Animal Class.
+
+          const dog = new animal('Bobi', 5, 'Black', 4);
+          console.log(dog); // -> animal {name: 'Bobi', age: 5, color: 'Black', legs: 4}
+          console.log( dog.bark() ); // -> bark! bark! bark!
+          const cat = new animal('Boncuk', 3, 'Yellow', 4);
+          console.log(cat); // -> animal {name: 'Boncuk', age: 3, color: 'Yellow', legs: 4}
+          console.log( cat.meow() ); // -> meow! meow! meow!
 
     // Exercises: Level 2
 
         //? 1. -> Override the method you create in Animal class.
 
+          class NewAnimal extends animal {
+            constructor (name, age, color, legs, gender, genre) {
+              super (name, age, color,legs, gender, genre)
+              this.gender = gender,
+              this.genre = genre
+            }
+          };
+
+          const bird = new NewAnimal('Bulut', 2, 'Light Blue', 2, 'Male', 'Parrot');
+          console.log(bird);
+          /* OUTPUT:
+          NewAnimal {
+            age: 2
+            color: "Light Blue"
+            gender: "Male"
+            genre: "Parrot"
+            legs: 2
+            name: "Bulut"
+            [[Prototype]]: animal
+          }
+          */
+
     // Exercises: Level 3
 
         //? 1. -> Let's try to develop a program which calculate measure of central tendency of a sample(mean, median, mode) and measure of variability(range, variance, standard deviation). In addition to those measures find the min, max, count, percentile, and frequency distribution of the sample. You can create a class called Statistics and create all the functions which do statistical calculations as method for the Statistics class. Check the output below.
 
-        /*
-            ages = [31, 26, 34, 37, 27, 26, 32, 32, 26, 27, 27, 24, 32, 33, 27, 25, 26, 38, 37, 31, 34, 24, 33, 29, 26]
+          ages = [31, 26, 34, 37, 27, 26, 32, 32, 26, 27, 27, 24, 32, 33, 27, 25, 26, 38, 37, 31, 34, 24, 33, 29, 26]
 
+        /*
             console.log('Count:', statistics.count()) // 25
             console.log('Sum: ', statistics.sum()) // 744
             console.log('Min: ', statistics.min()) // 24
@@ -469,6 +513,101 @@
             Frequency Distribution: [(20.0, 26), (16.0, 27), (12.0, 32), (8.0, 37), (8.0, 34), (8.0, 33), (8.0, 31), (8.0, 24), (4.0, 38), (4.0, 29), (4.0, 25)]
         */
 
-        //? 2. -> Create a class called PersonAccount. It has firstname, lastname, incomes, expenses properties and it has totalIncome, totalExpense, accountInfo,addIncome, addExpense and accountBalance methods. Incomes is a set of incomes and its description and expenses is also a set of expenses and its description.
+            class statistics {
+              constructor(array) {
+                this.array = array;
+              }
+              count() {
+                return this.array.length;
+              }
+              sum() {
+                 const total = this.array.reduce( (acc, cur) => acc+=cur, 0)
+                 return total;
+              }
+              min() {
+                this.array.sort( function (a, b) { return a-b } );
+                return this.array[0];
+              }
+              max() {
+                this.array.sort( function (a, b) { return b-a } );
+                return this.array[0];
+              }
+              range() {
+                let numRange = new Set(this.array);
+                return numRange.size;
+              }
+              mean() {
+                const total = this.array.reduce( (acc, cur) => acc+=cur, 0)
+                return total / this.array.length;
+              }
+              describe() {
+                return `Count: ${this.count()}\nSum: ${this.sum()}\nMin: ${this.min()}\nMax: ${this.max()}\nRange: ${this.range()}\nMean: ${this.mean()}\n`
+              }
+            }
+            let nums = new statistics(ages);
+            console.log(nums.count()); // -> 25
+            console.log(nums.sum()); // -> 744
+            console.log(nums.min()); // -> 24
+            console.log(nums.max()); // -> 38
+            console.log(nums.range()); // -> 11
+            console.log(nums.mean()); // -> 29.76
+            console.log(nums.describe());
+              /*
+                Count: 25
+                Sum: 744
+                Min: 24
+                Max: 38
+                Range: 11
+                Mean: 29.76
+              */
+
+        //? 2. -> Create a class called PersonAccount. It has firstname, lastname, incomes, expenses properties and it has totalIncome, totalExpense, accountInfo, addIncome, addExpense and accountBalance methods. Incomes is a set of incomes and its description and expenses is also a set of expenses and its description.
+
+            class PersonAccount {
+              constructor(firstname, lastname, incomes, expenses) {
+                this.firstName = firstname,
+                this.lastName = lastname,
+                this.incomes = [],
+                this.expenses = []
+              }
+              totalIncome() {
+                return this.incomes.reduce( (sum,cur) => sum+cur, 0);
+              }
+              totalExpense() {
+                return this.expenses.reduce( (sum,cur) => sum+cur, 0);
+              }
+              accountInfo() {
+                return `
+                Name: ${this.firstName} ${this.lastName},
+                Total Income: ${this.totalIncome()},
+                Total Expense: ${this.totalExpense()},
+                Account Balance: ${this.accountBalance()}.`
+              }
+              set addIncome(income) {
+                if(income > 0) {
+                  this.incomes.push(income);
+                }
+              }
+              set addExpense(expense) {
+                if(expense > 0) {
+                  this.expenses.push(expense);
+                }
+              }
+              accountBalance() {
+                return this.totalIncome() - this.totalExpense();
+              }
+            }
+            const Person_53 = new PersonAccount('Selim', 'Biber');
+            console.log(Person_53);
+            Person_53.addIncome = 5000;
+            Person_53.addIncome = 8000;
+            Person_53.addExpense = 3000;
+            console.log(Person_53.accountInfo());
+            /*
+                Name: Selim Biber,
+                Total Income: 13000,
+                Total Expense: 3000,
+                Account Balance: 10000.
+            */
 
 //! 🎉 CONGRATULATIONS ! 🎉

@@ -4,7 +4,7 @@
  *! Not: Kod bloklarını yorum satırından çıkarmak için (ctrl + k + u) kısayolunu kullanabilirsin.
 ***/
 
-/*  Topics of Day 16:
+/*  Topics of Day 17:
     
     HTML5 Web Storage
 

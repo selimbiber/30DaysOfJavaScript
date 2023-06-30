@@ -1,6 +1,6 @@
 /*** Day 17 = Web Storages
  *? https://30dayjavascript.js.org/17-day/
- *? https://tr.javascript.info/json
+ *? https://tr.javascript.info/localstorage
  *! Not: Kod bloklarını yorum satırından çıkarmak için (ctrl + k + u) kısayolunu kullanabilirsin.
 ***/
 

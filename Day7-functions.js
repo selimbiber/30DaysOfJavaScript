@@ -1098,19 +1098,21 @@
         //? 15. -> Write a function called isPrime, which checks if a number is prime number.
 
             // const isPrime = (number) => {
-                
+                    
             //     if (number < 2) {
             //         return false;
             //     } if (number == 2) {
             //         return true;
             //     } else {
             //         for (let i = 2; i <= 10; i++) {
-            //             if (number % i == 0) {
+            //             if (number === i) {
+            //                 continue;
+            //             }
+            //             else if (number % i == 0) {
             //                 return false;
-            //             } else {
-            //                 return true;
             //             }
             //         }
+            //         return true;
             //     }
             // }
             // console.log( isPrime(2) ); // -> true

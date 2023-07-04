@@ -32,11 +32,31 @@
 //! Document Object Model (DOM | Belge Nesne Modeli)
 
     /*
-        HTML belgesi JavaScript nesnesi olarak yapılandırılmıştır. Her HTML elementi farklı özelliklere sahiptir ve bunları manipüle etmek için kullanılabilir. JavaScript kullanarak HTML elementlerini almak, oluşturmak, eklemek veya kaldırmak mümkündür.
+        DOM Yapısı:
+
+        Bir HTML belgesinin omurgası etiketlerdir.
+
+        Document Object Model (DOM)’ a göre, her HTML etiketi JavaScript için bir nesnedir. İç içe geçmiş etiketlere, çevreleyen etiketin “alt öğeleri” denir.
+
+        Bir etiketin içindeki metin de bir nesnedir.
+
+        Her HTML elementi farklı özelliklere sahiptir ve bunları manipüle etmek için kullanılabilir. JavaScript kullanarak HTML elementlerini almak, oluşturmak, eklemek veya kaldırmak mümkündür.
 
         JavaScript ile HTML elementi seçmek, CSS ile seçmek ile benzerdir. HTML elementini seçmek için etiket adı, id, sınıf adı veya diğer öznitelikler kullanılır.
 
         document nesnesi sayfa içeriğine erişimi sağlar. Sayfada herhangi bir şeyi değiştirebilir ya da oluşturabiliriz.
+        
+        Bir HTML / XML belgesi tarayıcının içinde DOM ağacı olarak temsil edilir.
+
+        Etiketler eleman düğümleri haline gelir ve yapıyı oluşturur.
+
+        Metin, metin düğümleri haline gelir.
+
+        HTML’deki her şey, hatta yorumlar da DOM’da vardır.
+
+        Özetle: DOM, web geliştirme süreçlerinde büyük öneme sahiptir ve web sayfalarının dinamik fonksiyonlarının birçok yönünü kontrol etmek için kullanılabilir. DOM, programcılar için esnek bir arayüz sunarak, web sayfalarının görünümünü ve tepkisini yönetmelerine kolaylık sağlar.
+
+        DOM’u incelemek ve manuel olarak değiştirmek için geliştirici araçlarını kullanabiliriz.
     */
 
         // console.log(window.innerHeight); //-> 651

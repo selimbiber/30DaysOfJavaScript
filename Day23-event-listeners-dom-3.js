@@ -265,118 +265,165 @@ document.body.innerHTML = ""; // -> Page Cleared.
             container.style.justifyContent = 'center';
             container.style.flexWrap = 'wrap';
 
-            heading.textContent = 'Number Generator';
-            heading.style.color = 'green';
-            heading.style.textAlign = 'center';
-            container.appendChild(heading);
+            // heading.textContent = 'Number Generator';
+            // heading.style.color = 'green';
+            // heading.style.textAlign = 'center';
+            // container.appendChild(heading);
 
-            const challengeName = document.createElement('h2');
-            challengeName.textContent = '30DaysOfJavaScript: DOM Day 3';
-            challengeName.style.textAlign = 'center';
-            container.appendChild(challengeName);
+            // const challengeName = document.createElement('h2');
+            // challengeName.textContent = '30DaysOfJavaScript: DOM Day 3';
+            // challengeName.style.textAlign = 'center';
+            // container.appendChild(challengeName);
 
-            const authorName = document.createElement('h3');
-            authorName.textContent = 'Asabeneh Yetayeh';
-            authorName.style.textAlign = 'center';
-            container.appendChild(authorName);
+            // const authorName = document.createElement('h3');
+            // authorName.textContent = 'Asabeneh Yetayeh';
+            // authorName.style.textAlign = 'center';
+            // container.appendChild(authorName);
 
-            const inputDiv = document.createElement('div');
-            inputDiv.style.margin = '0 auto';
-            container.appendChild(inputDiv);
+            // const inputDiv = document.createElement('div');
+            // inputDiv.style.margin = '0 auto';
+            // container.appendChild(inputDiv);
 
-            const numInput = document.createElement('input');
-            numInput.setAttribute('type', 'number');
-            numInput.style.border = '1px solid green'
-            numInput.style.width = '30rem'
-            numInput.style.marginRight = '1rem'
-            numInput.style.height = '2rem'
-            inputDiv.appendChild(numInput);
+            // const numInput = document.createElement('input');
+            // numInput.setAttribute('type', 'number');
+            // numInput.style.border = '1px solid green'
+            // numInput.style.width = '30rem'
+            // numInput.style.marginRight = '1rem'
+            // numInput.style.height = '2rem'
+            // inputDiv.appendChild(numInput);
 
-            const submitInput = document.createElement('input');
-            submitInput.setAttribute('type', 'submit');
-            submitInput.setAttribute('value', 'Generate Numbers');
-            submitInput.style.width = '10rem'
-            submitInput.style.height = '2.3rem'
-            submitInput.style.backgroundColor = 'green'
-            submitInput.style.color = 'white'
-            submitInput.style.cursor = 'pointer'
-            inputDiv.appendChild(submitInput);
+            // const submitInput = document.createElement('input');
+            // submitInput.setAttribute('type', 'submit');
+            // submitInput.setAttribute('value', 'Generate Numbers');
+            // submitInput.style.width = '10rem'
+            // submitInput.style.height = '2.3rem'
+            // submitInput.style.backgroundColor = 'green'
+            // submitInput.style.color = 'white'
+            // submitInput.style.cursor = 'pointer'
+            // inputDiv.appendChild(submitInput);
 
-            // Helper Funcs
+            // // Helper Funcs
 
-            const isPrime = (number) => {
+            // const isPrime = (number) => {
 
-                if (number < 2) {
-                    return false;
-                } if (number == 2) {
-                    return true;
-                } else {
-                    for (let i = 2; i <= 10; i++) {
-                        if (number === i) {
-                            continue;
-                        }
-                        else if (number % i == 0) {
-                            return false;
-                        }
-                    }
-                    return true;
-                }
-            }
+            //     if (number < 2) {
+            //         return false;
+            //     } if (number == 2) {
+            //         return true;
+            //     } else {
+            //         for (let i = 2; i <= 10; i++) {
+            //             if (number === i) {
+            //                 continue;
+            //             }
+            //             else if (number % i == 0) {
+            //                 return false;
+            //             }
+            //         }
+            //         return true;
+            //     }
+            // }
 
-            const table = document.createElement('table');
-            container.appendChild(table);
+            // const table = document.createElement('table');
+            // container.appendChild(table);
 
-            function generateNumbers (numCount) {
-                let nums = 0;
-                while (nums < numCount) {
-                    const tableRow = document.createElement('tr');
+            // function generateNumbers (numCount) {
+            //     let nums = 0;
+            //     while (nums < numCount) {
+            //         const tableRow = document.createElement('tr');
 
-                    let i = 1;
-                    let iCount = numCount - nums > 6 ? 6 : numCount - nums;
-                    while (i <= iCount) {
-                        const tableData = document.createElement('td');
-                        tableData.textContent = nums;
-                        tableData.style.padding = '.5rem'
-                        tableData.style.textAlign = 'center'
+            //         let i = 1;
+            //         let iCount = numCount - nums > 6 ? 6 : numCount - nums;
+            //         while (i <= iCount) {
+            //             const tableData = document.createElement('td');
+            //             tableData.textContent = nums;
+            //             tableData.style.padding = '.5rem'
+            //             tableData.style.textAlign = 'center'
 
-                        if (nums % 2 === 0) {
-                            tableData.style.backgroundColor = 'green';
-                        } else if (nums % 2 === 1) {
-                            tableData.style.backgroundColor = 'yellow';
-                        }
-                        if (isPrime(nums)) {
-                            tableData.style.backgroundColor = 'red';
-                        }
+            //             if (nums % 2 === 0) {
+            //                 tableData.style.backgroundColor = 'green';
+            //             } else if (nums % 2 === 1) {
+            //                 tableData.style.backgroundColor = 'yellow';
+            //             }
+            //             if (isPrime(nums)) {
+            //                 tableData.style.backgroundColor = 'red';
+            //             }
 
-                        tableRow.appendChild(tableData);
-                        nums++;
-                        i++;
-                    }
-                    table.appendChild(tableRow);
-                }
-            }
+            //             tableRow.appendChild(tableData);
+            //             nums++;
+            //             i++;
+            //         }
+            //         table.appendChild(tableRow);
+            //     }
+            // }
 
-            // Events
+            // // Events
 
-            numInput.addEventListener('keypress', () => {
-                let inputValue = parseInt(numInput.value);
-                if (inputValue < 0 || inputValue > 999) {
-                    alert('Please enter a number between 1-1000!');
-                }
-            })
+            // numInput.addEventListener('keyup', (event) => {
+            //     let inputValue = parseInt(numInput.value);
+            //     if (inputValue < 0 || inputValue > 999) {
+            //         alert('Please enter a number between 1-1000!');
+            //     }
+            //     if (event.keyCode === 13) {
+            //         submitInput.click();
+            //     }
+            // })
 
-            submitInput.addEventListener('click', () => {
-                table.innerHTML = '';
-                let inputValue = parseInt(numInput.value);
+            // submitInput.addEventListener('click', () => {
+            //     table.innerHTML = '';
+            //     let inputValue = parseInt(numInput.value);
 
-                if (inputValue < 0 || inputValue > 1000) {
-                    alert('Please enter a number between 1-1000!');
-                } else {
-                    generateNumbers(inputValue);
-                }
-            })
+            //     if (inputValue < 0 || inputValue > 1000) {
+            //         alert('Please enter a number between 1-1000!');
+            //     } else {
+            //         generateNumbers(inputValue);
+            //     }
+            // })
 
         //? 2.-> Generating the keyboard code code using even listener. The image below.
         /* https://30dayjavascript.js.org/images/projects/dom_min_project_keycode_day_3.2.gif */
+
+            // // Key Name Styles
+            //     const keyName = document.createElement('p');
+            //     keyName.style.height = '5rem'
+            //     keyName.style.width = '20rem'
+            //     keyName.style.border = '1px solid black'
+            //     keyName.style.borderRadius = '.5rem'
+            //     keyName.style.boxShadow = '0 0 .5rem 1px black'
+            //     keyName.textContent = 'Press any keyboard key'
+            //     keyName.style.display = 'flex'
+            //     keyName.style.justifyContent = 'center'
+            //     keyName.style.alignItems = 'center'
+            //     keyName.style.fontSize = '1.5rem'
+            //     keyName.style.fontWeight = '600'
+            //     container.appendChild(keyName)
+
+            // // Key Code Styles
+            //     const keyCode = document.createElement('div')
+            //     keyCode.style.height = '5rem'
+            //     keyCode.style.width = '5rem'
+            //     keyCode.style.border = '1px solid black'
+            //     keyCode.style.borderRadius = '.5rem'
+            //     keyCode.style.boxShadow = '0 0 .5rem 1px black'
+            //     keyCode.style.margin = '0 auto'
+            //     keyCode.style.display = 'flex'
+            //     keyCode.style.justifyContent = 'center'
+            //     keyCode.style.alignItems = 'center'
+            //     keyCode.style.fontSize = '2.5rem'
+            //     keyCode.style.fontWeight = '700'
+            //     keyCode.style.color = 'green'
+
+            // document.body.addEventListener('keydown', (key) => {
+            //     keyCode.textContent = key.keyCode
+            //     function isBackspace() {
+            //         if (key.keyCode === 32) {
+            //             return 'Backspace'
+            //         } else {
+            //             return key.key
+            //         }
+            //     }
+                
+            //     keyName.innerHTML = `You Pressed &nbsp <span style="color:green">${isBackspace()}</span>`
+            //     container.appendChild(keyCode)
+            // });
 
 //! 🎉 CONGRATULATIONS ! 🎉

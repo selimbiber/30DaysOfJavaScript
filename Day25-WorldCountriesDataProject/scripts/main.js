@@ -1,4 +1,4 @@
-import {dataForAllCountries} from "./data.js";
+// import {dataForAllCountries} from "./data.js";
 
 const container = document.getElementById('container');
 

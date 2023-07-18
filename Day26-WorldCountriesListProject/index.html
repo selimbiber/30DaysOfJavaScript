@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="shortcut icon"
+			href="./assets/world-favicon.png"
+			type="image/x-icon"
+		/>
+		<link rel="stylesheet" href="styles.css" />
+		<title>World Countries List</title>
+	</head>
+	<body>
+		<header id="top-container">
+			<div id="search-panel">
+				<h1 id="heading">WORLD COUNTRIES LIST</h1>
+				<h3 id="country-count"></h3>
+				<p id="searching-info"></p>
+				<section id="searching-options-area">
+					<button id="initial-letter-btn" class="initial-letter-btn">
+						SEARCH WITH INITIAL LETTER
+					</button>
+					<button id="any-word-btn" class="any-word-btn">
+						SEARCH WITH ANY WORD
+					</button>
+					<button
+						id="alpha-sorting-btn"
+						class="alpha-sorting-btn arrow-down"
+					></button>
+				</section>
+				<label for="search-country-input" id="search-input-area">
+					<input
+						type="search"
+						name="search-country-input"
+						id="search-country-input"
+						placeholder="Search Country"
+					/>
+					<button
+						type="button"
+						name="search-country-btn"
+						id="search-country-btn"
+					>
+						<img src="./assets/search-icon.svg" alt="search icon" />
+					</button>
+				</label>
+			</div>
+		</header>
+		<main id="box-container"></main>
+	</body>
+	<!-- SCRIPTS -->
+	<script src="./scripts/data.js"></script>
+	<script src="./scripts/main.js"></script>
+</html>

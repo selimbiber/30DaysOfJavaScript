@@ -13,4 +13,4 @@ Bir sonraki sürümde bu projeye eklemeyi düşündüğüm bazı özellikler:
 
     Hakkında internette çok az veri olan, nüfusu ve arazi büyüklüğü gibi değerleri çok düşük olan veya başka bir ülkenin egemenliği altındaki ülkeler listeden kaldırılabilir.
 
-### [Live Preview Link | Canlı Önizleme Bağlantısı](eklenecek)
+### [Live Preview Link | Canlı Önizleme Bağlantısı](https://htmlpreview.github.io/?https://github.com/selimbiber/30DaysOfJavaScriptChallenge/blob/master/Day26-WorldCountriesListProject/index.html)

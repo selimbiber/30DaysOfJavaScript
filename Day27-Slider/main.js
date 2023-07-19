@@ -30,6 +30,10 @@ setInterval(() => {
 
     const currentTech = personData.techs[indexForTechs]
     TAUGHT_TECHS.textContent = currentTech
+    const randomR = Math.floor(Math.random() * 256)
+    const randomG = Math.floor(Math.random() * 256)
+    const randomB = Math.floor(Math.random() * 256)
+    TAUGHT_TECHS.style.color = `rgb(${randomR}, ${randomG}, ${randomB})`
     indexForTechs++;
 
     if (indexForTechs === personData.titles.length -1) {

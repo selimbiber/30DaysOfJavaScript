@@ -25,3 +25,15 @@
 [Expected Result](https://30dayjavascript.js.org/26-day/)
 
 [My Result](https://htmlpreview.github.io/?https://github.com/selimbiber/30DaysOfJavaScriptChallenge/blob/master/Day26-WorldCountriesListProject/index.html)
+
+#### Slider
+
+[Expected Result](https://30dayjavascript.js.org/27-day/)
+
+[My Result](https://htmlpreview.github.io/?https://github.com/selimbiber/30DaysOfJavaScriptChallenge/blob/master/Day27-Slider/index.html)
+
+#### Leaderboard
+
+[Expected Result](https://30dayjavascript.js.org/28-day/)
+
+[My Result](https://htmlpreview.github.io/?https://github.com/selimbiber/30DaysOfJavaScriptChallenge/blob/master/Day28-Leaderboard/index.html)

@@ -17,90 +17,39 @@
 		</header>
 		<main id="container">
 			<section id="input-section">
-				<input type="text" id="first-name-input" placeholder="First Name" />
-				<input type="text" id="last-name-input" placeholder="Last Name" />
-				<input type="text" id="country-input" placeholder="Country" />
-				<input type="number" id="score-input" placeholder="Score" />
+				<input
+					type="text"
+					pattern="[a-zA-Z]*"
+					maxlength="20"
+					id="first-name-input"
+					placeholder="First Name"
+				/>
+				<input
+					type="text"
+					pattern="[a-zA-Z]*"
+					onkeydown="if(['Space'].includes(arguments[0].code)){return false;}"
+					maxlength="20"
+					id="last-name-input"
+					placeholder="Last Name"
+				/>
+				<input
+					type="text"
+					pattern="[a-zA-Z]*"
+					maxlength="20"
+					id="country-input"
+					placeholder="Country"
+				/>
+				<input
+					type="number"
+					min="0"
+					max="100"
+					id="score-input"
+					placeholder="Score"
+				/>
 				<button id="add-btn">Add Player</button>
 			</section>
-			<section id="warning-section">All fields are required.</section>
-			<section id="list-section">
-				<ol id="new-line">
-					<ul id="name-date-area">
-						<li id="name" class="name">ASABENEH YETAYEH</li>
-						<li id="date" class="date">JAN 30, 2024 01:09</li>
-					</ul>
-					<li id="country" class="country">FINLAND</li>
-					<li id="score" class="score">75</li>
-					<ul class="options">
-						<li id="delete" class="delete">
-							<img src="./images/delete-icon.svg" alt="delete" />
-						</li>
-						<li id="increase" class="increase">+5</li>
-						<li id="decrease" class="decrease">-5</li>
-					</ul>
-				</ol>
-				<ol id="new-line">
-					<ul id="name-date-area">
-						<li id="name" class="name">ASABENEH YETAYEH</li>
-						<li id="date" class="date">JAN 30, 2024 01:09</li>
-					</ul>
-					<li id="country" class="country">FINLAND</li>
-					<li id="score" class="score">75</li>
-					<ul class="options">
-						<li id="delete" class="delete">
-							<img src="./images/delete-icon.svg" alt="delete" />
-						</li>
-						<li id="increase" class="increase">+5</li>
-						<li id="decrease" class="decrease">-5</li>
-					</ul>
-				</ol>
-				<ol id="new-line">
-					<ul id="name-date-area">
-						<li id="name" class="name">ASABENEH YETAYEH</li>
-						<li id="date" class="date">JAN 30, 2024 01:09</li>
-					</ul>
-					<li id="country" class="country">FINLAND</li>
-					<li id="score" class="score">75</li>
-					<ul class="options">
-						<li id="delete" class="delete">
-							<img src="./images/delete-icon.svg" alt="delete" />
-						</li>
-						<li id="increase" class="increase">+5</li>
-						<li id="decrease" class="decrease">-5</li>
-					</ul>
-				</ol>
-				<ol id="new-line">
-					<ul id="name-date-area">
-						<li id="name" class="name">ASABENEH YETAYEH</li>
-						<li id="date" class="date">JAN 30, 2024 01:09</li>
-					</ul>
-					<li id="country" class="country">FINLAND</li>
-					<li id="score" class="score">75</li>
-					<ul class="options">
-						<li id="delete" class="delete">
-							<img src="./images/delete-icon.svg" alt="delete" />
-						</li>
-						<li id="increase" class="increase">+5</li>
-						<li id="decrease" class="decrease">-5</li>
-					</ul>
-				</ol>
-				<ol id="new-line">
-					<ul id="name-date-area">
-						<li id="name" class="name">ASABENEH YETAYEH</li>
-						<li id="date" class="date">JAN 30, 2024 01:09</li>
-					</ul>
-					<li id="country" class="country">FINLAND</li>
-					<li id="score" class="score">75</li>
-					<ul class="options">
-						<li id="delete" class="delete">
-							<img src="./images/delete-icon.svg" alt="delete" />
-						</li>
-						<li id="increase" class="increase">+5</li>
-						<li id="decrease" class="decrease">-5</li>
-					</ul>
-				</ol>
-			</section>
+			<section id="warning-section">All fields are required!</section>
+			<section id="list-section"></section>
 		</main>
 		<footer>
 			Challenged by

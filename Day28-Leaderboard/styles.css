@@ -118,12 +118,14 @@ input {
     text-align: center;
     color: red;
     font-weight: bold;
+    display: none;
 }
 
 #list-section {
     display: flex;
     flex-direction: column;
     row-gap: 1rem;
+    margin-bottom: 4rem;
 }
 
 li {
@@ -131,7 +133,7 @@ li {
     display: inline-flex;
 }
 
-#new-line {
+.new-line {
     min-height: 7rem;
     width: 100%;
     border-radius: 1rem;
@@ -139,24 +141,26 @@ li {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 10rem 0 1rem;
+    padding: 1rem 10rem 1rem 1rem;
     font-weight: bold;
 }
 
-#name-date-area {
+.name-date-area {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
 }
 
 .name {
     font-size: 2rem;
+    margin-right: auto;
 }
 
 .date {
     font-weight: lighter;
     color: gray;
+    margin-right: auto;
+    font-size: 1.2rem;
 }
 
 .country, .score {
@@ -170,8 +174,8 @@ li {
 }
 
 .delete img {
-    height: 2rem;
-    width: 2rem;
+    height: 1.5rem;
+    width: 1.5rem;
 }
 
 .delete, .increase, .decrease {
@@ -196,6 +200,7 @@ footer > a {
     color: black;
     font-weight: bold;
     text-decoration:underline;
+    font-size: 1.5rem;
 }
 
 #github-logo {
@@ -210,18 +215,18 @@ footer > a {
     transform: rotate(360deg) scale(1.2);
 }
 
-/* For Mobile */
+/* For Mobile Devices */
 @media screen and (max-width: 1440px) {
     body {
         max-width: 90%;
     }
-    #new-line {
+    .new-line {
         padding-right: 1rem;
     }
     #add-btn, input::placeholder {
         font-size: 1.4rem;
     }
-    #new-line {
+    .new-line {
         font-size: 1.5rem;
     }
 }

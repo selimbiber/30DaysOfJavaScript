@@ -37,3 +37,9 @@
 [Expected Result](https://30dayjavascript.js.org/28-day/)
 
 [My Result](https://htmlpreview.github.io/?https://github.com/selimbiber/30DaysOfJavaScriptChallenge/blob/master/Day28-Leaderboard/index.html)
+
+#### Animation
+
+[Expected Result](https://30dayjavascript.js.org/29-day/)
+
+[My Result](https://htmlpreview.github.io/?https://github.com/selimbiber/30DaysOfJavaScriptChallenge/blob/master/Day29-Animation/index.html)

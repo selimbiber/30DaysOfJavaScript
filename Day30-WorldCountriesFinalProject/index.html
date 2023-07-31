@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="shortcut icon"
+			href="./images/world-favicon.png"
+			type="image/x-icon"
+		/>
+		<link rel="stylesheet" href="styles.css" />
+		<title>World Countries Data Search</title>
+	</head>
+	<body>
+		<header id="top-container">
+			<section id="search-panel">
+				<h1 id="heading">WORLD COUNTRIES DATA</h1>
+				<h3 id="country-count"></h3>
+				<p id="searching-info"></p>
+				<label for="search-country-input" id="search-input-area">
+					<input
+						type="search"
+						name="search-country-input"
+						id="search-country-input"
+						placeholder="Search countries by name, capital and languages"
+					/>
+				</label>
+				<section id="searching-options-area">
+					<button id="name-btn" class="name-btn">NAME</button>
+					<button id="capital-btn" class="capital-btn">CAPITAL</button>
+					<button id="population-btn" class="population-btn">POPULATION</button>
+					<button id="currency-btn" class="currency-btn">CURRENCY</button>
+					<button id="chartbar-btn" class="chartbar-btn"></button>
+				</section>
+			</section>
+		</header>
+		<main id="main-container">
+			<section id="box-container"></section>
+			<section id="chartbar-container">
+				<ul id="chartbar-buttons-area">
+					<li>
+						<button class="chartbar-options-btn" id="population-chartbar-btn">
+							POPULATION
+						</button>
+					</li>
+					<li>
+						<button class="chartbar-options-btn" id="languages-chartbar-btn">
+							LANGUAGES
+						</button>
+					</li>
+					<li>
+						<button class="chartbar-options-btn" id="currency-chartbar-btn">
+							CURRENCY
+						</button>
+					</li>
+				</ul>
+			</section>
+		</main>
+		<!-- SCRIPTS-->
+		<script src="./scripts/data.js"></script>
+		<script src="./scripts/main.js"></script>
+	</body>
+</html>
